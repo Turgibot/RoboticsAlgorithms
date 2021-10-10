@@ -52,7 +52,7 @@ class Book(OPU_Slide):
         bul2 = "Alongsided by short video lessons from Dr. Elishai"
         bul1 = "Our course deals with 6 chapters"
         bul3 = "Excerises mostly from the book"
-        bul4 = "Plenty of online resources including Coursera and GitHub"
+        bul4 = "Plenty of online resources including wiki, Coursera and GitHub"
 
         bullets = [bul0,bul1,bul2,bul3,bul4]
         blist = BulletedList(*bullets).scale(0.5).shift(LEFT*1.2+UP)
