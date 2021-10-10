@@ -67,7 +67,7 @@ class HowTo(OPU_Slide):
         img = ImageMobject('../images/facing.jpg').scale(0.5).shift(RIGHT*2+DOWN*1.3)
         img_txt = Text("Framed base image data.").scale(0.3).next_to(img, DOWN)
 
-        bul0 = "Read the elevant material in the book and course notebook."
+        bul0 = "Read the relevant material in the book and course notebook."
         bul1 = "Watch Elishai's videos."
         bul2 = "Practise a few questions before class."
         bul3 = "Zoom and participate in lessons.(sessions are recorded and uploaded)"

@@ -4,7 +4,6 @@ import os
 import shutil
 import numpy as np
 import cv2
-import pyautogui 
 
 config.video_dir= "../video_slides"
 config.notes_dir= "../notes"
@@ -57,7 +56,27 @@ class SlideScene(Scene):
         out=f'<aside class="notes">%s</aside>\n'%(note)
         with open("%s/%s.txt"%(dirname,type(self).__name__),'w') as f:
             f.write(out)
-    def take_shot(self):
-        image = pyautogui.screenshot()
-        image = cv2.cvtColor(np.array(image),cv2.COLOR_RGB2BGR)
-        cv2.imwrite("image1.png", image)
+
+
+class MyBullets:
+     def __new__(self, isNumbered=False, latex_grp=None, size=0):
+        bullets = VGroup(latex_grp[0])
+        if isNumbered:
+            bul = Text("1. ")
+            bullets[0].add_to_back(bul.next_to(bullets[0], LEFT, SMALL_BUFF).align_to(bullets[0], bullets[0].get_center()).shift(UP*0.05+LEFT*0.7))
+
+        else:
+            bul = MathTex("\\cdot").scale(2)
+            bullets[0].add_to_back(bul.next_to(bullets[0], LEFT, SMALL_BUFF).align_to(bullets[0], bullets[0].get_center()))
+
+        for i in range(1, size):
+            bullets+=latex_grp[i].set_buffer(0)
+            if isNumbered:
+                bul = Text(str(i+1)+". ")
+                bul.next_to(bullets[i], LEFT).shift(UP*0.05+LEFT*0.5)
+            else:
+                bul = MathTex("\\cdot").scale(2)
+                bul.next_to(bullets[i], LEFT, MED_SMALL_BUFF).align_to(bullets[i], bullets[i].get_center())
+            bullets[i].add_to_back(bul)
+
+        return bullets.arrange(DOWN, aligned_edge=LEFT, buff=0.7)
