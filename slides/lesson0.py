@@ -4,7 +4,7 @@ class Intro1(OPU_Slide):
     def construct(self):
         self.add_info()
         welcome = Text("Welcome to 20944").scale(0.8).shift(UP)
-        title = Text("Algorithmics Robotics", color=BLUE).next_to(welcome, DOWN)
+        title = Text("Algorithmic Robotics", color=BLUE).next_to(welcome, DOWN)
         version = Text("Version 0001").scale(0.25).next_to(title,RIGHT).align_to(title, DOWN)
         self.play(Write(welcome), Write(title))
         self.play(Write(version))
@@ -14,9 +14,9 @@ class Intro2(OPU_Slide):
         self.add_info()
         today = date.today()
         welcome = Text("Welcome to 20944").scale(0.8).shift(UP)
-        old_title = Text("Algorithmics Robotics", color=BLUE).next_to(welcome, DOWN)
+        old_title = Text("Algorithmic Robotics", color=BLUE).next_to(welcome, DOWN)
         self.add(old_title)
-        lecture = Text("Algorithmics Robotics "+str(today.year), color=BLUE).scale(0.25).shift(3.3*DOWN+5.3*RIGHT)
+        lecture = Text("Algorithmic Robotics "+str(today.year), color=BLUE).scale(0.25).shift(3.3*DOWN+5.3*RIGHT)
         self.play(ReplacementTransform(old_title, lecture))
 
 class Admin(OPU_Slide):

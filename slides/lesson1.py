@@ -541,4 +541,19 @@ class Chap2_213(OPU_Slide):
 
         self.play(FadeIn(solution03))
 
+class Chap2_30(OPU_Slide):
+    def construct(self):
+        self.add_info()
 
+        title = Text("Chapter 2: Configuration Space").shift(UP*3).scale(0.65)
+        secondary_title = Text("2.3: Topology and Representation", color=BLUE).next_to(title, DOWN).scale(0.4)
+        
+        self.add(title, secondary_title)
+
+        solution0 = Tex(r"dof is the dimension of the C-space, toplogy is its shape", color = GREEN).scale(0.6).center().shift(UP*1.5)
+        solution01 = Tex(r"Two C-spaces may have the same dof but differ in other ways.", color = GREEN).scale(0.6).next_to(solution0, DOWN)
+        solution02 = Tex(r"The topology (“shape”) of a space is independent of how we represent it", color = GREEN).scale(0.6).next_to(solution01, DOWN)
+        solution03 = Tex(r"Two spaces are topologically equivalent if one can be continuously deformed to the other without cutting or pasting.", color = GREEN).scale(0.6).next_to(solution02, DOWN)
+        
+
+        self.play(FadeIn(solution0, solution01, solution02, solution03))
