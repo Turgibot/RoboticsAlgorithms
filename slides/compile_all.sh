@@ -39,10 +39,42 @@ manim lesson1.py Chap2_211
 manim lesson1.py Chap2_212
 manim lesson1.py Chap2_213
 
+#2.3
+manim lesson1.py Chap2_30
+manim lesson1.py Chap2_31
+manim lesson1.py Chap2_32
+manim lesson1.py Chap2_33
+manim lesson1.py Chap2_34
+manim lesson1.py Chap2_35
+manim lesson1.py Chap2_36
+manim lesson1.py Chap2_37
+manim lesson1.py Chap2_38
+manim lesson1.py Chap2_39
+
+#2.4
 
 
+manim lesson1.py Chap2_40
+manim lesson1.py Chap2_41
+manim lesson1.py Chap2_42
+manim lesson1.py Chap2_43
+manim lesson1.py Chap2_44
+manim lesson1.py Chap2_45
+manim lesson1.py Chap2_46
+manim lesson1.py Chap2_47
+manim lesson1.py Chap2_48
+manim lesson1.py Chap2_49
+manim lesson1.py Chap2_410
+manim lesson1.py Chap2_411
+
+#2.5
 
 
+manim lesson1.py Chap2_50
+manim lesson1.py Chap2_51
+manim lesson1.py Chap2_52
+manim lesson1.py Chap2_53
+manim lesson1.py Chap2_54
 
 
 

@@ -1,4 +1,5 @@
 from math import e
+from cv2 import FILLED
 from numpy import WRAP
 from OPU import *
 from manim_slide import MyBullets
@@ -550,10 +551,620 @@ class Chap2_30(OPU_Slide):
         
         self.add(title, secondary_title)
 
-        solution0 = Tex(r"dof is the dimension of the C-space, toplogy is its shape", color = GREEN).scale(0.6).center().shift(UP*1.5)
+        solution0 =  Tex(r"dof is the dimension of the C-space, toplogy is its shape", color = GREEN).scale(0.6).center().shift(UP*1.5)
         solution01 = Tex(r"Two C-spaces may have the same dof but differ in other ways.", color = GREEN).scale(0.6).next_to(solution0, DOWN)
-        solution02 = Tex(r"The topology (“shape”) of a space is independent of how we represent it", color = GREEN).scale(0.6).next_to(solution01, DOWN)
-        solution03 = Tex(r"Two spaces are topologically equivalent if one can be continuously deformed to the other without cutting or pasting.", color = GREEN).scale(0.6).next_to(solution02, DOWN)
+       
+        rec = ImageMobject('../images/plane.png').scale(1.5).shift(DOWN+RIGHT*3)
+        sphere = ImageMobject('../images/sphere.png').scale(1.2).shift(DOWN+LEFT*3)
+        plane_txt = Text ("The 2D surface of a plane").scale(0.3).next_to(rec, DOWN)
+        sphere_txt = Text ("The 2D surface of a sphere").scale(0.3).next_to(sphere, DOWN)
+
+        self.play(FadeIn(solution0, solution01, rec, sphere, sphere_txt, plane_txt))
         
 
-        self.play(FadeIn(solution0, solution01, solution02, solution03))
+
+class Chap2_31(OPU_Slide):
+    def construct(self):
+        self.add_info()
+
+        title = Text("Chapter 2: Configuration Space").shift(UP*3).scale(0.65)
+        secondary_title = Text("2.3: Topology and Representation", color=BLUE).next_to(title, DOWN).scale(0.4)
+        
+        self.add(title, secondary_title)
+
+        solution0 =  Tex(r"The topology of a space is independent of how we represent it.", color = GREEN).scale(0.6).center().shift(UP*1.5)
+        solution01 = Tex(r"Two spaces are topologically equivalent if one can be smoothly deformed to the other without cutting or pasting.", color = GREEN).scale(0.6).next_to(solution0, DOWN)
+        
+        self.play(FadeIn(solution0, solution01))
+        
+        cap = cv2.VideoCapture("../media/videos/mug.mp4")
+        flag, frame = cap.read()
+        while not flag:
+            pass
+        while flag :
+            flag, frame = cap.read()
+            if flag:
+                frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+                frame_img = ImageMobject(frame).scale(0.4).shift(DOWN*2)
+                self.add(frame_img)
+                self.wait(0.032) 
+                self.remove(frame_img)
+            
+        cap.release()
+
+
+class Chap2_32(OPU_Slide):
+    def construct(self):
+        self.add_info()
+
+        title = Text("Chapter 2: Configuration Space").shift(UP*3).scale(0.65)
+        secondary_title = Text("2.3: Topology and Representation", color=BLUE).next_to(title, DOWN).scale(0.4)
+        
+        self.add(title, secondary_title)
+
+        solution0 =  Tex(r"1D topologically distinct shapes:.", color = GREEN).scale(0.6).center().shift(UP*1.5+LEFT*3)
+        solution01 = Tex(r"2D topologically distinct shapes:", color = GREEN).scale(0.6).next_to(solution0, RIGHT).shift(RIGHT*2)
+        
+        self.add(solution0, solution01)
+
+        d1 = ImageMobject('../images/1d.png').scale(1).shift(DOWN+LEFT*3)
+        s1_tex=Tex(r"$\mathbb{S}^1$", color=BLUE).scale(0.4).next_to(d1, LEFT).shift(UP)
+        e1_tex=Tex(r"$\mathbb{E}^1$", color=BLUE).scale(0.4).next_to(s1_tex, DOWN).shift(DOWN*1.5)
+        sphere = ImageMobject('../images/sphere.png').scale(0.8).shift(RIGHT*2.5)
+        torus = ImageMobject('../images/torus.png').scale(1).next_to(sphere, RIGHT)
+        plane = ImageMobject('../images/plane.png').scale(0.9).next_to(sphere, DOWN)
+        cylinder = ImageMobject('../images/cylinder.png').scale(1).next_to(plane, RIGHT)
+        e2_tex=Tex(r"$\mathbb{E}^2$", color=BLUE).scale(0.4).next_to(plane, LEFT)
+        s2_tex=Tex(r"$\mathbb{S}^2$", color=BLUE).scale(0.4).next_to(sphere, LEFT)
+        t2_tex=Tex(r"$\mathbb{T}^2$", color=BLUE).scale(0.4).next_to(torus, RIGHT)
+        exs_tex=Tex(r"$\mathbb{E}^1 \times \mathbb{S}^1$", color=BLUE).scale(0.4).next_to(cylinder, RIGHT)
+
+        self.play(FadeIn(d1, sphere, torus, plane, cylinder,s1_tex, e1_tex, e2_tex, s2_tex, t2_tex, exs_tex))
+
+       
+class Chap2_33(OPU_Slide):
+    def construct(self):
+        self.add_info()
+
+        title = Text("Chapter 2: Configuration Space").shift(UP*3).scale(0.65)
+        secondary_title = Text("2.3: Topology and Representation", color=BLUE).next_to(title, DOWN).scale(0.4)
+        
+        self.add(title, secondary_title)
+
+        solution0 = Tex(r"Some spaces are Cartesian products of spaces of lower dimension, e.g.,", color = GREEN).scale(0.6).center().shift(UP*1.5)
+        
+        
+        coin_plane = ImageMobject('../images/coin_plane.png').scale(0.7).shift(RIGHT*2+DOWN*0.5)
+        e2xs_tex=Tex(r"$\mathbb{E}^2 \times \mathbb{S}^1$", color=BLUE).scale(0.4).next_to(coin_plane, RIGHT)
+        cylinder = ImageMobject('../images/cylinder.png').scale(1).next_to(coin_plane, LEFT).shift(LEFT*2)
+        exs_tex=Tex(r"$\mathbb{E}^1 \times \mathbb{S}^1$", color=BLUE).scale(0.4).next_to(cylinder, LEFT)
+
+
+        self.play(FadeIn(solution0, coin_plane, e2xs_tex, cylinder, exs_tex))
+
+class Chap2_34(OPU_Slide):
+    def construct(self):
+        self.add_info()
+
+        title = Text("Chapter 2: Configuration Space").shift(UP*3).scale(0.65)
+        secondary_title = Text("2.3: Topology and Representation", color=BLUE).next_to(title, DOWN).scale(0.4).shift(UP*0.2)
+        
+        self.add(title, secondary_title)
+
+        img = ImageMobject('../images/cspace_tbl.png').scale(0.8).shift(DOWN*0.5)
+        
+        self.play(FadeIn(img))
+
+class Chap2_35(OPU_Slide):
+    def construct(self):
+        self.add_info()
+
+        title = Text("Chapter 2: Configuration Space").shift(UP*3).scale(0.65)
+        secondary_title = Text("2.3: Topology and Representation", color=BLUE).next_to(title, DOWN).scale(0.4)
+        
+        self.add(title, secondary_title)
+
+        cap = cv2.VideoCapture("../media/videos/cspace_torus.mp4")
+        flag, frame = cap.read()
+        while not flag:
+            pass
+        while flag :
+            flag, frame = cap.read()
+            if flag:
+                frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+                frame_img = ImageMobject(frame).scale(0.9).shift(DOWN*0.5)
+                self.add(frame_img)
+                self.wait(0.042) 
+                self.remove(frame_img)
+            
+        cap.release()
+
+class Chap2_36(OPU_Slide):
+    def construct(self):
+        self.add_info()
+
+        title = Text("Chapter 2: Configuration Space").shift(UP*3).scale(0.65)
+        secondary_title = Text("2.3: Topology and Representation", color=BLUE).next_to(title, DOWN).scale(0.4)
+        
+        self.add(title, secondary_title)
+
+        cap = cv2.VideoCapture("../media/videos/cspace_cylinder.mp4")
+        flag, frame = cap.read()
+        while not flag:
+            pass
+        while flag :
+            flag, frame = cap.read()
+            if flag:
+                frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+                frame_img = ImageMobject(frame).scale(0.9).shift(DOWN*0.5)
+                self.add(frame_img)
+                self.wait(0.042) 
+                self.remove(frame_img)
+            
+        cap.release()
+
+class Chap2_37(OPU_Slide):
+    def construct(self):
+        self.add_info()
+
+        title = Text("Chapter 2: Configuration Space").shift(UP*3).scale(0.65)
+        secondary_title = Text("2.3: Topology and Representation", color=BLUE).next_to(title, DOWN).scale(0.4)
+        
+        self.add(title, secondary_title)
+
+        cap = cv2.VideoCapture("../media/videos/cspace_sphere.mp4")
+        flag, frame = cap.read()
+        while not flag:
+            pass
+        while flag :
+            flag, frame = cap.read()
+            if flag:
+                frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+                frame_img = ImageMobject(frame).scale(0.9).shift(DOWN*0.5)
+                self.add(frame_img)
+                self.wait(0.042) 
+                self.remove(frame_img)
+            
+        cap.release()
+
+
+class Chap2_38(OPU_Slide):
+    def construct(self):
+        self.add_info()
+
+        title = Text("Chapter 2: Configuration Space").shift(UP*3).scale(0.65)
+        secondary_title = Text("2.3: Topology and Representation", color=BLUE).next_to(title, DOWN).scale(0.4)
+        
+        self.add(title, secondary_title)
+        
+        sphere_opt = ImageMobject('../images/sphere_opt.png').shift(UP*0.8)
+        
+        self.play(FadeIn(sphere_opt))
+
+
+
+class Chap2_39(OPU_Slide):
+    def construct(self):
+        self.add_info()
+
+        title = Text("Chapter 2: Configuration Space").shift(UP*3).scale(0.65)
+        secondary_title = Text("2.3: Topology and Representation", color=BLUE).next_to(title, DOWN).scale(0.4)
+        
+        self.add(title, secondary_title)
+        
+        sphere_opt = ImageMobject('../images/sphere_opt.png').shift(UP*0.8)
+        explicit = ImageMobject('../images/explicit.png').shift(DOWN*1.5+LEFT*1.35)
+        implicit = ImageMobject('../images/implicit.png').shift(DOWN*1.47+RIGHT*1.7)
+        self.add(sphere_opt)
+        self.play(FadeIn(implicit, explicit))
+
+
+
+
+class Chap2_40(OPU_Slide):
+    def construct(self):
+        self.add_info()
+
+        title = Text("Chapter 2: Configuration Space").shift(UP*3).scale(0.65)
+        secondary_title = Text("2.4: Configuration and Velocity Constraints", color=BLUE).next_to(title, DOWN).scale(0.4)
+        
+        self.add(title, secondary_title)
+        
+        four_bar = ImageMobject('../images/4bar.png').scale(0.8).shift(LEFT*4)
+        four_txt = Text("The four bar linkage.", color=BLUE).next_to(four_bar, DOWN).scale(0.3).shift(UP*0.3)
+
+        
+        self.add(four_bar, four_txt)
+
+        dof = Tex(r"dof =            ", color=RED).scale(0.5).shift(RIGHT+UP)
+        topology = Tex(r"Topology :  ", color=RED).scale(0.5).next_to(dof, DOWN).align_to(dof, LEFT)
+        implicit = Tex(r"Implicit representaion :  ", color=RED).scale(0.5).next_to(topology, DOWN).align_to(topology, LEFT)
+        explicit = Tex(r"Explicit representaion :  ", color=RED).scale(0.5).next_to(implicit, DOWN).align_to(implicit, LEFT)
+
+        self.play(FadeIn(dof, topology, implicit, explicit))
+
+class Chap2_41(OPU_Slide):
+    def construct(self):
+        self.add_info()
+
+        title = Text("Chapter 2: Configuration Space").shift(UP*3).scale(0.65)
+        secondary_title = Text("2.4: Configuration and Velocity Constraints", color=BLUE).next_to(title, DOWN).scale(0.4)
+        
+        self.add(title, secondary_title)
+        
+        four_bar = ImageMobject('../images/4bar.png').scale(0.8).shift(LEFT*4)
+        four_txt = Text("The four bar linkage.", color=BLUE).next_to(four_bar, DOWN).scale(0.3).shift(UP*0.3)
+
+        
+        self.add(four_bar, four_txt)
+
+        dof = Tex(r"dof = 3(4-1-4)+4 = 1", color=RED).scale(0.5).shift(RIGHT+UP)
+        topology = Tex(r"Topology : $\mathbb{E}^1$", color=RED).scale(0.5).next_to(dof, DOWN).align_to(dof, LEFT)
+        implicit = Tex(r"Implicit representaion : $\mathbb{R}^1$", color=RED).scale(0.5).next_to(topology, DOWN).align_to(topology, LEFT)
+        explicit = Tex(r"Explicit representaion : $\mathbb{R}^4$", color=RED).scale(0.5).next_to(implicit, DOWN).align_to(implicit, LEFT)
+
+        self.play(FadeIn(dof, topology, implicit, explicit))
+
+
+
+
+class Chap2_42(OPU_Slide):
+    def construct(self):
+        self.add_info()
+
+        title = Text("Chapter 2: Configuration Space").shift(UP*3).scale(0.65)
+        secondary_title = Text("2.4: Configuration and Velocity Constraints", color=BLUE).next_to(title, DOWN).scale(0.4)
+        
+        self.add(title, secondary_title)
+        
+        four_bar = ImageMobject('../images/4bar.png').scale(0.8).shift(LEFT*4)
+        four_txt = Text("The four bar linkage.", color=BLUE).next_to(four_bar, DOWN).scale(0.3).shift(UP*0.3)
+
+        holonomic_eq = ImageMobject('../images/holonomic.png').scale(1.2).next_to(four_bar, RIGHT)
+
+        
+        self.add(four_bar, four_txt)
+
+        holonomic = Text(r"k independent").scale(0.3).shift(LEFT*4.5+UP*1.6)
+        bold = Text(r"holonomic constraints", color=RED, weight=BOLD).scale(0.3).next_to(holonomic, RIGHT).shift(LEFT*0.15+UP*0.02)
+        on = Text(r"on n unknown variables reduce an n-dim C-space to n-k dof").scale(0.3).next_to(bold, RIGHT).shift(LEFT*0.15+DOWN*0.02)
+
+        loop = Text("loop-closure equations", color=GREEN).scale(0.25).next_to(holonomic_eq, DOWN)
+        self.play(FadeIn(holonomic_eq, holonomic, bold, on, loop))
+
+class Chap2_43(OPU_Slide):
+    def construct(self):
+        self.add_info()
+
+        title = Text("Chapter 2: Configuration Space").shift(UP*3).scale(0.65)
+        secondary_title = Text("2.4: Configuration and Velocity Constraints", color=BLUE).next_to(title, DOWN).scale(0.4)
+        
+        self.add(title, secondary_title)
+        
+
+        holonomic = Text(r"k independent").scale(0.3).shift(LEFT*4.5+UP*1.6)
+        bold = Text(r"holonomic constraints", color=RED, weight=BOLD).scale(0.3).next_to(holonomic, RIGHT).shift(LEFT*0.15+UP*0.02)
+        on = Text(r"on n unknown variables reduce an n-dim C-space to n-k dof").scale(0.3).next_to(bold, RIGHT).shift(LEFT*0.15+DOWN*0.02)
+
+        g_thetas = ImageMobject('../images/g_thetas.png').scale(1.3).shift(DOWN*1)
+        
+        general = Text("A general form, for", color=GREEN).scale(0.3).shift(LEFT+UP*0.5)
+        thetas = Tex(r"$\theta = [\theta_1, ... , \theta_n]^T$", color=GREEN).scale(0.5).next_to(general, RIGHT)
+        
+        self.add(holonomic, bold, on)
+
+        self.play(FadeIn(  g_thetas, general, thetas))
+
+
+class Chap2_44(OPU_Slide):
+    def construct(self):
+        self.add_info()
+
+        title = Text("Chapter 2: Configuration Space").shift(UP*3).scale(0.65)
+        secondary_title = Text("2.4: Configuration and Velocity Constraints", color=BLUE).next_to(title, DOWN).scale(0.4)
+        
+        self.add(title, secondary_title)
+        
+
+        pfaffian0 = Text(r"Suppose that a closed-chain robot with such loop-closure equations is in motion.").scale(0.3).shift(UP*1.6)
+        pfaffian1 = Text(r"Pfaffian constraints:", color=RED).scale(0.3).shift(LEFT*4.5+UP)
+        pfaffian2 = Text(r"are constraints on velocity:").scale(0.3).next_to(pfaffian1, RIGHT).shift(LEFT*0.15)
+        
+
+        vel0 = ImageMobject('../images/vel0.png').scale(1).shift(LEFT*4+0.3*DOWN)
+        vel2 = ImageMobject('../images/vel2.png').scale(1).shift(DOWN*1).next_to(vel0, RIGHT).shift(RIGHT*0.5)
+        vel3 = ImageMobject('../images/vel3.png').scale(1).shift(DOWN*1).next_to(vel2, RIGHT).shift(RIGHT*0.5)
+        vel4 = ImageMobject('../images/vel4.png').scale(1).shift(DOWN*1.8+RIGHT)
+        
+        pfaffian3 = Text(r"The pfaffian constraints can be written as", color=GREEN).scale(0.3).next_to(vel4, LEFT)
+        pfaffian4 = Text(r"If pfaffian constraints can be integrated to equivalent configuration constraints, they are ", color=BLUE).scale(0.3).next_to(pfaffian3, DOWN).shift(RIGHT)
+        pfaffian5 = Text(r"holonomic.", color=RED ).scale(0.3).next_to(pfaffian4, RIGHT).shift(LEFT*0.15+UP*0.02)
+        self.add(pfaffian0, pfaffian1, pfaffian2)
+
+        self.play(FadeIn(pfaffian3,pfaffian4,pfaffian5, vel0, vel2, vel3, vel4))
+
+class Chap2_45(OPU_Slide):
+    def construct(self):
+        self.add_info()
+
+        title = Text("Chapter 2: Configuration Space").shift(UP*3).scale(0.65)
+        secondary_title = Text("2.4: Configuration and Velocity Constraints", color=BLUE).next_to(title, DOWN).scale(0.4)
+        
+        self.add(title, secondary_title)
+        
+        pfaffian0 = Text(r"If pfaffian constraints can NOT be integrated to equivalent configuration constraints, they are ").scale(0.3).next_to(secondary_title, DOWN).shift(LEFT*0.7)
+        pfaffian1 = Text(r"non-holonomic.", color=RED ).scale(0.3).next_to(pfaffian0, RIGHT).shift(LEFT*0.15+UP*0.02)
+        pfaffian2 = Text(r"They reduce the dimension of the feasible velocities, but not the dimension of the C-space.", color=GREEN).scale(0.3).next_to(pfaffian0, DOWN).align_to(pfaffian0, LEFT)
+
+        rolling = ImageMobject('../images/car.png').scale(0.8).shift(DOWN+LEFT*1.3).shift(LEFT*2.3)
+        rolling_txt = Text("A car on a plane.", color=BLUE).scale(0.25).next_to(rolling, DOWN)
+        cspace = Tex(r"$q = \begin{pmatrix}\phi\\x\\y \end{pmatrix}$").scale(0.5).next_to(rolling, LEFT).shift(UP*1.4)
+        x_vec = Vector().move_to(rolling, aligned_edge=LEFT).shift(LEFT+DOWN)
+        y_vec = Vector(UP).move_to(rolling, aligned_edge=LEFT).shift(LEFT*1.1+DOWN*0.5)
+        x = Text("x").scale(0.25).next_to(x_vec, DOWN).shift(UP*0.2)
+        y = Text("y").scale(0.25).next_to(y_vec, LEFT).shift(RIGHT*0.2)
+        self.add(pfaffian0,pfaffian1,pfaffian2, x, y, x_vec, y_vec)
+        self.play(FadeIn(rolling, rolling_txt, cspace))
+
+class Chap2_46(OPU_Slide):
+    def construct(self):
+        self.add_info()
+
+        title = Text("Chapter 2: Configuration Space").shift(UP*3).scale(0.65)
+        secondary_title = Text("2.4: Configuration and Velocity Constraints", color=BLUE).next_to(title, DOWN).scale(0.4)
+        
+        self.add(title, secondary_title)
+        
+        pfaffian0 = Text(r"If pfaffian constraints can NOT be integrated to equivalent configuration constraints, they are ").scale(0.3).next_to(secondary_title, DOWN).shift(LEFT*0.7)
+        pfaffian1 = Text(r"non-holonomic.", color=RED ).scale(0.3).next_to(pfaffian0, RIGHT).shift(LEFT*0.15+UP*0.02)
+        pfaffian2 = Text(r"They reduce the dimension of the feasible velocities, but not the dimension of the C-space.", color=GREEN).scale(0.3).next_to(pfaffian0, DOWN).align_to(pfaffian0, LEFT)
+
+        rolling = ImageMobject('../images/car.png').scale(0.8).shift(DOWN+LEFT*1.3).shift(LEFT*2.3)
+        rolling_txt = Text("A car on a plane.", color=BLUE).scale(0.25).next_to(rolling, DOWN)
+        cspace = Tex(r"$q = \begin{pmatrix}\phi\\x\\y \end{pmatrix}$").scale(0.5).next_to(rolling, LEFT).shift(UP*1.4)
+        x_vec = Vector().move_to(rolling, aligned_edge=LEFT).shift(LEFT+DOWN)
+        y_vec = Vector(UP).move_to(rolling, aligned_edge=LEFT).shift(LEFT*1.1+DOWN*0.5)
+        x = Text("x").scale(0.25).next_to(x_vec, DOWN).shift(UP*0.2)
+        y = Text("y").scale(0.25).next_to(y_vec, LEFT).shift(RIGHT*0.2)
+        self.add(pfaffian0,pfaffian1,pfaffian2, x, y, x_vec, y_vec, rolling, rolling_txt, cspace)
+
+        y_dot = Tex(r"$\dot{y} = v sin(\phi)$").scale(0.5).shift(UP*0.3)
+        x_dot = Tex(r"$\dot{x} = v cos(\phi)$").scale(0.5).next_to(y_dot, DOWN).align_to(y_dot, LEFT)
+        self.play(FadeIn(x_dot, y_dot))
+
+class Chap2_47(OPU_Slide):
+    def construct(self):
+        self.add_info()
+
+        title = Text("Chapter 2: Configuration Space").shift(UP*3).scale(0.65)
+        secondary_title = Text("2.4: Configuration and Velocity Constraints", color=BLUE).next_to(title, DOWN).scale(0.4)
+        
+        self.add(title, secondary_title)
+        
+        pfaffian0 = Text(r"If pfaffian constraints can NOT be integrated to equivalent configuration constraints, they are ").scale(0.3).next_to(secondary_title, DOWN).shift(LEFT*0.7)
+        pfaffian1 = Text(r"non-holonomic.", color=RED ).scale(0.3).next_to(pfaffian0, RIGHT).shift(LEFT*0.15+UP*0.02)
+        pfaffian2 = Text(r"They reduce the dimension of the feasible velocities, but not the dimension of the C-space.", color=GREEN).scale(0.3).next_to(pfaffian0, DOWN).align_to(pfaffian0, LEFT)
+
+        rolling = ImageMobject('../images/car.png').scale(0.8).shift(DOWN+LEFT*1.3).shift(LEFT*2.3)
+        rolling_txt = Text("A car on a plane.", color=BLUE).scale(0.25).next_to(rolling, DOWN)
+        cspace = Tex(r"$q = \begin{pmatrix}\phi\\x\\y \end{pmatrix}$").scale(0.5).next_to(rolling, LEFT).shift(UP*1.4)
+        x_vec = Vector().move_to(rolling, aligned_edge=LEFT).shift(LEFT+DOWN)
+        y_vec = Vector(UP).move_to(rolling, aligned_edge=LEFT).shift(LEFT*1.1+DOWN*0.5)
+        x = Text("x").scale(0.25).next_to(x_vec, DOWN).shift(UP*0.2)
+        y = Text("y").scale(0.25).next_to(y_vec, LEFT).shift(RIGHT*0.2)
+        y_dot = Tex(r"$\dot{y} = v sin(\phi)$").scale(0.5).shift(UP*0.3)
+        x_dot = Tex(r"$\dot{x} = v cos(\phi)$").scale(0.5).next_to(y_dot, DOWN).align_to(y_dot, LEFT)
+        self.add(pfaffian0,pfaffian1,pfaffian2, x, y, x_vec, y_vec, rolling, rolling_txt, cspace, x_dot, y_dot)
+
+        y_dot = Tex(r"$\rightarrow v = \frac{\dot{y}}{sin(\phi)}$").scale(0.5).shift(UP*0.3).next_to(y_dot, RIGHT)
+        x_dot = Tex(r"$= \frac{\dot{y}}{sin(\phi)}cos(\phi)$").scale(0.5).next_to(y_dot, DOWN).next_to(x_dot, RIGHT)
+        self.play(FadeIn(x_dot, y_dot))
+class Chap2_48(OPU_Slide):
+    def construct(self):
+        self.add_info()
+
+        title = Text("Chapter 2: Configuration Space").shift(UP*3).scale(0.65)
+        secondary_title = Text("2.4: Configuration and Velocity Constraints", color=BLUE).next_to(title, DOWN).scale(0.4)
+        
+        self.add(title, secondary_title)
+        
+        pfaffian0 = Text(r"If pfaffian constraints can NOT be integrated to equivalent configuration constraints, they are ").scale(0.3).next_to(secondary_title, DOWN).shift(LEFT*0.7)
+        pfaffian1 = Text(r"non-holonomic.", color=RED ).scale(0.3).next_to(pfaffian0, RIGHT).shift(LEFT*0.15+UP*0.02)
+        pfaffian2 = Text(r"They reduce the dimension of the feasible velocities, but not the dimension of the C-space.", color=GREEN).scale(0.3).next_to(pfaffian0, DOWN).align_to(pfaffian0, LEFT)
+
+        rolling = ImageMobject('../images/car.png').scale(0.8).shift(DOWN+LEFT*3.6)
+        rolling_txt = Text("A car on a plane.", color=BLUE).scale(0.25).next_to(rolling, DOWN)
+        cspace = Tex(r"$q = \begin{pmatrix}\phi\\x\\y \end{pmatrix}$").scale(0.5).next_to(rolling, LEFT).shift(UP*1.4)
+        x_vec = Vector().move_to(rolling, aligned_edge=LEFT).shift(LEFT+DOWN)
+        y_vec = Vector(UP).move_to(rolling, aligned_edge=LEFT).shift(LEFT*1.1+DOWN*0.5)
+        x = Text("x").scale(0.25).next_to(x_vec, DOWN).shift(UP*0.2)
+        y = Text("y").scale(0.25).next_to(y_vec, LEFT).shift(RIGHT*0.2)
+        y_dot = Tex(r"$\dot{y} = v sin(\phi) \rightarrow v = \frac{\dot{y}}{sin(\phi)}$").scale(0.5).shift(UP*0.3+RIGHT*0.7)
+        x_dot = Tex(r"$\dot{x} = v cos(\phi) = \frac{\dot{y}}{sin(\phi)}cos(\phi)$").scale(0.5).next_to(y_dot, DOWN).align_to(y_dot, LEFT)
+        self.add(pfaffian0,pfaffian1,pfaffian2, x, y, x_vec, y_vec, rolling, rolling_txt, cspace, x_dot, y_dot)
+
+        x_dot = Tex(r"$\rightarrow \dot{x} sin (\phi) - \dot{y}cos(\phi) = 0$").scale(0.5).next_to(x_dot, RIGHT)
+        
+        self.play(FadeIn(x_dot))
+
+class Chap2_49(OPU_Slide):
+    def construct(self):
+        self.add_info()
+
+        title = Text("Chapter 2: Configuration Space").shift(UP*3).scale(0.65)
+        secondary_title = Text("2.4: Configuration and Velocity Constraints", color=BLUE).next_to(title, DOWN).scale(0.4)
+        
+        self.add(title, secondary_title)
+        
+        pfaffian0 = Text(r"If pfaffian constraints can NOT be integrated to equivalent configuration constraints, they are ").scale(0.3).next_to(secondary_title, DOWN).shift(LEFT*0.7)
+        pfaffian1 = Text(r"non-holonomic.", color=RED ).scale(0.3).next_to(pfaffian0, RIGHT).shift(LEFT*0.15+UP*0.02)
+        pfaffian2 = Text(r"They reduce the dimension of the feasible velocities, but not the dimension of the C-space.", color=GREEN).scale(0.3).next_to(pfaffian0, DOWN).align_to(pfaffian0, LEFT)
+
+        rolling = ImageMobject('../images/car.png').scale(0.8).shift(DOWN+LEFT*3.6)
+        rolling_txt = Text("A car on a plane.", color=BLUE).scale(0.25).next_to(rolling, DOWN)
+        cspace = Tex(r"$q = \begin{pmatrix}\phi\\x\\y \end{pmatrix}$").scale(0.5).next_to(rolling, LEFT).shift(UP*1.4)
+        x_vec = Vector().move_to(rolling, aligned_edge=LEFT).shift(LEFT+DOWN)
+        y_vec = Vector(UP).move_to(rolling, aligned_edge=LEFT).shift(LEFT*1.1+DOWN*0.5)
+        x = Text("x").scale(0.25).next_to(x_vec, DOWN).shift(UP*0.2)
+        y = Text("y").scale(0.25).next_to(y_vec, LEFT).shift(RIGHT*0.2)
+        y_dot = Tex(r"$\dot{y} = v sin(\phi) \rightarrow v = \frac{\dot{y}}{sin(\phi)}$").scale(0.5).shift(UP*0.3+RIGHT*0.7)
+        x_dot = Tex(r"$\dot{x} = v cos(\phi) = \frac{\dot{y}}{sin(\phi)}cos(\phi) \rightarrow \dot{x} sin (\phi) - \dot{y}cos(\phi) = 0$").scale(0.5).next_to(y_dot, DOWN).align_to(y_dot, LEFT)
+        self.add(pfaffian0,pfaffian1,pfaffian2, x, y, x_vec, y_vec, rolling, rolling_txt, cspace, x_dot, y_dot)
+
+        pfa_dot = Tex(r"$A(q)\dot{q} = \begin{pmatrix}0 & sin(\phi) & cos(\phi)\end{pmatrix} \cdot \begin{pmatrix}\dot{\phi}\\\dot{x}\\\dot{y} \end{pmatrix} = 0$").scale(0.5).next_to(x_dot, DOWN).shift(RIGHT*0.5+DOWN*0.2)
+        
+        pfaffian = ImageMobject('../images/pfafian.png').scale(0.4).next_to(pfa_dot, LEFT)
+
+        self.play(FadeIn(pfa_dot, pfaffian))
+
+class Chap2_410(OPU_Slide):
+    def construct(self):
+        self.add_info()
+
+        title = Text("Chapter 2: Configuration Space").shift(UP*3).scale(0.65)
+        secondary_title = Text("2.4: Configuration and Velocity Constraints", color=BLUE).next_to(title, DOWN).scale(0.4)
+        
+        self.add(title, secondary_title)
+        
+        pfaffian0 = Text(r"If pfaffian constraints can NOT be integrated to equivalent configuration constraints, they are ").scale(0.3).next_to(secondary_title, DOWN).shift(LEFT*0.7)
+        pfaffian1 = Text(r"non-holonomic.", color=RED ).scale(0.3).next_to(pfaffian0, RIGHT).shift(LEFT*0.15+UP*0.02)
+        pfaffian2 = Text(r"They reduce the dimension of the feasible velocities, but not the dimension of the C-space.", color=GREEN).scale(0.3).next_to(pfaffian0, DOWN).align_to(pfaffian0, LEFT)
+
+        rolling = ImageMobject('../images/rolling.png').scale(1).shift(DOWN+LEFT*1.3).shift(LEFT*2.3)
+        rolling_txt = Text("A coin rolling on a plane without slipping.", color=BLUE).scale(0.25).next_to(rolling, DOWN)
+        cspace = Tex(r"C-space: $\mathbb{R}^2\times\mathbb{T}^2$", color=RED).scale(0.5).next_to(rolling, LEFT).shift(UP*1.4+RIGHT*1.5)
+        self.add(pfaffian0,pfaffian1,pfaffian2)
+        self.play(FadeIn(rolling, rolling_txt, cspace))
+
+class Chap2_411(OPU_Slide):
+    def construct(self):
+        self.add_info()
+
+        title = Text("Chapter 2: Configuration Space").shift(UP*3).scale(0.65)
+        secondary_title = Text("2.4: Configuration and Velocity Constraints", color=BLUE).next_to(title, DOWN).scale(0.4)
+        
+        self.add(title, secondary_title)
+        
+        pfaffian0 = Text(r"If pfaffian constraints can NOT be integrated to equivalent configuration constraints, they are ").scale(0.3).next_to(secondary_title, DOWN).shift(LEFT*0.7)
+        pfaffian1 = Text(r"non-holonomic.", color=RED ).scale(0.3).next_to(pfaffian0, RIGHT).shift(LEFT*0.15+UP*0.02)
+        pfaffian2 = Text(r"They reduce the dimension of the feasible velocities, but not the dimension of the C-space.", color=GREEN).scale(0.3).next_to(pfaffian0, DOWN).align_to(pfaffian0, LEFT)
+
+        rolling = ImageMobject('../images/rolling.png').scale(1).shift(DOWN+LEFT*1.3).shift(LEFT*2.3)
+        rolling_txt = Text("A coin rolling on a plane without slipping.", color=BLUE).scale(0.25).next_to(rolling, DOWN)
+        cspace = Tex(r"C-space: $\mathbb{R}^2\times\mathbb{T}^2$", color=RED).scale(0.5).next_to(rolling, LEFT).shift(UP*1.4+RIGHT*1.5)
+        self.add(pfaffian0,pfaffian1,pfaffian2, rolling, rolling_txt, cspace)
+
+
+        direction = ImageMobject('../images/direction.png').scale(1).next_to(rolling, RIGHT).shift(UP*1.5+LEFT*0.4)
+        speed = ImageMobject('../images/speed.png').scale(1).next_to(direction, DOWN).align_to(direction, LEFT).shift(UP*0.2)
+        collect = ImageMobject('../images/collect.png').scale(1).next_to(speed, DOWN).align_to(speed, LEFT).shift(UP*0.2)
+        integrable = ImageMobject('../images/integrable.png').scale(1).next_to(collect, DOWN).align_to(collect, LEFT).shift(UP*0.2)
+
+        self.play(FadeIn(direction, speed, collect, integrable))
+
+      
+class Chap2_50(OPU_Slide):
+    def construct(self):
+        self.add_info()
+
+        title = Text("Chapter 2: Configuration Space").shift(UP*3).scale(0.65)
+        secondary_title = Text("2.5: Task Space and Workspace", color=BLUE).next_to(title, DOWN).scale(0.4)
+        
+        self.add(title, secondary_title)
+        
+        task_space0 = Text("The task space is a space in which the robot’s task can be naturally expressed.").scale(0.3).shift(UP*1.5+LEFT*2)
+        task_space1 = Text("For example, if the task is to control the position of the tip of a marker on a board, then task space is the Euclidean plane.").scale(0.3).next_to(task_space0, DOWN).align_to(task_space0, LEFT)
+        task_space2 = Text(" You only have to know about the task, not the robot, to define the task space.").scale(0.3).next_to(task_space1, DOWN).align_to(task_space1, LEFT)
+
+        task = ImageMobject('../images/task.jpg').shift(DOWN)
+
+        self.play(FadeIn(task_space0, task_space1, task_space2, task))
+
+class Chap2_51(OPU_Slide):
+    def construct(self):
+        self.add_info()
+
+        title = Text("Chapter 2: Configuration Space").shift(UP*3).scale(0.65)
+        secondary_title = Text("2.5: Task Space and Workspace", color=BLUE).next_to(title, DOWN).scale(0.4)
+        
+        self.add(title, secondary_title)
+        
+        task_space0 = Text("The workspace is a specification of the configurations that the end-effector of the robot can reach.").scale(0.3).shift(UP*1.5+LEFT)
+        task_space1 = Text("It has nothing to do with a particular task.").scale(0.3).next_to(task_space0, DOWN).align_to(task_space0, LEFT)
+        task_space2 = Text("For example, a planar robot with 2 revolute joints, limited to ranges of motion of 180 and 150 degrees, has the workspace:").scale(0.3).next_to(task_space1, DOWN).align_to(task_space1, LEFT)
+
+        task = ImageMobject('../images/workspace.png').shift(DOWN*1.7).scale(0.6)
+
+        self.play(FadeIn(task_space0, task_space1, task_space2, task))
+
+class Chap2_52(OPU_Slide):
+    def construct(self):
+        self.add_info()
+
+        title = Text("Chapter 2: Configuration Space").shift(UP*3).scale(0.65)
+        secondary_title = Text("2.5: Task Space and Workspace", color=BLUE).next_to(title, DOWN).scale(0.4)
+        img_title = Text("The SCARA robot", color=YELLOW).next_to(secondary_title, DOWN).scale(0.3)
+        
+        self.add(title, secondary_title, img_title)
+        
+        
+         #include video
+        cap = cv2.VideoCapture("../media/videos/scara_cut.mp4")
+        flag, frame = cap.read()
+        while not flag:
+            pass
+        while flag :
+            flag, frame = cap.read()
+            if flag:
+                frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+                frame_img = ImageMobject(frame).scale(0.5).next_to(img_title, DOWN)
+                self.add(frame_img)
+                self.wait(0.042)
+                self.remove(frame_img)
+            
+        cap.release()
+
+
+      
+class Chap2_53(OPU_Slide):
+    def construct(self):
+        self.add_info()
+
+        title = Text("Chapter 2: Configuration Space").shift(UP*3).scale(0.65)
+        secondary_title = Text("2.5: Task Space and Workspace", color=BLUE).next_to(title, DOWN).scale(0.4)
+        
+        self.add(title, secondary_title)
+        
+        task_space0 = Tex(r"The SCARA robot is an RRRP open chain that is widely used for tabletop pick-and-place tasks.").scale(0.5).shift(UP*1.5+LEFT*2)
+        task_space1 = Tex(r"The end-effector configuration is described by the four parameters $(x, y, z, \phi)$.").scale(0.5).next_to(task_space0, DOWN).align_to(task_space0, LEFT)
+        task_space2 = Tex(r"Task space: $\mathbb{R}^3 \times \mathbb{S}^1$").scale(0.5).next_to(task_space1, DOWN).align_to(task_space1, LEFT)
+        task_space3 = Tex(r"The workspace is defined as the EE reachable points in (x, y, z) Cartesian space, since all orientations can be achieved").scale(0.5).next_to(task_space2, DOWN).align_to(task_space2, LEFT)
+        frame_img = ImageMobject("../images/scara.png").scale(0.66).shift(RIGHT*4+DOWN)
+        self.play(FadeIn(frame_img, task_space0, task_space1, task_space2, task_space3))
+      
+
+class Chap2_54(OPU_Slide):
+    def construct(self):
+        self.add_info()
+
+        title = Text("Chapter 2: Configuration Space").shift(UP*3).scale(0.65)
+        secondary_title = Text("2.5: Task Space and Workspace", color=BLUE).next_to(title, DOWN).scale(0.4)
+        
+        self.add(title, secondary_title)
+        
+        task_space0 = Text(r"The task space and workspace relate to configuration of the EE and are distinct from the robot’s C-space.").scale(0.3).shift(UP*1.5)
+        task_space1 = Text(r"Some points in the task space may not be reachable at all by the robot").scale(0.3).next_to(task_space0, DOWN).align_to(task_space0, LEFT)
+        task_space20 = Text(r"All points in the workspace are reachable by at least one configuration of the robot.").scale(0.3).next_to(task_space1, DOWN).align_to(task_space1, LEFT)         
+        task_space2 = Text(r"A point in the task space or the workspace may be achievable by more than one robot configuration.").scale(0.3).next_to(task_space20, DOWN).align_to(task_space1, LEFT)
+        task_space3 = Text(r"Some freedoms of the EE (for ex. orientation), do not have to be represented for the task and workspace.").scale(0.3).next_to(task_space2, DOWN).align_to(task_space2, LEFT)
+        task_space4 = Text(r"Two mechanisms with the same C-space may also have diferent workspaces.").scale(0.3).next_to(task_space3, DOWN).align_to(task_space2, LEFT)
+        
+        
+        cspace_a = ImageMobject("../images/cspace_a.png").scale(0.66).next_to(task_space4, DOWN).shift(LEFT)
+        cspace_c = ImageMobject("../images/cspace_c.png").scale(0.66).next_to(cspace_a, RIGHT).shift(RIGHT*2)
+        
+        
+        
+        self.play(FadeIn(task_space0,task_space20, task_space1, task_space2, task_space3, task_space4, cspace_a, cspace_c))
+      
+      

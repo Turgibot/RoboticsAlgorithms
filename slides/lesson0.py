@@ -34,9 +34,9 @@ class Admin(OPU_Slide):
         # bul4 = Text("...").scale(0.3).next_to(bul3, DOWN).align_to(bul3, LEFT)
         bul0 = "Dr. Elishai Ezra Tsur - Course manager.     email : elishai@nbel-lab.com"
         bul1 = "Guy Tordjman - Course Host.     email : turgibot@gmail.com.     cell : 053-7203788"
-        bul2 = "4 assignments - must submit 3/4."
-        bul3 = "4 assignments - must submit 3/4."
-        bullets = [bul0,bul1,bul2]
+        bul2 = "4 assignments - must submit at least 3 @ 4 points each."
+        bul3 = "Assignments contribute max 12 or 16 pts. exam contributes 88 or 84 pts."
+        bullets = [bul0,bul1,bul2, bul3]
         blist = BulletedList(*bullets).scale(0.5).shift(LEFT*1.2+UP)
         self.play(FadeIn(title, secondary_title, blist, img))
 
@@ -64,18 +64,18 @@ class HowTo(OPU_Slide):
 
         title = Text("How to study and succeed in the course").shift(UP*3).scale(0.65)
         secondary_title = Text("", color=BLUE).next_to(title, DOWN+LEFT).scale(0.4)
-        img = ImageMobject('../images/facing.jpg').scale(0.5).shift(RIGHT*2+DOWN*1.3)
+        img = ImageMobject('../images/facing.jpg').scale(0.4).shift(RIGHT*3.5+DOWN*1.6)
         img_txt = Text("Framed base image data.").scale(0.3).next_to(img, DOWN)
 
-        bul0 = "Read the relevant material in the book and course notebook."
+        bul0 = "Read the relevant material in the book and course material."
         bul1 = "Watch Elishai's videos."
-        bul2 = "Practise a few questions before class."
+        bul2 = "Practise a few questions from the book before class."
         bul3 = "Zoom and participate in lessons.(sessions are recorded and uploaded)"
         bul4 = "Complete all the assignments"
-        bul5 = "Ask anything anytime!!!"
+        bul5 = "Ask anything during lecture. email anytime or call me on Tuesday 13-14 at 053-7203788"
 
         bullets = [bul0,bul1,bul2,bul3,bul4, bul5]
-        blist = BulletedList(*bullets).scale(0.5).shift(LEFT*1.2+UP*0.7)
+        blist = BulletedList(*bullets).scale(0.5).shift(LEFT*1.5+UP*0.7)
         self.play(FadeIn(title, secondary_title, blist, img))
 
 class Overview(OPU_Slide):
