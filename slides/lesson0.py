@@ -34,8 +34,8 @@ class Admin(OPU_Slide):
         # bul4 = Text("...").scale(0.3).next_to(bul3, DOWN).align_to(bul3, LEFT)
         bul0 = "Dr. Elishai Ezra Tsur - Course manager.     email : elishai@nbel-lab.com"
         bul1 = "Guy Tordjman - Course Host.     email : turgibot@gmail.com.     cell : 053-7203788"
-        bul2 = "4 assignments - must submit at least 3 @ 4 points each."
-        bul3 = "Assignments contribute max 12 or 16 pts. exam contributes 88 or 84 pts."
+        bul2 = "4 assignments - must submit at least 3 @ 5 points each."
+        bul3 = "Assignments contribute max 15 or 20 pts. exam contributes 85 or 80 pts."
         bullets = [bul0,bul1,bul2, bul3]
         blist = BulletedList(*bullets).scale(0.5).shift(LEFT*1.2+UP)
         self.play(FadeIn(title, secondary_title, blist, img))
