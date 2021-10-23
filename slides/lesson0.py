@@ -27,13 +27,9 @@ class Admin(OPU_Slide):
         secondary_title = Text("", color=BLUE).next_to(title, DOWN+LEFT).scale(0.4)
         img = ImageMobject('../images/pointing.jpg').scale(0.27).shift(RIGHT*4.5+1.9*UP)
         img_txt = Text("Framed base image data").scale(0.3).next_to(img, DOWN)
-        # bul0 = Text("Dr. Elishai Ezra Tsur - Course manager.     email : elishai@nbel-lab.com")
-        # bul1 = Text("Guy Tordjman - Course Host.     email : turgibot@gmail.com.     cell : 053-7203788").scale(0.3).next_to(bul0, DOWN).align_to(bul0, LEFT)
-        # bul2 = Text("4 assignments - must submit 3/4.").scale(0.3).next_to(bul1, DOWN).align_to(bul1, LEFT)
-        # bul3 = Text("...").scale(0.3).next_to(bul2, DOWN).align_to(bul2, LEFT)
-        # bul4 = Text("...").scale(0.3).next_to(bul3, DOWN).align_to(bul3, LEFT)
+       
         bul0 = "Dr. Elishai Ezra Tsur - Course manager.     email : elishai@nbel-lab.com"
-        bul1 = "Guy Tordjman - Course Host.     email : turgibot@gmail.com.     cell : 053-7203788"
+        bul1 = "Guy Tordjman - Course Host.     email : turgibot@gmail.com."
         bul2 = "4 assignments - must submit at least 3 @ 5 points each."
         bul3 = "Assignments contribute max 15 or 20 pts. exam contributes 85 or 80 pts."
         bullets = [bul0,bul1,bul2, bul3]

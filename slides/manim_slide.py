@@ -66,8 +66,8 @@ class MyBullets:
             bullets[0].add_to_back(bul.next_to(bullets[0], LEFT, SMALL_BUFF).align_to(bullets[0], bullets[0].get_center()).shift(UP*0.05+LEFT*0.7))
 
         else:
-            bul = MathTex("\\cdot").scale(2)
-            bullets[0].add_to_back(bul.next_to(bullets[0], LEFT, SMALL_BUFF).align_to(bullets[0], bullets[0].get_center()))
+            bul = MathTex("\\cdot ").scale(2)
+            bullets[0].add_to_back(bul.next_to(bullets[0], LEFT, SMALL_BUFF).align_to(bullets[0], bullets[0].get_center()).shift(LEFT*0.12))
 
         for i in range(1, size):
             bullets+=latex_grp[i].set_buffer(0)
