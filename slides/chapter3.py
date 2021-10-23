@@ -8,7 +8,7 @@ class Empty(OPU_Slide):
     def construct(self):
         self.add_info()
         self.wait()
-        
+
 class Chap3_00(OPU_Slide):
     def construct(self):
         self.add_info()
@@ -271,11 +271,12 @@ class Chap3_15(OPU_Slide, VectorScene):
         self.add(number_plane)
      
         fixedFrame = self.add_frame(position=number_plane.get_origin(), name="s")
-
+        fixedFrameCopy = self.add_frame(position=number_plane.get_origin(), name="s")
+        fixedFrame.set_opacity(0.5)
         bodyFrame = self.add_frame('b', number_plane.get_origin(), 60)
         self.remove(bodyFrame)
 
-        all = VGroup(number_plane, fixedFrame, bodyFrame)
+        all = VGroup(number_plane, fixedFrame, bodyFrame, fixedFrameCopy)
         all.scale(0.75).shift(DOWN)
         
         p_tex = Tex(r"$p=p_x\hat{x}_s+p_y\hat{y}_s$").scale(0.5).next_to(trans, DOWN)
@@ -283,7 +284,7 @@ class Chap3_15(OPU_Slide, VectorScene):
         self.add(p_mat,p_tex)
         arc =  Arc(radius=2,angle=60*DEGREES, color=GREEN, stroke_width=2).scale(0.15).move_to(number_plane.get_origin()+[0.2,0.12,0])
         theta = Tex(r"$\theta$", color=GREEN).scale(0.33).move_to(number_plane.get_origin()+[0.16,0.1,0])
-        self.play(ReplacementTransform(fixedFrame, bodyFrame))
+        self.play(ReplacementTransform(fixedFrameCopy, bodyFrame))
         self.play(Create(arc), Write(theta))
 
         self.wait()
@@ -323,11 +324,12 @@ class Chap3_16(OPU_Slide, VectorScene):
         # b_co = self.vector_to_coords(b)
         
         self.add(number_plane)
-     
+        fixedFrame = self.add_frame(position=number_plane.get_origin(), name="s")
+        fixedFrame.set_opacity(0.5)
 
         bodyFrame = self.add_frame('b', number_plane.get_origin(), 60)
 
-        all = VGroup(number_plane, bodyFrame)
+        all = VGroup(number_plane, bodyFrame, fixedFrame)
         all.scale(0.75).shift(DOWN)
         
         p_tex = Tex(r"$p=p_x\hat{x}_s+p_y\hat{y}_s$").scale(0.5).next_to(trans, DOWN)
@@ -379,9 +381,12 @@ class Chap3_17(OPU_Slide, VectorScene):
         self.add(number_plane)
      
 
+        fixedFrame = self.add_frame(position=number_plane.get_origin(), name="s")
+        fixedFrame.set_opacity(0.5)
+
         bodyFrame = self.add_frame('b', number_plane.get_origin(), 60)
 
-        all = VGroup(number_plane, bodyFrame)
+        all = VGroup(number_plane, bodyFrame, fixedFrame)
         all.scale(0.75).shift(DOWN)
         
         p_tex = Tex(r"$p=p_x\hat{x}_s+p_y\hat{y}_s$").scale(0.5).next_to(trans, DOWN)
