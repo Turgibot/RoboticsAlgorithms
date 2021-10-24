@@ -1,6 +1,6 @@
 from math import e
 from cv2 import FILLED, FastFeatureDetector
-from numpy import WRAP
+from numpy import WRAP, right_shift
 from OPU import *
 from manim_slide import MyBullets
 import random
@@ -482,7 +482,8 @@ class Chap3_19(OPU_Slide, VectorScene):
 
         self.add(title, secondary_title, blist)
 
-       
+        img = ImageMobject('../images/3drot.png').scale(0.8).shift(DOWN*1.7+RIGHT*3)
+        self.add(img)
         self.wait()
 
 
@@ -728,6 +729,8 @@ class Chap3_2120(OPU_Slide):
         self.add(chang.shift(LEFT),r_ab, r_bc, quest, img)
 
         self.play(Write(r_ac))
+
+       
         self.wait()
 
 class Chap3_2121(OPU_Slide):
@@ -839,3 +842,318 @@ class Chap3_2126(OPU_Slide):
         img2 = ImageMobject('../images/relb.png').scale(1.2).next_to(img, RIGHT).shift(DOWN)
         self.add(quest, img, img1, img2, r)
         self.wait()
+
+
+class Chap3_220(OPU_Slide):
+    def construct(self):
+        self.add_info()
+
+        title = Text("Chapter 3: Rigid-Body Motions").shift(UP*3).scale(0.65)
+        secondary_title = Text("3.2.2: Angular Velocities", color=BLUE).next_to(title, DOWN).scale(0.4)
+        
+        self.add(title, secondary_title)
+
+        quest = Tex(r"In this section we'll see how to respresent rotation using angular velocity", color=GREEN).scale(0.5).shift(UP*1.5)
+
+        img = ImageMobject('../images/der.png').scale(1.2).shift(LEFT*2+DOWN*0.5)
+        img1 = ImageMobject('../images/cross.png').scale(1.2).next_to(img, RIGHT)
+        img2 = ImageMobject('../images/relb.png').scale(1.2).next_to(img, RIGHT).shift(DOWN)
+        self.add(quest, img)
+        self.wait()
+
+class Chap3_221(OPU_Slide):
+    def construct(self):
+        self.add_info()
+
+        title = Text("Chapter 3: Rigid-Body Motions").shift(UP*3).scale(0.65)
+        secondary_title = Text("3.2.2: Angular Velocities", color=BLUE).next_to(title, DOWN).scale(0.4)
+        
+        self.add(title, secondary_title)
+
+        quest = Tex(r"In this section we'll see how to respresent rotation using angular velocity", color=GREEN).scale(0.5).shift(UP*1.5)
+
+        img = ImageMobject('../images/der.png').scale(1.2).shift(LEFT*2+DOWN*0.5)
+        img1 = ImageMobject('../images/cross.png').scale(1.2).next_to(img, RIGHT)
+        img2 = ImageMobject('../images/crossall.png').scale(1.2).next_to(img1, RIGHT).shift(DOWN)
+        self.add(quest, img, img1, img2)
+        self.wait()
+
+class Chap3_222(OPU_Slide):
+    def construct(self):
+        self.add_info()
+
+        title = Text("Chapter 3: Rigid-Body Motions").shift(UP*3).scale(0.65)
+        secondary_title = Text("3.2.2: Angular Velocities", color=BLUE).next_to(title, DOWN).scale(0.4)
+        
+        self.add(title, secondary_title)
+
+        r_ab = Tex(r"Let $R(t)$ be the rotation matrix describing the orientation of the body frame with respect to the fixed frame at time t.", color=GREEN).scale(0.5).shift(UP*1.5)
+        r_bc = Tex(r"let $w_s \in \mathbb{R}^3$ be the angular velocity w expressed in fixed-frame coordinates", color=GREEN).scale(0.5).next_to(r_ab, DOWN).align_to(r_ab, LEFT)
+
+        img = ImageMobject('../images/cross.png').scale(1.2).shift(DOWN*0.5)
+        img1 = ImageMobject('../images/wcr.png').scale(1.2).next_to(r_bc, DOWN).align_to(r_bc, LEFT)
+        img2 = ImageMobject('../images/rdot.png').scale(1.2).next_to(img1, DOWN).align_to(r_bc, LEFT)
+        self.add(r_ab, r_bc, img1, img2)
+        self.wait()
+
+class Chap3_223(OPU_Slide):
+    def construct(self):
+        self.add_info()
+
+        title = Text("Chapter 3: Rigid-Body Motions").shift(UP*3).scale(0.65)
+        secondary_title = Text("3.2.2: Angular Velocities", color=BLUE).next_to(title, DOWN).scale(0.4)
+        
+        self.add(title, secondary_title)
+
+        r_ab = Tex(r"Let $R(t)$ be the rotation matrix describing the orientation of the body frame with respect to the fixed frame at time t.", color=GREEN).scale(0.5).shift(UP*1.5)
+        r_bc = Tex(r"let $w_s \in \mathbb{R}^3$ be the angular velocity w expressed in fixed-frame coordinates", color=GREEN).scale(0.5).next_to(r_ab, DOWN).align_to(r_ab, LEFT)
+
+        img = ImageMobject('../images/cross.png').scale(1.2).shift(DOWN*0.5)
+        img1 = ImageMobject('../images/wcr.png').scale(1.2).next_to(r_bc, DOWN).align_to(r_bc, LEFT)
+        img2 = ImageMobject('../images/rdot.png').scale(1.2).next_to(img1, DOWN).align_to(r_bc, LEFT)
+        self.add(r_ab, r_bc, img1, img2)
+
+
+        skew1 = Tex(r"The cross product is eliminated by using skew symetric matrix multiplication.", color=RED).scale(0.5).next_to(img2, DOWN).align_to(r_bc, LEFT)
+        skew2 = Tex(r"$\dot{R} = w_s \times R = [w_s]R$").scale(0.4).next_to(skew1, DOWN).align_to(r_bc, LEFT)
+        img3 = ImageMobject('../images/skew.png').scale(1.2).next_to(skew2, RIGHT).shift(RIGHT+DOWN*0.5)
+
+        self.add(skew1, skew2, img3)
+        self.wait()
+
+
+class Chap3_224(OPU_Slide):
+    def construct(self):
+        self.add_info()
+
+        title = Text("Chapter 3: Rigid-Body Motions").shift(UP*3).scale(0.65)
+        secondary_title = Text("3.2.2: Angular Velocities", color=BLUE).next_to(title, DOWN).scale(0.4)
+        
+        self.add(title, secondary_title)
+
+        skew0 = Tex(r"Some usuful properties:(see book for proff):", color=RED).scale(0.5).shift(LEFT*2+UP*1.5)
+        skew1 = Tex(r"$R[w]R^T = [Rw]$").scale(0.5).next_to(skew0, DOWN).align_to(skew0, LEFT)
+        skew2 = Tex(r"$\dot{R} = [w_s]R$").scale(0.5).next_to(skew1, DOWN).align_to(skew1, LEFT)
+        skew3 = Tex(r"$\dot{R}R^{-1} = [w_s]$").scale(0.5).next_to(skew2, DOWN).align_to(skew1, LEFT)
+        skew4 = Tex(r"$w_s = R_{sb}w_b \rightarrow w_b = R_{sb}^{-1}w_s = R^{-1}w_s = R^Tw_s$").scale(0.5).next_to(skew3, DOWN).align_to(skew1, LEFT)
+        img3 = ImageMobject('../images/prp5.png').scale(1.2).next_to(skew4, DOWN).align_to(skew1, LEFT)
+
+        self.add(skew1, skew2, skew3, skew4, skew0, img3)
+        self.wait()
+
+class Chap3_2320(OPU_Slide):
+    def construct(self):
+        self.add_info()
+
+        title = Text("Chapter 3: Rigid-Body Motions").shift(UP*3).scale(0.65)
+        secondary_title = Text("3.2.3.2: Exponential Coordinates of Rotations", color=BLUE).next_to(title, DOWN).scale(0.4)
+        
+        self.add(title, secondary_title)
+
+        img3 = ImageMobject('../images/prot.png').scale(1.2).shift(UP*0.75+RIGHT*4)
+        skew0 = Tex(r"$p(0)$ is rotated by $\theta$ about $\hat{w}$ to $p(\theta)$ :", color=GREEN).scale(0.5).shift(LEFT*2+UP*1.5)
+        skew1 = Tex(r"Assume that: $\dot{\theta}=1rad/sec$, then  $w = \hat{w}\dot{\theta} = \hat{w}$", color=GREEN).scale(0.5).next_to(skew0, DOWN).align_to(skew0, LEFT)
+        skew2 = Tex(r"$\dot{p} = \hat{w}\times p$", color=RED).scale(0.5).next_to(skew1, DOWN)
+        skew3 = Tex(r"$\dot{p} = [\hat{w}]p$", color=RED).scale(0.5).next_to(skew2, DOWN)
+        skew4 = Tex(r"This is a linear differential equation of the form $\dot{x} = Ax$", color=GREEN).scale(0.5).next_to(skew3, DOWN).align_to(skew1, LEFT)
+        skew5 = Tex(r"Its solution id given by:", color=GREEN).scale(0.5).next_to(skew4, DOWN).align_to(skew1, LEFT)
+        skew51 = Tex(r"$p(t) = e^{[\hat{w}]t}p(0)$", color=RED).scale(0.5).next_to(skew5, RIGHT)
+        skew6 = Tex(r"Change parameter and get:", color=GREEN).scale(0.5).next_to(skew5, DOWN).align_to(skew1, LEFT)
+        skew61 = Tex(r" $p(\theta) = e^{[\hat{w}]\theta}p(0) = Rot(\hat{w}, \theta)$", color=RED).scale(0.5).next_to(skew6, RIGHT)
+
+        self.add(skew1, skew2, skew3, skew0, img3)
+        self.wait()
+
+
+class Chap3_2321(OPU_Slide):
+    def construct(self):
+        self.add_info()
+
+        title = Text("Chapter 3: Rigid-Body Motions").shift(UP*3).scale(0.65)
+        secondary_title = Text("3.2.3.2: Exponential Coordinates of Rotations", color=BLUE).next_to(title, DOWN).scale(0.4)
+        
+        self.add(title, secondary_title)
+
+        img3 = ImageMobject('../images/prot.png').scale(1.2).shift(UP*0.75+RIGHT*4)
+        skew0 = Tex(r"$p(0)$ is rotated by $\theta$ about $\hat{w}$ to $p(\theta)$ :", color=GREEN).scale(0.5).shift(LEFT*2+UP*1.5)
+        skew1 = Tex(r"Assume that: $\dot{\theta}=1rad/sec$, then  $w = \hat{w}\dot{\theta} = \hat{w}$", color=GREEN).scale(0.5).next_to(skew0, DOWN).align_to(skew0, LEFT)
+        skew2 = Tex(r"$\dot{p} = \hat{w}\times p$", color=RED).scale(0.5).next_to(skew1, DOWN)
+        skew3 = Tex(r"$\dot{p} = [\hat{w}]p$", color=RED).scale(0.5).next_to(skew2, DOWN)
+        skew4 = Tex(r"This is a linear differential equation of the form $\dot{x} = Ax$", color=GREEN).scale(0.5).next_to(skew3, DOWN).align_to(skew1, LEFT)
+        skew5 = Tex(r"Its solution id given by:", color=GREEN).scale(0.5).next_to(skew4, DOWN).align_to(skew1, LEFT)
+        skew51 = Tex(r"$p(t) = e^{[\hat{w}]t}p(0)$", color=RED).scale(0.5).next_to(skew5, RIGHT)
+        skew6 = Tex(r"Change parameter and get:", color=GREEN).scale(0.5).next_to(skew5, DOWN).align_to(skew1, LEFT)
+        skew61 = Tex(r" $p(\theta) = e^{[\hat{w}]\theta}p(0) = Rot(\hat{w}, \theta)$", color=RED).scale(0.5).next_to(skew6, RIGHT)
+
+        self.add(skew1, skew2, skew3, skew4, skew0, img3, skew5,skew51, skew61, skew6)
+        self.wait()
+
+
+class Chap3_2322(OPU_Slide):
+    def construct(self):
+        self.add_info()
+
+        title = Text("Chapter 3: Rigid-Body Motions").shift(UP*3).scale(0.65)
+        secondary_title = Text("3.2.3.2: Exponential Coordinates of Rotations", color=BLUE).next_to(title, DOWN).scale(0.4)
+        
+        self.add(title, secondary_title)
+
+        img3 = ImageMobject('../images/prot.png').scale(1.2).shift(UP*0.75+RIGHT*4)
+        skew0 = Tex(r"The Rodrigues’ formula for rotations:", color=GREEN).scale(0.5).shift(LEFT*2+UP*1.5)
+        skew1 = Tex(r"$Rot(\hat{w}, \theta) = e^{[\hat{w}]\theta} = I + sin\theta[\hat{w}] + (1-cos\theta)[\hat{w}]^2$", color=BLUE).scale(0.5).next_to(skew0, DOWN)
+        skew2 = Tex(r"$R' = Rot(\hat{w}, \theta)R$", color=RED).scale(0.5).shift(DOWN+LEFT*4)
+        skew21 = Tex(r"is the orientation achieved by the rotation R by $\theta$ about the axis $\hat{w}$ in the fixed frame", color=GREEN).scale(0.5).next_to(skew2, RIGHT).shift(DOWN*0.12)
+        skew3 = Tex(r"$R'' = R Rot(\hat{w}, \theta)$", color=RED).scale(0.5).shift(DOWN*1.8+LEFT*4)
+        skew31 = Tex(r"is the orientation achieved by the rotation R by $\theta$ about the axis $\hat{w}$ in the body frame", color=GREEN).scale(0.5).next_to(skew3, RIGHT).shift(DOWN*0.12)
+        
+
+        self.add(skew1, skew2, skew3, skew0, img3, skew21, skew31)
+        self.wait()
+
+
+class Chap3_2323(OPU_Slide):
+    def construct(self):
+        self.add_info()
+
+        title = Text("Chapter 3: Rigid-Body Motions").shift(UP*3).scale(0.65)
+        secondary_title = Text("3.2.3.2: Exponential Coordinates of Rotations", color=BLUE).next_to(title, DOWN).scale(0.4)
+        
+        self.add(title, secondary_title)
+
+        img3 = ImageMobject('../images/rod.png').scale(1.2).shift(UP*0.75+RIGHT*4)
+        skew0 = Tex(r"Example 3.2:").scale(0.4).shift(LEFT*4.5+UP*1.5)
+        skew1 = Tex(r"The frame ${b}$ is obtained by rotation from an initial orientation aligned with the", color=GREEN).scale(0.4).next_to(skew0, DOWN).align_to(skew0, LEFT)
+        skew2 = Tex(r"fixed frame ${s}$ about a unit axis $\hat{w}_1 = (0, 0.866, 0.5)$ by an angle of $\theta_1=30=0.524rad$", color=GREEN).scale(0.4).next_to(skew1, DOWN).align_to(skew0, LEFT)
+        skew3 = Tex(r"a) Calculate the rotation matrix representation of ${b}$", color=RED).scale(0.4).next_to(skew2, DOWN).align_to(skew0, LEFT)
+
+        self.add(skew1, skew2, skew3, skew0, img3)
+        self.wait()
+
+class Chap3_2324(OPU_Slide):
+    def construct(self):
+        self.add_info()
+
+        title = Text("Chapter 3: Rigid-Body Motions").shift(UP*3).scale(0.65)
+        secondary_title = Text("3.2.3.2: Exponential Coordinates of Rotations", color=BLUE).next_to(title, DOWN).scale(0.4)
+        
+        self.add(title, secondary_title)
+
+        img3 = ImageMobject('../images/rod.png').scale(1.2).shift(UP*0.75+RIGHT*4)
+        skew0 = Tex(r"Example 3.2:").scale(0.4).shift(LEFT*4.5+UP*1.5)
+        skew1 = Tex(r"The frame ${b}$ is obtained by rotation from an initial orientation aligned with the", color=GREEN).scale(0.4).next_to(skew0, DOWN).align_to(skew0, LEFT)
+        skew2 = Tex(r"fixed frame ${s}$ about a unit axis $\hat{w}_1 = (0, 0.866, 0.5)$ by an angle of $\theta_1=30=0.524rad$", color=GREEN).scale(0.4).next_to(skew1, DOWN).align_to(skew0, LEFT)
+        skew3 = Tex(r"a) Calculate the rotation matrix representation of ${b}$", color=RED).scale(0.4).next_to(skew2, DOWN).align_to(skew0, LEFT)
+        img4 = ImageMobject('../images/sol32.png').scale(1.2).next_to(skew3, DOWN).shift(RIGHT*1.4)
+
+        self.add(skew1, skew2, skew3, skew0, img3, img4)
+        self.wait()
+
+class Chap3_2325(OPU_Slide):
+    def construct(self):
+        self.add_info()
+
+        title = Text("Chapter 3: Rigid-Body Motions").shift(UP*3).scale(0.65)
+        secondary_title = Text("3.2.3.2: Exponential Coordinates of Rotations", color=BLUE).next_to(title, DOWN).scale(0.4)
+        
+        self.add(title, secondary_title)
+
+        img3 = ImageMobject('../images/rod.png').scale(1.2).shift(UP*0.75+RIGHT*4)
+        skew0 = Tex(r"Example 3.2:").scale(0.4).shift(LEFT*4.5+UP*1.5)
+        skew1 = Tex(r"The frame ${b}$ is obtained by rotation from an initial orientation aligned with the", color=GREEN).scale(0.4).next_to(skew0, DOWN).align_to(skew0, LEFT)
+        skew2 = Tex(r"fixed frame ${s}$ about a unit axis $\hat{w}_1 = (0, 0.866, 0.5)$ by an angle of $\theta_1=30=0.524rad$", color=GREEN).scale(0.4).next_to(skew1, DOWN).align_to(skew0, LEFT)
+        skew3 = Tex(r"a) Calculate the rotation matrix representation of ${b}$", color=RED).scale(0.4).next_to(skew2, DOWN).align_to(skew0, LEFT)
+        skew4 = Tex(r"b) ${b}$ got rotated again by $\theta_2$ about a fixed frame axis $\hat{w}_1 \neq \hat{w}_1$", color=RED).scale(0.4).next_to(skew3, DOWN).align_to(skew0, LEFT)
+
+        self.add(skew1, skew2, skew3, skew0, img3, skew4)
+        self.wait()
+
+class Chap3_2326(OPU_Slide):
+    def construct(self):
+        self.add_info()
+
+        title = Text("Chapter 3: Rigid-Body Motions").shift(UP*3).scale(0.65)
+        secondary_title = Text("3.2.3.2: Exponential Coordinates of Rotations", color=BLUE).next_to(title, DOWN).scale(0.4)
+        
+        self.add(title, secondary_title)
+
+        img3 = ImageMobject('../images/rod.png').scale(1.2).shift(UP*0.75+RIGHT*4)
+        skew0 = Tex(r"Example 3.2:").scale(0.4).shift(LEFT*4.5+UP*1.5)
+        skew1 = Tex(r"The frame ${b}$ is obtained by rotation from an initial orientation aligned with the", color=GREEN).scale(0.4).next_to(skew0, DOWN).align_to(skew0, LEFT)
+        skew2 = Tex(r"fixed frame ${s}$ about a unit axis $\hat{w}_1 = (0, 0.866, 0.5)$ by an angle of $\theta_1=30=0.524rad$", color=GREEN).scale(0.4).next_to(skew1, DOWN).align_to(skew0, LEFT)
+        skew3 = Tex(r"a) Calculate the rotation matrix representation of ${b}$", color=RED).scale(0.4).next_to(skew2, DOWN).align_to(skew0, LEFT)
+        skew4 = Tex(r"b) ${b}$ got rotated again by $\theta_2$ about a fixed frame axis $\hat{w}_1 \neq \hat{w}_1$", color=RED).scale(0.4).next_to(skew3, DOWN).align_to(skew0, LEFT)
+        skew5 = Tex(r"$R' = Rot(\hat{w}_2, \theta_2)R$", color=BLUE).scale(0.4).next_to(skew4, DOWN)
+        self.add(skew1, skew2, skew3, skew0, img3, skew4, skew5)
+        self.wait()
+
+class Chap3_2327(OPU_Slide):
+    def construct(self):
+        self.add_info()
+
+        title = Text("Chapter 3: Rigid-Body Motions").shift(UP*3).scale(0.65)
+        secondary_title = Text("3.2.3.2: Exponential Coordinates of Rotations", color=BLUE).next_to(title, DOWN).scale(0.4)
+        
+        self.add(title, secondary_title)
+
+        img3 = ImageMobject('../images/rod.png').scale(1.2).shift(UP*0.75+RIGHT*4)
+        skew0 = Tex(r"Example 3.2:").scale(0.4).shift(LEFT*4.5+UP*1.5)
+        skew1 = Tex(r"The frame ${b}$ is obtained by rotation from an initial orientation aligned with the", color=GREEN).scale(0.4).next_to(skew0, DOWN).align_to(skew0, LEFT)
+        skew2 = Tex(r"fixed frame ${s}$ about a unit axis $\hat{w}_1 = (0, 0.866, 0.5)$ by an angle of $\theta_1=30=0.524rad$", color=GREEN).scale(0.4).next_to(skew1, DOWN).align_to(skew0, LEFT)
+        skew3 = Tex(r"a) Calculate the rotation matrix representation of ${b}$", color=RED).scale(0.4).next_to(skew2, DOWN).align_to(skew0, LEFT)
+        skew4 = Tex(r"b) ${b}$ got rotated again by $\theta_2$ about a fixed frame axis $\hat{w}_1 \neq \hat{w}_1$", color=RED).scale(0.4).next_to(skew3, DOWN).align_to(skew0, LEFT)
+        skew5 = Tex(r"c) same as b) but the rotation is about the body frame", color=RED).scale(0.4).next_to(skew4, DOWN).align_to(skew0, LEFT)
+        self.add(skew1, skew2, skew3, skew0, img3, skew4, skew5)
+        self.wait()
+
+
+class Chap3_2328(OPU_Slide):
+    def construct(self):
+        self.add_info()
+
+        title = Text("Chapter 3: Rigid-Body Motions").shift(UP*3).scale(0.65)
+        secondary_title = Text("3.2.3.2: Exponential Coordinates of Rotations", color=BLUE).next_to(title, DOWN).scale(0.4)
+        
+        self.add(title, secondary_title)
+
+        img3 = ImageMobject('../images/rod.png').scale(1.2).shift(UP*0.75+RIGHT*4)
+        skew0 = Tex(r"Example 3.2:").scale(0.4).shift(LEFT*4.5+UP*1.5)
+        skew1 = Tex(r"The frame ${b}$ is obtained by rotation from an initial orientation aligned with the", color=GREEN).scale(0.4).next_to(skew0, DOWN).align_to(skew0, LEFT)
+        skew2 = Tex(r"fixed frame ${s}$ about a unit axis $\hat{w}_1 = (0, 0.866, 0.5)$ by an angle of $\theta_1=30=0.524rad$", color=GREEN).scale(0.4).next_to(skew1, DOWN).align_to(skew0, LEFT)
+        skew3 = Tex(r"a) Calculate the rotation matrix representation of ${b}$", color=RED).scale(0.4).next_to(skew2, DOWN).align_to(skew0, LEFT)
+        skew4 = Tex(r"b) ${b}$ got rotated again by $\theta_2$ about a fixed frame axis $\hat{w}_1 \neq \hat{w}_1$", color=RED).scale(0.4).next_to(skew3, DOWN).align_to(skew0, LEFT)
+        skew5 = Tex(r"c) same as b) but the rotation is about the body frame", color=RED).scale(0.4).next_to(skew4, DOWN).align_to(skew0, LEFT)
+        skew6 = Tex(r"$R' = R Rot(\hat{w}_2, \theta_2)$", color=BLUE).scale(0.4).next_to(skew5, DOWN)
+        self.add(skew1, skew2, skew3, skew0, img3, skew4, skew5, skew6)
+        self.wait()
+
+
+class Chap3_2330(OPU_Slide):
+    def construct(self):
+        self.add_info()
+
+        title = Text("Chapter 3: Rigid-Body Motions").shift(UP*3).scale(0.65)
+        secondary_title = Text("3.2.3.3: Matrix Logarithm of Rotations", color=BLUE).next_to(title, DOWN).scale(0.4)
+        
+        self.add(title, secondary_title)
+
+        img3 = ImageMobject('../images/explog.png').scale(1.5)
+      
+        self.add(img3)
+        self.wait()
+
+
+class Chap3_2331(OPU_Slide):
+    def construct(self):
+        self.add_info()
+
+        title = Text("Chapter 3: Rigid-Body Motions").shift(UP*3).scale(0.65)
+        secondary_title = Text("3.2.3.3: Matrix Logarithm of Rotations", color=BLUE).next_to(title, DOWN).scale(0.4).shift(UP*0.2)
+        
+        self.add(title, secondary_title)
+
+        img1 = ImageMobject('../images/alg0.png').shift(UP*0.4)
+        img2 = ImageMobject('../images/alg1.png').next_to(img1, DOWN).shift(RIGHT*0.1)
+      
+        self.add(img2, img1)
+        self.wait()
+
