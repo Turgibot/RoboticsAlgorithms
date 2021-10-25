@@ -778,8 +778,8 @@ class Chap2_40(OPU_Slide):
 
         dof = Tex(r"dof =            ", color=RED).scale(0.5).shift(RIGHT+UP)
         topology = Tex(r"Topology :  ", color=RED).scale(0.5).next_to(dof, DOWN).align_to(dof, LEFT)
-        implicit = Tex(r"Implicit representaion :  ", color=RED).scale(0.5).next_to(topology, DOWN).align_to(topology, LEFT)
-        explicit = Tex(r"Explicit representaion :  ", color=RED).scale(0.5).next_to(implicit, DOWN).align_to(implicit, LEFT)
+        implicit = Tex(r"Explicit representaion :  ", color=RED).scale(0.5).next_to(topology, DOWN).align_to(topology, LEFT)
+        explicit = Tex(r"Implicit representaion :  ", color=RED).scale(0.5).next_to(implicit, DOWN).align_to(implicit, LEFT)
 
         self.play(FadeIn(dof, topology, implicit, explicit))
 
@@ -800,8 +800,8 @@ class Chap2_41(OPU_Slide):
 
         dof = Tex(r"dof = 3(4-1-4)+4 = 1", color=RED).scale(0.5).shift(RIGHT+UP)
         topology = Tex(r"Topology : $\mathbb{E}^1$", color=RED).scale(0.5).next_to(dof, DOWN).align_to(dof, LEFT)
-        implicit = Tex(r"Implicit representaion : $\mathbb{R}^1$", color=RED).scale(0.5).next_to(topology, DOWN).align_to(topology, LEFT)
-        explicit = Tex(r"Explicit representaion : $\mathbb{R}^4$", color=RED).scale(0.5).next_to(implicit, DOWN).align_to(implicit, LEFT)
+        implicit = Tex(r"Explicit representaion : $\mathbb{R}^1$", color=RED).scale(0.5).next_to(topology, DOWN).align_to(topology, LEFT)
+        explicit = Tex(r"Implicit representaion : $\mathbb{R}^4$", color=RED).scale(0.5).next_to(implicit, DOWN).align_to(implicit, LEFT)
 
         self.play(FadeIn(dof, topology, implicit, explicit))
 
