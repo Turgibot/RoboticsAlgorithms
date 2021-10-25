@@ -798,7 +798,7 @@ class Chap3_2124(OPU_Slide):
         
         self.add(title, secondary_title)
 
-        quest = Tex(r"$R_{sb}$ represents frame {b} relative to {s}.\\ Rotate {b} by $\theta$ about a unit axis $\hat{w} = \hat{z}$", color=GREEN).scale(0.5).shift(UP*1.5)
+        quest = Tex(r"Use the Rotation operator to\\ Rotate {b} by $\theta$ about a unit axis $\hat{w} = \hat{z}$", color=GREEN).scale(0.5).shift(UP*1.5)
 
         img = ImageMobject('../images/rotrelative.png').scale(1.2).shift(LEFT*2+DOWN*1.2)
         r = ImageMobject('../images/rrot.png').next_to(img, UP)
@@ -816,7 +816,7 @@ class Chap3_2125(OPU_Slide):
         
         self.add(title, secondary_title)
 
-        quest = Tex(r"$R_{sb}$ represents frame {b} relative to {s}.\\ Rotate {b} by $\theta$ about a unit axis $\hat{w} = \hat{z}$", color=GREEN).scale(0.5).shift(UP*1.5)
+        quest = Tex(r"Use the Rotation operator to\\ Rotate {b} by $\theta$ about a unit axis $\hat{w} = \hat{z}$", color=GREEN).scale(0.5).shift(UP*1.5)
 
         img = ImageMobject('../images/rotrelative.png').scale(1.2).shift(LEFT*2+DOWN*1.2)
         r = ImageMobject('../images/rrot.png').next_to(img, UP)
@@ -834,7 +834,7 @@ class Chap3_2126(OPU_Slide):
         
         self.add(title, secondary_title)
 
-        quest = Tex(r"$R_{sb}$ represents frame {b} relative to {s}.\\ Rotate {b} by $\theta$ about a unit axis $\hat{w} = \hat{z}$", color=GREEN).scale(0.5).shift(UP*1.5)
+        quest = Tex(r"Use the Rotation operator to\\ Rotate {b} by $\theta$ about a unit axis $\hat{w} = \hat{z}$", color=GREEN).scale(0.5).shift(UP*1.5)
 
         img = ImageMobject('../images/rotrelative.png').scale(1.2).shift(LEFT*2+DOWN*1.2)
         r = ImageMobject('../images/rrot.png').next_to(img, UP)
