@@ -1142,6 +1142,7 @@ class Chap3_2330(OPU_Slide):
         self.wait()
 
 
+
 class Chap3_2331(OPU_Slide):
     def construct(self):
         self.add_info()
@@ -1157,3 +1158,681 @@ class Chap3_2331(OPU_Slide):
         self.add(img2, img1)
         self.wait()
 
+
+
+#3.3.1
+
+class Chap3_310(OPU_Slide):
+    def construct(self):
+        self.add_info()
+
+        title = Text("Chapter 3: Rigid-Body Motions").shift(UP*3).scale(0.65)
+        secondary_title = Text("3.3.1: Homogeneous Transformation Matrices", color=BLUE).next_to(title, DOWN).scale(0.4).shift(UP*0.2)
+        
+        self.add(title, secondary_title)
+
+        img1 = ImageMobject('../images/transf0.png').shift(UP*0.8)
+        img2 = ImageMobject('../images/transf1.png').next_to(img1, DOWN)
+      
+        self.add(img2, img1)
+        self.wait()
+
+
+class Chap3_3110(OPU_Slide):
+    def construct(self):
+        self.add_info()
+
+        title = Text("Chapter 3: Rigid-Body Motions").shift(UP*3).scale(0.65)
+        secondary_title = Text("3.3.1.1: Properties of Transformation Matrices", color=BLUE).next_to(title, DOWN).scale(0.4).shift(UP*0.2)
+        
+        self.add(title, secondary_title)
+
+        img1 = ImageMobject('../images/transfprop0.png').shift(UP*0.8)
+        img2 = ImageMobject('../images/transfprop1.png').next_to(img1, DOWN).align_to(img1, LEFT).shift(DOWN)
+      
+        self.add(img2, img1)
+        self.wait()
+
+
+class Chap3_3120(OPU_Slide):
+    def construct(self):
+        self.add_info()
+
+        title = Text("Chapter 3: Rigid-Body Motions").shift(UP*3).scale(0.65)
+        secondary_title = Text("3.3.1.2: Uses of Transformation Matrices", color=BLUE).next_to(title, DOWN).scale(0.4).shift(UP*0.2)
+        
+        self.add(title, secondary_title)
+
+        img1 = ImageMobject('../images/transfuses.png').shift(UP*0.8)
+        img2 = ImageMobject('../images/threeref.png').next_to(img1, DOWN)
+      
+        self.add(img1, img2)
+        self.wait()
+
+class Chap3_3121(OPU_Slide):
+    def construct(self):
+        self.add_info()
+
+        title = Text("Chapter 3: Rigid-Body Motions").shift(UP*3).scale(0.65)
+        secondary_title = Text("3.3.1.2: Uses of Transformation Matrices", color=BLUE).next_to(title, DOWN).scale(0.4).shift(UP*0.2)
+        mini_title = Text("(a) Representation of configuration", color=GREEN).scale(0.3).next_to(secondary_title, DOWN).shift(LEFT*4.2)
+        self.add(title, secondary_title, mini_title)
+
+        img1 = ImageMobject('../images/transfuses.png').shift(UP*0.8)
+        img2 = ImageMobject('../images/threeref.png').next_to(img1, DOWN)
+      
+        self.add(img2)
+
+        img3 = ImageMobject('../images/threerefcut.png').shift(UP)
+        img4 = ImageMobject('../images/vb.png').shift(UP*0.6+LEFT*1.2)
+        imgs = Group(img3, img4).move_to(img2)
+
+        self.play(FadeOut(img2), imgs.animate().shift(UP*2.5))
+
+        
+        self.wait()
+
+class Chap3_3122(OPU_Slide):
+    def construct(self):
+        self.add_info()
+
+        title = Text("Chapter 3: Rigid-Body Motions").shift(UP*3).scale(0.65)
+        secondary_title = Text("3.3.1.2: Uses of Transformation Matrices", color=BLUE).next_to(title, DOWN).scale(0.4).shift(UP*0.2)
+        mini_title = Text("(a) Representation of configuration", color=GREEN).scale(0.3).next_to(secondary_title, DOWN).shift(LEFT*4.2)
+        self.add(title, secondary_title, mini_title)
+
+        img1 = ImageMobject('../images/transfuses.png').shift(UP*0.8)
+        img2 = ImageMobject('../images/threeref.png').next_to(img1, DOWN)
+      
+        img3 = ImageMobject('../images/threerefcut.png').shift(UP)
+        img4 = ImageMobject('../images/vb.png').shift(UP*0.6+LEFT*1.2)
+        imgs = Group(img3, img4).move_to(img2).shift(UP*2.5)
+
+        self.add(imgs)
+        
+        img5 = ImageMobject('../images/transfall.png').next_to(imgs, DOWN)
+        self.play(FadeIn(img5))
+        self.wait()
+
+class Chap3_3123(OPU_Slide):
+    def construct(self):
+        self.add_info()
+
+        title = Text("Chapter 3: Rigid-Body Motions").shift(UP*3).scale(0.65)
+        secondary_title = Text("3.3.1.2: Uses of Transformation Matrices", color=BLUE).next_to(title, DOWN).scale(0.4).shift(UP*0.2)
+        mini_title = Text("(a) Representation of configuration", color=GREEN).scale(0.3).next_to(secondary_title, DOWN).shift(LEFT*4.2)
+        self.add(title, secondary_title, mini_title)
+
+        img1 = ImageMobject('../images/transfuses.png').shift(UP*0.8)
+        img2 = ImageMobject('../images/threeref.png').next_to(img1, DOWN)
+      
+        img3 = ImageMobject('../images/threerefcut.png').shift(UP)
+        img4 = ImageMobject('../images/vb.png').shift(UP*0.6+LEFT*1.2)
+        imgs = Group(img3, img4).move_to(img2).shift(UP*2.5)
+
+        self.add(imgs)
+        
+        img5 = ImageMobject('../images/transfall.png').next_to(imgs, DOWN)
+        self.add(img5)
+        
+        self.play(imgs.animate().shift(RIGHT*5), img5.animate().shift(UP*2))
+        self.wait()
+
+
+
+class Chap3_3124(OPU_Slide):
+    def construct(self):
+        self.add_info()
+
+        title = Text("Chapter 3: Rigid-Body Motions").shift(UP*3).scale(0.65)
+        secondary_title = Text("3.3.1.2: Uses of Transformation Matrices", color=BLUE).next_to(title, DOWN).scale(0.4).shift(UP*0.2)
+        mini_title = Text("(a) Representation of configuration", color=GREEN).scale(0.3).next_to(secondary_title, DOWN).shift(LEFT*4.2)
+        self.add(title, secondary_title, mini_title)
+
+        img1 = ImageMobject('../images/transfuses.png').shift(UP*0.8)
+        img2 = ImageMobject('../images/threeref.png').next_to(img1, DOWN)
+      
+        img3 = ImageMobject('../images/threerefcut.png').shift(UP)
+        img4 = ImageMobject('../images/vb.png').shift(UP*0.6 + LEFT*1.2)
+        imgs = Group(img3, img4).move_to(img2).shift(UP*2.5 + RIGHT*5)
+
+        self.add(imgs)
+        
+        img5 = ImageMobject('../images/transfall.png').shift(UP*0.4)
+        self.add(img5)
+        
+        quest = Tex(r"How would you represent $T_{sc}?$", color=RED).scale(0.4).next_to(img5, DOWN).shift(LEFT*4+DOWN*0.7)
+        self.play(FadeIn(quest))
+        self.wait()
+
+
+class Chap3_3125(OPU_Slide):
+    def construct(self):
+        self.add_info()
+
+        title = Text("Chapter 3: Rigid-Body Motions").shift(UP*3).scale(0.65)
+        secondary_title = Text("3.3.1.2: Uses of Transformation Matrices", color=BLUE).next_to(title, DOWN).scale(0.4).shift(UP*0.2)
+        mini_title = Text("(a) Representation of configuration", color=GREEN).scale(0.3).next_to(secondary_title, DOWN).shift(LEFT*4.2)
+        self.add(title, secondary_title, mini_title)
+
+        img1 = ImageMobject('../images/transfuses.png').shift(UP*0.8)
+        img2 = ImageMobject('../images/threeref.png').next_to(img1, DOWN)
+      
+        img3 = ImageMobject('../images/threerefcut.png').shift(UP)
+        img4 = ImageMobject('../images/vb.png').shift(UP*0.6 + LEFT*1.2)
+        imgs = Group(img3, img4).move_to(img2).shift(UP*2.5 + RIGHT*5)
+
+        self.add(imgs)
+        
+        img5 = ImageMobject('../images/transfall.png').shift(UP*0.4)
+        self.add(img5)
+        
+        quest = Tex(r"How would you represent $T_{sc}?$", color=RED).scale(0.4).next_to(img5, DOWN).shift(LEFT*4+DOWN*0.7)
+        self.add(quest)
+        ans0 = Tex(r"$T_{sc} = $", color=GREEN).scale(0.4).next_to(quest, RIGHT)
+        self.add(ans0)
+
+        tbs = Tex(r"$ \begin{bmatrix}R_{sc} & p_{sc} \\ 0 & 1 \end{bmatrix}$", color=GREEN).scale(0.4).next_to(ans0, RIGHT)
+        self.add(tbs)
+        self.wait()
+
+
+class Chap3_3126(OPU_Slide):
+    def construct(self):
+        self.add_info()
+
+        title = Text("Chapter 3: Rigid-Body Motions").shift(UP*3).scale(0.65)
+        secondary_title = Text("3.3.1.2: Uses of Transformation Matrices", color=BLUE).next_to(title, DOWN).scale(0.4).shift(UP*0.2)
+        mini_title = Text("(a) Representation of configuration", color=GREEN).scale(0.3).next_to(secondary_title, DOWN).shift(LEFT*4.2)
+        self.add(title, secondary_title, mini_title)
+
+        img1 = ImageMobject('../images/transfuses.png').shift(UP*0.8)
+        img2 = ImageMobject('../images/threeref.png').next_to(img1, DOWN)
+      
+        img3 = ImageMobject('../images/threerefcut.png').shift(UP)
+        img4 = ImageMobject('../images/vb.png').shift(UP*0.6 + LEFT*1.2)
+        imgs = Group(img3, img4).move_to(img2).shift(UP*2.5 + RIGHT*5)
+
+        self.add(imgs)
+        
+        img5 = ImageMobject('../images/transfall.png').shift(UP*0.4)
+        self.add(img5)
+        
+        quest = Tex(r"How would you represent $T_{sc}?$", color=RED).scale(0.4).next_to(img5, DOWN).shift(LEFT*4+DOWN*0.7)
+        self.add(quest)
+        ans0 = Tex(r"$T_{sc} = $", color=GREEN).scale(0.4).next_to(quest, RIGHT)
+        self.add(ans0)
+
+        tbs = Tex(r"$ \begin{bmatrix}R_{sc} & p_{sc} \\ 0 & 1 \end{bmatrix}$", color=GREEN).scale(0.4).next_to(ans0, RIGHT)
+        self.add(tbs)
+
+        tbc = Tex(r"$ = \begin{bmatrix}-1 & 0 & 0 & -1 \\ 0 & 0 & 1 & 1 \\ 0 & 1 & 0 & 0\\ 0 & 0 & 0 & 1\end{bmatrix}$", color=GREEN).scale(0.4).next_to(tbs, RIGHT)
+        self.add(tbc)
+        self.wait()
+
+
+
+class Chap3_3127(OPU_Slide):
+    def construct(self):
+        self.add_info()
+
+        title = Text("Chapter 3: Rigid-Body Motions").shift(UP*3).scale(0.65)
+        secondary_title = Text("3.3.1.2: Uses of Transformation Matrices", color=BLUE).next_to(title, DOWN).scale(0.4).shift(UP*0.2)
+        mini_title = Text("(b) Change of refrence frame", color=GREEN).scale(0.3).next_to(secondary_title, DOWN).shift(LEFT*4.2)
+        self.add(title, secondary_title, mini_title)
+
+        img1 = ImageMobject('../images/transfuses.png').shift(UP*0.8)
+        img2 = ImageMobject('../images/threeref.png').next_to(img1, DOWN)
+      
+        img3 = ImageMobject('../images/threerefcut.png').shift(UP)
+        img4 = ImageMobject('../images/vb.png').shift(UP*0.6 + LEFT*1.2)
+        imgs = Group(img3, img4).move_to(img2).shift(UP*2.5 + RIGHT*5)
+
+        self.add(imgs)
+        
+        img5 = ImageMobject('../images/transfall.png').shift(UP*0.4)
+        self.add(img5)
+        
+        quest = Tex(r"How would you represent $T_{bc}?$", color=RED).scale(0.4).next_to(img5, DOWN).shift(LEFT*4+DOWN*0.7)
+        self.play(FadeIn(quest))
+        self.wait()
+
+class Chap3_3128(OPU_Slide):
+    def construct(self):
+        self.add_info()
+
+        title = Text("Chapter 3: Rigid-Body Motions").shift(UP*3).scale(0.65)
+        secondary_title = Text("3.3.1.2: Uses of Transformation Matrices", color=BLUE).next_to(title, DOWN).scale(0.4).shift(UP*0.2)
+        mini_title = Text("(b) Change of refrence frame", color=GREEN).scale(0.3).next_to(secondary_title, DOWN).shift(LEFT*4.2)
+        self.add(title, secondary_title, mini_title)
+
+        img1 = ImageMobject('../images/transfuses.png').shift(UP*0.8)
+        img2 = ImageMobject('../images/threeref.png').next_to(img1, DOWN)
+      
+        img3 = ImageMobject('../images/threerefcut.png').shift(UP)
+        img4 = ImageMobject('../images/vb.png').shift(UP*0.6 + LEFT*1.2)
+        imgs = Group(img3, img4).move_to(img2).shift(UP*2.5 + RIGHT*5)
+
+        self.add(imgs)
+        
+        img5 = ImageMobject('../images/transfall.png').shift(UP*0.4)
+        self.add(img5)
+        
+        quest = Tex(r"How would you represent $T_{bc}?$", color=RED).scale(0.4).next_to(img5, DOWN).shift(LEFT*4+DOWN*0.7)
+        self.add(quest)
+        ans0 = Tex(r"$T_{bc} = T_{bs}T_{sc} = (T_{sb})^{-1} T_{sc}$", color=GREEN).scale(0.4).next_to(quest, RIGHT)
+        self.add(ans0)
+        self.wait()
+
+class Chap3_3129(OPU_Slide):
+    def construct(self):
+        self.add_info()
+
+        title = Text("Chapter 3: Rigid-Body Motions").shift(UP*3).scale(0.65)
+        secondary_title = Text("3.3.1.2: Uses of Transformation Matrices", color=BLUE).next_to(title, DOWN).scale(0.4).shift(UP*0.2)
+        mini_title = Text("(b) Change of refrence frame", color=GREEN).scale(0.3).next_to(secondary_title, DOWN).shift(LEFT*4.2)
+        self.add(title, secondary_title, mini_title)
+
+        img1 = ImageMobject('../images/transfuses.png').shift(UP*0.8)
+        img2 = ImageMobject('../images/threeref.png').next_to(img1, DOWN)
+      
+        img3 = ImageMobject('../images/threerefcut.png').shift(UP)
+        img4 = ImageMobject('../images/vb.png').shift(UP*0.6 + LEFT*1.2)
+        imgs = Group(img3, img4).move_to(img2).shift(UP*2.5 + RIGHT*5)
+
+        self.add(imgs)
+        
+        img5 = ImageMobject('../images/transfall.png').shift(UP*0.4)
+        self.add(img5)
+        
+        quest = Tex(r"How would you represent $T_{bc}?$", color=RED).scale(0.4).next_to(img5, DOWN).shift(LEFT*4+DOWN*0.7)
+        self.add(quest)
+        ans0 = Tex(r"$T_{bc} = T_{bs}T_{sc} = (T_{sb})^{-1} T_{sc}$", color=GREEN).scale(0.4).next_to(quest, RIGHT)
+        self.add(ans0)
+
+        tbs = Tex(r"$ = \begin{bmatrix}0 & 0 & 1 & 0 \\ 0 & -1 & 0 & -2 \\ 1 & 0 & 0 & 0\\ 0 & 0 & 0 & 1\end{bmatrix}^{-1}$\
+            $\begin{bmatrix}-1 & 0 & 0 & -1 \\ 0 & 0 & 1 & 1 \\ 0 & 1 & 0 & 0\\ 0 & 0 & 0 & 1\end{bmatrix}$", color=GREEN).scale(0.4).next_to(ans0, RIGHT)
+        self.add(tbs)
+        self.wait()
+
+
+class Chap3_31210(OPU_Slide):
+    def construct(self):
+        self.add_info()
+
+        title = Text("Chapter 3: Rigid-Body Motions").shift(UP*3).scale(0.65)
+        secondary_title = Text("3.3.1.2: Uses of Transformation Matrices", color=BLUE).next_to(title, DOWN).scale(0.4).shift(UP*0.2)
+        mini_title = Text("(b) Change of refrence frame", color=GREEN).scale(0.3).next_to(secondary_title, DOWN).shift(LEFT*4.2)
+        self.add(title, secondary_title, mini_title)
+
+        img1 = ImageMobject('../images/transfuses.png').shift(UP*0.8)
+        img2 = ImageMobject('../images/threeref.png').next_to(img1, DOWN)
+      
+        img3 = ImageMobject('../images/threerefcut.png').shift(UP)
+        img4 = ImageMobject('../images/vb.png').shift(UP*0.6 + LEFT*1.2)
+        imgs = Group(img3, img4).move_to(img2).shift(UP*2.5 + RIGHT*5)
+
+        self.add(imgs)
+        
+        img5 = ImageMobject('../images/transfall.png').shift(UP*0.4)
+        self.add(img5)
+        
+        quest = Tex(r"How would you represent $T_{bc}?$", color=RED).scale(0.4).next_to(img5, DOWN).shift(LEFT*4+DOWN*0.7)
+        self.add(quest)
+        ans0 = Tex(r"$T_{bc} = T_{bs}T_{sc} = (T_{sb})^{-1} T_{sc}$", color=GREEN).scale(0.4).next_to(quest, RIGHT)
+        self.add(ans0)
+
+        tbs = Tex(r"$ = \begin{bmatrix}0 & 0 & 1 & 0 \\ 0 & -1 & 0 & -2 \\ 1 & 0 & 0 & 0\\ 0 & 0 & 0 & 1\end{bmatrix}^{-1}$\
+            $\begin{bmatrix}-1 & 0 & 0 & -1 \\ 0 & 0 & 1 & 1 \\ 0 & 1 & 0 & 0\\ 0 & 0 & 0 & 1\end{bmatrix}$", color=GREEN).scale(0.4).next_to(ans0, RIGHT)
+        self.add(tbs)
+
+        tbc = Tex(r"$ = \begin{bmatrix}0 & 1 & 0 & 0 \\ 0 & 0 & -1 & -3 \\ -1 & 0 & 0 & -1\\ 0 & 0 & 0 & 1\end{bmatrix}$", color=GREEN).scale(0.4).next_to(tbs, RIGHT)
+        self.add(tbc)
+        self.wait()
+
+
+
+class Chap3_31211(OPU_Slide):
+    def construct(self):
+        self.add_info()
+
+        title = Text("Chapter 3: Rigid-Body Motions").shift(UP*3).scale(0.65)
+        secondary_title = Text("3.3.1.2: Uses of Transformation Matrices", color=BLUE).next_to(title, DOWN).scale(0.4).shift(UP*0.2)
+        mini_title = Text("(b) Change of refrence frame", color=GREEN).scale(0.3).next_to(secondary_title, DOWN).shift(LEFT*4.2)
+        self.add(title, secondary_title, mini_title)
+
+        img1 = ImageMobject('../images/transfuses.png').shift(UP*0.8)
+        img2 = ImageMobject('../images/threeref.png').next_to(img1, DOWN)
+      
+        img3 = ImageMobject('../images/threerefcut.png').shift(UP)
+        img4 = ImageMobject('../images/vb.png').shift(UP*0.6 + LEFT*1.2)
+        imgs = Group(img3, img4).move_to(img2).shift(UP*2.5 + RIGHT*5)
+
+        self.add(imgs)
+        
+        img5 = ImageMobject('../images/transfall.png').shift(UP*0.4)
+        self.add(img5)
+        
+        quest = Tex(r"How would you represent $v_{a}?$", color=RED).scale(0.4).next_to(img5, DOWN).shift(LEFT*4+DOWN*0.7)
+        self.play(FadeIn(quest))
+        self.wait()
+
+class Chap3_31212(OPU_Slide):
+    def construct(self):
+        self.add_info()
+
+        title = Text("Chapter 3: Rigid-Body Motions").shift(UP*3).scale(0.65)
+        secondary_title = Text("3.3.1.2: Uses of Transformation Matrices", color=BLUE).next_to(title, DOWN).scale(0.4).shift(UP*0.2)
+        mini_title = Text("(b) Change of refrence frame", color=GREEN).scale(0.3).next_to(secondary_title, DOWN).shift(LEFT*4.2)
+        self.add(title, secondary_title, mini_title)
+
+        img1 = ImageMobject('../images/transfuses.png').shift(UP*0.8)
+        img2 = ImageMobject('../images/threeref.png').next_to(img1, DOWN)
+      
+        img3 = ImageMobject('../images/threerefcut.png').shift(UP)
+        img4 = ImageMobject('../images/vb.png').shift(UP*0.6 + LEFT*1.2)
+        imgs = Group(img3, img4).move_to(img2).shift(UP*2.5 + RIGHT*5)
+
+        self.add(imgs)
+        
+        img5 = ImageMobject('../images/transfall.png').shift(UP*0.4)
+        self.add(img5)
+        
+        quest = Tex(r"How would you represent $v_{a}$?", color=RED).scale(0.4).next_to(img5, DOWN).shift(LEFT*4+DOWN*0.7)
+        self.add(quest)
+        ans0 = Tex(r"$v_{a} = T_{ab}v_{b}$", color=GREEN).scale(0.4).next_to(quest, RIGHT)
+        self.add(ans0)
+        self.wait()
+
+class Chap3_31213(OPU_Slide):
+    def construct(self):
+        self.add_info()
+
+        title = Text("Chapter 3: Rigid-Body Motions").shift(UP*3).scale(0.65)
+        secondary_title = Text("3.3.1.2: Uses of Transformation Matrices", color=BLUE).next_to(title, DOWN).scale(0.4).shift(UP*0.2)
+        mini_title = Text("(b) Change of refrence frame", color=GREEN).scale(0.3).next_to(secondary_title, DOWN).shift(LEFT*4.2)
+        self.add(title, secondary_title, mini_title)
+
+        img1 = ImageMobject('../images/transfuses.png').shift(UP*0.8)
+        img2 = ImageMobject('../images/threeref.png').next_to(img1, DOWN)
+      
+        img3 = ImageMobject('../images/threerefcut.png').shift(UP)
+        img4 = ImageMobject('../images/vb.png').shift(UP*0.6 + LEFT*1.2)
+        imgs = Group(img3, img4).move_to(img2).shift(UP*2.5 + RIGHT*5)
+
+        self.add(imgs)
+        
+        img5 = ImageMobject('../images/transfall.png').shift(UP*0.4)
+        self.add(img5)
+        
+        quest = Tex(r"How would you represent $v_{a}$?", color=RED).scale(0.4).next_to(img5, DOWN).shift(LEFT*4+DOWN*0.7)
+        self.add(quest)
+        ans0 = Tex(r"$v_{a} = T_{ab}v_{b}$", color=GREEN).scale(0.4).next_to(quest, RIGHT)
+        self.add(ans0)
+
+        tbs = Tex(r"$ = \begin{bmatrix}0 & 0 & 1 & 0 \\ 0 & -1 & 0 & -2 \\ 1 & 0 & 0 & 0\\ 0 & 0 & 0 & 1\end{bmatrix}$\
+            $\begin{bmatrix}0 \\ 0 \\ 1.5\\ 1\end{bmatrix}$", color=GREEN).scale(0.4).next_to(ans0, RIGHT)
+        self.add(tbs)
+        self.wait()
+
+
+class Chap3_31214(OPU_Slide):
+    def construct(self):
+        self.add_info()
+
+        title = Text("Chapter 3: Rigid-Body Motions").shift(UP*3).scale(0.65)
+        secondary_title = Text("3.3.1.2: Uses of Transformation Matrices", color=BLUE).next_to(title, DOWN).scale(0.4).shift(UP*0.2)
+        mini_title = Text("(b) Change of refrence frame", color=GREEN).scale(0.3).next_to(secondary_title, DOWN).shift(LEFT*4.2)
+        self.add(title, secondary_title, mini_title)
+
+        img1 = ImageMobject('../images/transfuses.png').shift(UP*0.8)
+        img2 = ImageMobject('../images/threeref.png').next_to(img1, DOWN)
+      
+        img3 = ImageMobject('../images/threerefcut.png').shift(UP)
+        img4 = ImageMobject('../images/vb.png').shift(UP*0.6 + LEFT*1.2)
+        imgs = Group(img3, img4).move_to(img2).shift(UP*2.5 + RIGHT*5)
+
+        self.add(imgs)
+        
+        img5 = ImageMobject('../images/transfall.png').shift(UP*0.4)
+        self.add(img5)
+        
+        quest = Tex(r"How would you represent $v_{a}$?", color=RED).scale(0.4).next_to(img5, DOWN).shift(LEFT*4+DOWN*0.7)
+        self.add(quest)
+        ans0 = Tex(r"$v_{a} = T_{ab}v_{b}$", color=GREEN).scale(0.4).next_to(quest, RIGHT)
+        self.add(ans0)
+
+        tbs = Tex(r"$ = \begin{bmatrix}0 & 0 & 1 & 0 \\ 0 & -1 & 0 & -2 \\ 1 & 0 & 0 & 0\\ 0 & 0 & 0 & 1\end{bmatrix}$\
+            $\begin{bmatrix}0 \\ 0 \\ 1.5\\ 1\end{bmatrix}$", color=GREEN).scale(0.4).next_to(ans0, RIGHT)
+        self.add(tbs)
+
+        tbc = Tex(r"$ = \begin{bmatrix}1.5 \\ -2 \\ 0\\ 1\end{bmatrix}$", color=GREEN).scale(0.4).next_to(tbs, RIGHT)
+        self.add(tbc)
+        self.wait()
+
+
+
+class Chap3_31215(OPU_Slide):
+    def construct(self):
+        self.add_info()
+
+        title = Text("Chapter 3: Rigid-Body Motions").shift(UP*3).scale(0.65)
+        secondary_title = Text("3.3.1.2: Uses of Transformation Matrices", color=BLUE).next_to(title, DOWN).scale(0.4).shift(UP*0.2)
+        mini_title = Text("(b) Change of refrence frame", color=GREEN).scale(0.3).next_to(secondary_title, DOWN).shift(LEFT*4.2)
+        self.add(title, secondary_title, mini_title)
+
+        img3 = ImageMobject('../images/transftac.png').scale(1.5)
+      
+        self.add(img3)
+        self.wait()
+
+
+class Chap3_31216(OPU_Slide):
+    def construct(self):
+        self.add_info()
+
+        title = Text("Chapter 3: Rigid-Body Motions").shift(UP*3).scale(0.65)
+        secondary_title = Text("3.3.1.2: Uses of Transformation Matrices", color=BLUE).next_to(title, DOWN).scale(0.4).shift(UP*0.2)
+        mini_title = Text("(c) Displacing a vector or a frame", color=GREEN).scale(0.3).next_to(secondary_title, DOWN).shift(LEFT*4.2)
+        self.add(title, secondary_title, mini_title)
+
+        t = Tex(r"$T = (R,p) = (Rot(\hat{w},\theta), p)$?").scale(0.4).shift(UP*1.4)
+      
+        self.add(t)
+        self.wait()
+
+
+class Chap3_31217(OPU_Slide):
+    def construct(self):
+        self.add_info()
+
+        title = Text("Chapter 3: Rigid-Body Motions").shift(UP*3).scale(0.65)
+        secondary_title = Text("3.3.1.2: Uses of Transformation Matrices", color=BLUE).next_to(title, DOWN).scale(0.4).shift(UP*0.2)
+        mini_title = Text("(c) Displacing a vector or a frame", color=GREEN).scale(0.3).next_to(secondary_title, DOWN).shift(LEFT*4.2)
+        self.add(title, secondary_title, mini_title)
+
+        t = Tex(r"$T = (R,p) = (Rot(\hat{w},\theta), p)$?").scale(0.4).shift(UP*1.4)
+        img1 = ImageMobject('../images/rotwth.png').shift(LEFT*2+UP*0.5).scale(1.2)
+        img2 = ImageMobject('../images/transfp.png').next_to(img1, RIGHT).shift(RIGHT*2).scale(1.2)
+        self.add(t, img1, img2)
+        self.wait()
+
+class Chap3_31218(OPU_Slide):
+    def construct(self):
+        self.add_info()
+
+        title = Text("Chapter 3: Rigid-Body Motions").shift(UP*3).scale(0.65)
+        secondary_title = Text("3.3.1.2: Uses of Transformation Matrices", color=BLUE).next_to(title, DOWN).scale(0.4).shift(UP*0.2)
+        mini_title = Text("(c) Displacing a vector or a frame", color=GREEN).scale(0.3).next_to(secondary_title, DOWN).shift(LEFT*4.2)
+        self.add(title, secondary_title, mini_title)
+
+        t = Tex(r"$T = (R,p) = (Rot(\hat{w},\theta), p)$?").scale(0.4).shift(UP*1.4)
+        img1 = ImageMobject('../images/rotwth.png').shift(LEFT*2+UP*0.5).scale(1.2)
+        img2 = ImageMobject('../images/transfp.png').next_to(img1, RIGHT).shift(RIGHT*2).scale(1.2)
+        img3 = ImageMobject('../images/whether.png').shift(DOWN*1.4)
+        self.add(t, img1, img2, img3)
+        self.wait()
+
+
+class Chap3_31219(OPU_Slide):
+    def construct(self):
+        self.add_info()
+
+        title = Text("Chapter 3: Rigid-Body Motions").shift(UP*3).scale(0.65)
+        secondary_title = Text("3.3.1.2: Uses of Transformation Matrices", color=BLUE).next_to(title, DOWN).scale(0.4).shift(UP*0.2)
+        mini_title = Text("(c) Displacing a vector or a frame", color=GREEN).scale(0.3).next_to(secondary_title, DOWN).shift(LEFT*4.2)
+        question = Tex(r"Transformation T with $\hat{w} = (0,0,1)$, $\theta = 90 $ and $p = (0,2,0)$").scale(0.4).next_to(mini_title, DOWN).align_to(mini_title, LEFT)
+        self.add(title, secondary_title, mini_title ,question)
+
+        img1 = ImageMobject('../images/tranfwz.png').next_to(question, DOWN)
+        
+        self.add(img1)
+        self.wait()
+
+
+
+class Chap3_31219(OPU_Slide):
+    def construct(self):
+        self.add_info()
+
+        title = Text("Chapter 3: Rigid-Body Motions").shift(UP*3).scale(0.65)
+        secondary_title = Text("3.3.1.2: Uses of Transformation Matrices", color=BLUE).next_to(title, DOWN).scale(0.4).shift(UP*0.2)
+        mini_title = Text("(c) Displacing a vector or a frame", color=GREEN).scale(0.3).next_to(secondary_title, DOWN).shift(LEFT*4.2)
+        question = Tex(r"Transformation T with $\hat{w} = (0,0,1)$, $\theta = 90 $ and $p = (0,2,0)$").scale(0.4).next_to(mini_title, DOWN).align_to(mini_title, LEFT)
+        self.add(title, secondary_title, mini_title ,question)
+
+        img1 = ImageMobject('../images/tranfwz.png').next_to(question, DOWN)
+        
+        self.add(img1)
+
+
+        
+        self.wait()
+
+
+
+
+class Chap3_31220(OPU_Slide):
+    def construct(self):
+        self.add_info()
+
+        title = Text("Chapter 3: Rigid-Body Motions").shift(UP*3).scale(0.65)
+        secondary_title = Text("3.3.1.2: Uses of Transformation Matrices", color=BLUE).next_to(title, DOWN).scale(0.4).shift(UP*0.2)
+        mini_title = Text("(c) Displacing a vector or a frame", color=GREEN).scale(0.3).next_to(secondary_title, DOWN).shift(LEFT*4.2)
+        question = Tex(r"Transformation T with $\hat{w} = (0,0,1)$, $\theta = 90 $ and $p = (0,2,0)$").scale(0.4).next_to(mini_title, DOWN).align_to(mini_title, LEFT)
+        self.add(title, secondary_title, mini_title ,question)
+
+        img1 = ImageMobject('../images/tranfwz.png').next_to(question, DOWN)
+        
+        self.add(img1)
+
+        tsb = Tex(r"The frame $\{b\}$ represnted in frame $\{s\}$ by:").scale(0.4).next_to(img1, DOWN).align_to(mini_title, LEFT)
+        img2 = ImageMobject('../images/transftsb.png').next_to(tsb, DOWN)
+
+        self.add(tsb, img2)
+
+        
+        self.wait()
+
+class Chap3_31221(OPU_Slide):
+    def construct(self):
+        self.add_info()
+
+        title = Text("Chapter 3: Rigid-Body Motions").shift(UP*3).scale(0.65)
+        secondary_title = Text("3.3.1.2: Uses of Transformation Matrices", color=BLUE).next_to(title, DOWN).scale(0.4).shift(UP*0.2)
+        mini_title = Text("(c) Displacing a vector or a frame", color=GREEN).scale(0.3).next_to(secondary_title, DOWN).shift(LEFT*4.2)
+        question = Tex(r"Transformation T with $\hat{w} = (0,0,1)$, $\theta = 90 $ and $p = (0,2,0)$").scale(0.4).next_to(mini_title, DOWN).align_to(mini_title, LEFT)
+        self.add(title, secondary_title, mini_title ,question)
+
+        img1 = ImageMobject('../images/tranfwz.png').next_to(question, DOWN)
+        
+        self.add(img1)
+
+        tsb = Tex(r"The frame $\{b\}$ represnted in frame $\{s\}$ by:").scale(0.4).next_to(img1, DOWN).align_to(mini_title, LEFT)
+        img2 = ImageMobject('../images/transftsb.png').next_to(tsb, DOWN)
+
+        self.add(tsb, img2)
+
+        fixed = Tex(r"Fixed frame transformation $T_{sb}'$").scale(0.4).next_to(mini_title, RIGHT).shift(RIGHT*3)
+        img3 = ImageMobject('../images/fixed.png').next_to(fixed, DOWN)
+        img4 = ImageMobject('../images/fixedt.png').next_to(img3, DOWN)
+
+        self.add(fixed, img3)
+        self.wait()
+
+class Chap3_31222(OPU_Slide):
+    def construct(self):
+        self.add_info()
+
+        title = Text("Chapter 3: Rigid-Body Motions").shift(UP*3).scale(0.65)
+        secondary_title = Text("3.3.1.2: Uses of Transformation Matrices", color=BLUE).next_to(title, DOWN).scale(0.4).shift(UP*0.2)
+        mini_title = Text("(c) Displacing a vector or a frame", color=GREEN).scale(0.3).next_to(secondary_title, DOWN).shift(LEFT*4.2)
+        question = Tex(r"Transformation T with $\hat{w} = (0,0,1)$, $\theta = 90 $ and $p = (0,2,0)$").scale(0.4).next_to(mini_title, DOWN).align_to(mini_title, LEFT)
+        self.add(title, secondary_title, mini_title ,question)
+
+        img1 = ImageMobject('../images/tranfwz.png').next_to(question, DOWN)
+        
+        self.add(img1)
+
+        tsb = Tex(r"The frame $\{b\}$ represnted in frame $\{s\}$ by:").scale(0.4).next_to(img1, DOWN).align_to(mini_title, LEFT)
+        img2 = ImageMobject('../images/transftsb.png').next_to(tsb, DOWN)
+
+        self.add(tsb, img2)
+
+        fixed = Tex(r"Fixed frame transformation $T_{sb}'$").scale(0.4).next_to(mini_title, RIGHT).shift(RIGHT*3)
+        img3 = ImageMobject('../images/fixed.png').next_to(fixed, DOWN)
+        img4 = ImageMobject('../images/fixedt.png').next_to(img3, DOWN)
+
+        self.add(fixed, img3, img4)
+        self.wait()
+
+class Chap3_31223(OPU_Slide):
+    def construct(self):
+        self.add_info()
+
+        title = Text("Chapter 3: Rigid-Body Motions").shift(UP*3).scale(0.65)
+        secondary_title = Text("3.3.1.2: Uses of Transformation Matrices", color=BLUE).next_to(title, DOWN).scale(0.4).shift(UP*0.2)
+        mini_title = Text("(c) Displacing a vector or a frame", color=GREEN).scale(0.3).next_to(secondary_title, DOWN).shift(LEFT*4.2)
+        question = Tex(r"Transformation T with $\hat{w} = (0,0,1)$, $\theta = 90 $ and $p = (0,2,0)$").scale(0.4).next_to(mini_title, DOWN).align_to(mini_title, LEFT)
+        self.add(title, secondary_title, mini_title ,question)
+
+        img1 = ImageMobject('../images/tranfwz.png').next_to(question, DOWN)
+        
+        self.add(img1)
+
+        tsb = Tex(r"The frame $\{b\}$ represnted in frame $\{s\}$ by:").scale(0.4).next_to(img1, DOWN).align_to(mini_title, LEFT)
+        img2 = ImageMobject('../images/transftsb.png').next_to(tsb, DOWN)
+
+        self.add(tsb, img2)
+
+        fixed = Tex(r"Body frame transformation $T_{sb}''$").scale(0.4).next_to(mini_title, RIGHT).shift(RIGHT*3)
+        img3 = ImageMobject('../images/body.png').next_to(fixed, DOWN)
+
+        self.add(fixed, img3)
+        self.wait()
+
+class Chap3_31224(OPU_Slide):
+    def construct(self):
+        self.add_info()
+
+        title = Text("Chapter 3: Rigid-Body Motions").shift(UP*3).scale(0.65)
+        secondary_title = Text("3.3.1.2: Uses of Transformation Matrices", color=BLUE).next_to(title, DOWN).scale(0.4).shift(UP*0.2)
+        mini_title = Text("(c) Displacing a vector or a frame", color=GREEN).scale(0.3).next_to(secondary_title, DOWN).shift(LEFT*4.2)
+        question = Tex(r"Transformation T with $\hat{w} = (0,0,1)$, $\theta = 90 $ and $p = (0,2,0)$").scale(0.4).next_to(mini_title, DOWN).align_to(mini_title, LEFT)
+        self.add(title, secondary_title, mini_title ,question)
+
+        img1 = ImageMobject('../images/tranfwz.png').next_to(question, DOWN)
+        
+        self.add(img1)
+
+        tsb = Tex(r"The frame $\{b\}$ represnted in frame $\{s\}$ by:").scale(0.4).next_to(img1, DOWN).align_to(mini_title, LEFT)
+        img2 = ImageMobject('../images/transftsb.png').next_to(tsb, DOWN)
+
+        self.add(tsb, img2)
+
+        fixed = Tex(r"Body frame transformation $T_{sb}''$").scale(0.4).next_to(mini_title, RIGHT).shift(RIGHT*3)
+        img3 = ImageMobject('../images/body.png').next_to(fixed, DOWN)
+        img4 = ImageMobject('../images/bodyt.png').next_to(img3, DOWN)
+
+        self.add(fixed, img3, img4)
+        self.wait()
