@@ -1,4 +1,5 @@
 from math import e
+from colour import Color
 from cv2 import FILLED, FastFeatureDetector
 from numpy import WRAP, right_shift
 from OPU import *
@@ -1636,7 +1637,7 @@ class Chap3_31216(OPU_Slide):
         mini_title = Text("(c) Displacing a vector or a frame", color=GREEN).scale(0.3).next_to(secondary_title, DOWN).shift(LEFT*4.2)
         self.add(title, secondary_title, mini_title)
 
-        t = Tex(r"$T = (R,p) = (Rot(\hat{w},\theta), p)$?").scale(0.4).shift(UP*1.4)
+        t = Tex(r"$T = (R,p) = (Rot(\hat{w},\theta), p)$").scale(0.4).shift(UP*1.4)
       
         self.add(t)
         self.wait()
@@ -1651,7 +1652,7 @@ class Chap3_31217(OPU_Slide):
         mini_title = Text("(c) Displacing a vector or a frame", color=GREEN).scale(0.3).next_to(secondary_title, DOWN).shift(LEFT*4.2)
         self.add(title, secondary_title, mini_title)
 
-        t = Tex(r"$T = (R,p) = (Rot(\hat{w},\theta), p)$?").scale(0.4).shift(UP*1.4)
+        t = Tex(r"$T = (R,p) = (Rot(\hat{w},\theta), p)$").scale(0.4).shift(UP*1.4)
         img1 = ImageMobject('../images/rotwth.png').shift(LEFT*2+UP*0.5).scale(1.2)
         img2 = ImageMobject('../images/transfp.png').next_to(img1, RIGHT).shift(RIGHT*2).scale(1.2)
         self.add(t, img1, img2)
@@ -1666,7 +1667,7 @@ class Chap3_31218(OPU_Slide):
         mini_title = Text("(c) Displacing a vector or a frame", color=GREEN).scale(0.3).next_to(secondary_title, DOWN).shift(LEFT*4.2)
         self.add(title, secondary_title, mini_title)
 
-        t = Tex(r"$T = (R,p) = (Rot(\hat{w},\theta), p)$?").scale(0.4).shift(UP*1.4)
+        t = Tex(r"$T = (R,p) = (Rot(\hat{w},\theta), p)$").scale(0.4).shift(UP*1.4)
         img1 = ImageMobject('../images/rotwth.png').shift(LEFT*2+UP*0.5).scale(1.2)
         img2 = ImageMobject('../images/transfp.png').next_to(img1, RIGHT).shift(RIGHT*2).scale(1.2)
         img3 = ImageMobject('../images/whether.png').shift(DOWN*1.4)
@@ -1833,6 +1834,89 @@ class Chap3_31224(OPU_Slide):
         fixed = Tex(r"Body frame transformation $T_{sb}''$").scale(0.4).next_to(mini_title, RIGHT).shift(RIGHT*3)
         img3 = ImageMobject('../images/body.png').next_to(fixed, DOWN)
         img4 = ImageMobject('../images/bodyt.png').next_to(img3, DOWN)
+
+        self.add(fixed, img3, img4)
+        self.wait()
+
+
+class Chap3_31225(OPU_Slide):
+    def construct(self):
+        self.add_info()
+
+        title = Text("Chapter 3: Rigid-Body Motions").shift(UP*3).scale(0.65)
+        secondary_title = Text("3.3.1.2: Uses of Transformation Matrices", color=BLUE).next_to(title, DOWN).scale(0.4).shift(UP*0.2)
+        mini_title = Text("Example 3.19", color=GREEN).scale(0.3).next_to(secondary_title, DOWN).shift(LEFT*5.5)
+        question = Tex(r"Given these Transformation matrices:", color=BLUE).scale(0.4).next_to(mini_title, DOWN).align_to(mini_title, LEFT)
+        self.add(title, secondary_title, mini_title ,question)
+
+        img0 = ImageMobject('../images/exe1.png').next_to(question, DOWN).scale(0.95)
+        img1 = ImageMobject('../images/exe2.png').next_to(img0, DOWN).shift(RIGHT*0.2+UP*0.3).scale(0.95)
+        
+        self.add(img1, img0)
+
+        # tsb = Tex(r"The frame $\{b\}$ represnted in frame $\{s\}$ by:").scale(0.4).next_to(img1, DOWN).align_to(mini_title, LEFT)
+        img2 = ImageMobject('../images/exe0.png').next_to(img1, RIGHT).shift(UP*0.7+LEFT*0.5).scale(0.75)
+
+        self.add(img2)
+
+        fixed = Tex(r"Whats the configuration of object \{e\} in respect to the robot EE ?", color=RED).scale(0.4).next_to(question, RIGHT).shift(RIGHT)
+        img3 = ImageMobject('../images/body.png').next_to(fixed, DOWN)
+        img4 = ImageMobject('../images/bodyt.png').next_to(img3, DOWN)
+
+        self.add(fixed)
+        self.wait()
+
+class Chap3_31226(OPU_Slide):
+    def construct(self):
+        self.add_info()
+
+        title = Text("Chapter 3: Rigid-Body Motions").shift(UP*3).scale(0.65)
+        secondary_title = Text("3.3.1.2: Uses of Transformation Matrices", color=BLUE).next_to(title, DOWN).scale(0.4).shift(UP*0.2)
+        mini_title = Text("Example 3.19", color=GREEN).scale(0.3).next_to(secondary_title, DOWN).shift(LEFT*5.5)
+        question = Tex(r"Given these Transformation matrices:", color=BLUE).scale(0.4).next_to(mini_title, DOWN).align_to(mini_title, LEFT)
+        self.add(title, secondary_title, mini_title ,question)
+
+        img0 = ImageMobject('../images/exe1.png').next_to(question, DOWN).scale(0.95)
+        img1 = ImageMobject('../images/exe2.png').next_to(img0, DOWN).shift(RIGHT*0.2+UP*0.3).scale(0.95)
+        
+        self.add(img1, img0)
+
+        # tsb = Tex(r"The frame $\{b\}$ represnted in frame $\{s\}$ by:").scale(0.4).next_to(img1, DOWN).align_to(mini_title, LEFT)
+        img2 = ImageMobject('../images/exe0.png').next_to(img1, RIGHT).shift(UP*0.7+LEFT*0.5).scale(0.75)
+
+        self.add(img2)
+
+        fixed = Tex(r"Whats the configuration of object \{e\} in respect to the robot EE ?", color=RED).scale(0.4).next_to(question, RIGHT).shift(RIGHT)
+        img3 = ImageMobject('../images/exe3.png').next_to(img2, RIGHT).scale(0.85).shift(UP*0.5+LEFT*0.56)
+        img4 = ImageMobject('../images/exe5.png').next_to(img3, DOWN).scale(0.85)
+
+        self.add(fixed, img3, img4)
+        self.wait()
+
+
+class Chap3_320(OPU_Slide):
+    def construct(self):
+        self.add_info()
+
+        title = Text("Chapter 3: Rigid-Body Motions").shift(UP*3).scale(0.65)
+        secondary_title = Text("3.3.2: Twists", color=BLUE).next_to(title, DOWN).scale(0.4).shift(UP*0.2)
+        mini_title = Tex(r"Twist is an $\mathbb{R}^6$ vector of velocities", color=GREEN).scale(0.4).next_to(secondary_title, DOWN).shift(LEFT*3.5)
+        question = Tex(r"$V =\begin{bmatrix}w\\v\end{bmatrix}$", color=BLUE).scale(0.4).next_to(mini_title, DOWN).align_to(mini_title, LEFT)
+        self.add(title, secondary_title, mini_title ,question)
+
+        img0 = ImageMobject('../images/exe1.png').next_to(question, DOWN).scale(0.95)
+        img1 = ImageMobject('../images/exe2.png').next_to(img0, DOWN).shift(RIGHT*0.2+UP*0.3).scale(0.95)
+        
+        self.add(img1, img0)
+
+        # tsb = Tex(r"The frame $\{b\}$ represnted in frame $\{s\}$ by:").scale(0.4).next_to(img1, DOWN).align_to(mini_title, LEFT)
+        img2 = ImageMobject('../images/exe0.png').next_to(img1, RIGHT).shift(UP*0.7+LEFT*0.5).scale(0.75)
+
+        self.add(img2)
+
+        fixed = Tex(r"Whats the configuration of object \{e\} in respect to the robot EE ?", color=RED).scale(0.4).next_to(question, RIGHT).shift(RIGHT)
+        img3 = ImageMobject('../images/exe3.png').next_to(img2, RIGHT).scale(0.85).shift(UP*0.5+LEFT*0.56)
+        img4 = ImageMobject('../images/exe5.png').next_to(img3, DOWN).scale(0.85)
 
         self.add(fixed, img3, img4)
         self.wait()
