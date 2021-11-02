@@ -1900,23 +1900,177 @@ class Chap3_320(OPU_Slide):
 
         title = Text("Chapter 3: Rigid-Body Motions").shift(UP*3).scale(0.65)
         secondary_title = Text("3.3.2: Twists", color=BLUE).next_to(title, DOWN).scale(0.4).shift(UP*0.2)
-        mini_title = Tex(r"Twist is an $\mathbb{R}^6$ vector of velocities", color=GREEN).scale(0.4).next_to(secondary_title, DOWN).shift(LEFT*3.5)
-        question = Tex(r"$V =\begin{bmatrix}w\\v\end{bmatrix}$", color=BLUE).scale(0.4).next_to(mini_title, DOWN).align_to(mini_title, LEFT)
+        mini_title = Tex(r"Twist is an $\mathbb{R}^6$ vector that describes the velocity of a rigid body").scale(0.4).next_to(secondary_title, DOWN)
+        question = Tex(r"$V =\begin{bmatrix}w\\v\end{bmatrix}$").scale(0.4).next_to(mini_title, DOWN).align_to(mini_title, LEFT)
         self.add(title, secondary_title, mini_title ,question)
+        w = Text("Angular velocity", color=GREEN).scale(0.25).next_to(question, RIGHT).shift(UP*0.15)
+        v = Text("Linear velocity", color=GREEN).scale(0.25).next_to(question, RIGHT).shift(DOWN*0.15)
+        self.add(w, v)
+        self.wait()
 
-        img0 = ImageMobject('../images/exe1.png').next_to(question, DOWN).scale(0.95)
-        img1 = ImageMobject('../images/exe2.png').next_to(img0, DOWN).shift(RIGHT*0.2+UP*0.3).scale(0.95)
+class Chap3_321(OPU_Slide):
+    def construct(self):
+        self.add_info()
+
+        title = Text("Chapter 3: Rigid-Body Motions").shift(UP*3).scale(0.65)
+        secondary_title = Text("3.3.2: Twists", color=BLUE).next_to(title, DOWN).scale(0.4).shift(UP*0.2)
+        mini_title = Tex(r"Twist is an $\mathbb{R}^6$ vector that describes the velocity of a rigid body").scale(0.4).next_to(secondary_title, DOWN)
+        question = Tex(r"$V =\begin{bmatrix}w\\v\end{bmatrix}$").scale(0.4).next_to(mini_title, DOWN).align_to(mini_title, LEFT)
+        self.add(title, secondary_title, mini_title ,question)
+        w = Text("Angular velocity", color=GREEN).scale(0.25).next_to(question, RIGHT).shift(UP*0.15)
+        v = Text("Linear velocity", color=GREEN).scale(0.25).next_to(question, RIGHT).shift(DOWN*0.15)
+        self.add(w, v)
+
+        img0 = ImageMobject('../images/lett.png').next_to(question, DOWN).scale(1.15).align_to(question, LEFT)
+        img1 = ImageMobject('../images/tt.png').next_to(img0, DOWN).scale(1.15).align_to(question, LEFT)
+
+        this_is = Tex(r"This is the matrix representation of a BODY twist", color=RED).scale(0.4).next_to(img1, DOWN).align_to(mini_title, LEFT)
+        self.add(img1, img0, this_is)
+
+        self.wait()
+
+
+class Chap3_322(OPU_Slide):
+    def construct(self):
+        self.add_info()
+
+        title = Text("Chapter 3: Rigid-Body Motions").shift(UP*3).scale(0.65)
+        secondary_title = Text("3.3.2: Twists", color=BLUE).next_to(title, DOWN).scale(0.4).shift(UP*0.2)
+        self.add(title, secondary_title)
+
+        img0 = ImageMobject('../images/twistsum.png').scale(1.15).shift(DOWN*0.6)
+
+        self.add(img0)
+        self.wait()
+
+class Chap3_3220(OPU_Slide):
+    def construct(self):
+        self.add_info()
+
+        title = Text("Chapter 3: Rigid-Body Motions").shift(UP*3).scale(0.65)
+        secondary_title = Text("3.3.2.2: The Screw Interpretation of a Twist", color=BLUE).next_to(title, DOWN).scale(0.4).shift(UP*0.2)
+        self.add(title, secondary_title)
+
+         #include video
+        cap = cv2.VideoCapture("../media/videos/screwMotion.mp4")
+        rec = Rectangle(color=WHITE, width=2, height=1, fill_color=WHITE, fill_opacity=1).shift(LEFT*2.1+UP*0.5)
+
+        flag, frame = cap.read()
+        while not flag:
+            pass
+        while flag :
+            flag, frame = cap.read()
+            if flag:
+                frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+                frame_img = ImageMobject(frame).scale(0.66).shift(0.5*DOWN)
+                self.add(frame_img, rec)
+                self.wait(0.042)
+                self.remove(frame_img)
+            
+        cap.release()
+        self.remove(rec)
+
+       
+        self.wait()
+
+class Chap3_3221(OPU_Slide):
+    def construct(self):
+        self.add_info()
+
+        title = Text("Chapter 3: Rigid-Body Motions").shift(UP*3).scale(0.65)
+        secondary_title = Text("3.3.2.2: The Screw Interpretation of a Twist", color=BLUE).next_to(title, DOWN).scale(0.4).shift(UP*0.2)
+        self.add(title, secondary_title)
+        img0 = ImageMobject('../images/screw.png').scale(1.15).shift(DOWN*0.2)
+        s = Tex(r"S is the collection $\{q, \hat{s}, h\}$", color=GREEN).scale(0.4).next_to(img0, UP).align_to(secondary_title, LEFT)
+
+        self.add(img0, s,)
+        self.wait()
+
+class Chap3_3222(OPU_Slide):
+    def construct(self):
+        self.add_info()
+
+        title = Text("Chapter 3: Rigid-Body Motions").shift(UP*3).scale(0.65)
+        secondary_title = Text("3.3.2.2: The Screw Interpretation of a Twist", color=BLUE).next_to(title, DOWN).scale(0.4).shift(UP*0.2)
+        self.add(title, secondary_title)
+        img0 = ImageMobject('../images/screw.png').scale(1.15).shift(DOWN*0.2)
+        s = Tex(r"S is the collection $\{q, \hat{s}, h\}$", color=GREEN).scale(0.4).next_to(img0, UP).align_to(secondary_title, LEFT)
+
+        so = Tex(r"so a twist V corresponding to an angular velocity $\dot{\theta}$ about a screw S is:", color=GREEN).scale(0.4).next_to(img0, DOWN).shift(LEFT)
+        img1 = ImageMobject('../images/twistscrew.png').scale(1.15).next_to(so, RIGHT)
+
+        self.add(img0, s, so, img1)
+        self.wait()
+
+class Chap3_3223(OPU_Slide):
+    def construct(self):
+        self.add_info()
+
+        title = Text("Chapter 3: Rigid-Body Motions").shift(UP*3).scale(0.65)
+        secondary_title = Text("3.3.2.2: The Screw Interpretation of a Twist", color=BLUE).next_to(title, DOWN).scale(0.4).shift(UP*0.2)
+        self.add(title, secondary_title)
+        img0 = ImageMobject('../images/ab.png')
+
+        s = Tex(r"Instead of using $\{q, \hat{s}, h\}$, the screw axis S is described using a normalized version of a twist:", color=GREEN).scale(0.4).next_to(img0, UP).shift(LEFT)
+        img0.scale(1.15).shift(DOWN*0.2).align_to(s, LEFT)
+        so = Tex(r"This leads to the following definition of a “unit” (normalized) screw axis:", color=GREEN).scale(0.4).next_to(img0, DOWN).align_to(s, LEFT)
+
+        # img1 = ImageMobject('../images/twistscrew.png').scale(1.15).next_to(so, RIGHT)
+
+        self.add(img0, s, so)
+        self.wait()
+
+class Chap3_3224(OPU_Slide):
+    def construct(self):
+        self.add_info()
+        title = Text("Chapter 3: Rigid-Body Motions").shift(UP*3).scale(0.65)
+        secondary_title = Text("3.3.2.2: The Screw Interpretation of a Twist", color=BLUE).next_to(title, DOWN).scale(0.4).shift(UP*0.2)
+        self.add(title, secondary_title)
+        img0 = ImageMobject('../images/ab.png')
+
+        s = Tex(r"Instead of using $\{q, \hat{s}, h\}$, the screw axis S is described using a normalized version of a twist:", color=GREEN).scale(0.4).next_to(img0, UP).shift(LEFT)
+        img0.scale(1.15).shift(DOWN*0.2).align_to(s, LEFT)
+        so = Tex(r"This leads to the following definition of a “unit” (normalized) screw axis:", color=RED).scale(0.4).next_to(img0, DOWN).align_to(s, LEFT)
+
+        self.play(so.animate().shift(UP*3).set(color=RED))
+
+        img0 = ImageMobject('../images/unit1.png').scale(1).shift(UP*0.3)
+        img1 = ImageMobject('../images/unit2.png').scale(1).next_to(img0, DOWN)
+        self.add(img0, img1)
+        self.wait()
+
+class Chap3_330(OPU_Slide):
+    def construct(self):
+        self.add_info()
+        title = Text("Chapter 3: Rigid-Body Motions").shift(UP*3).scale(0.65)
+        secondary_title = Text("3.3.3.1: Exponential Coordinates of Rigid-Body Motions", color=BLUE).next_to(title, DOWN).scale(0.4).shift(UP*0.2)
+        self.add(title, secondary_title)
+        img0 = ImageMobject('../images/expo1.png').scale(1.2).shift(UP)
+        img1 = ImageMobject('../images/expo2.png').scale(1.2).next_to(img0, DOWN)
+        img2 = ImageMobject('../images/expo3.png').scale(1.2).next_to(img1, DOWN).align_to(img1, LEFT)
+        self.add(img0, img1, img2)
+        self.wait()
+
+class Chap3_331(OPU_Slide):
+    def construct(self):
+        self.add_info()
+        title = Text("Chapter 3: Rigid-Body Motions").shift(UP*3).scale(0.65)
+        secondary_title = Text("3.3.3.2: Matrix Logarithm of Rigid-Body Motions", color=BLUE).next_to(title, DOWN).scale(0.4).shift(UP*0.2)
+        self.add(title, secondary_title)
+        img0 = ImageMobject('../images/explog1.png').scale(1.15).shift(UP*1.5)
+        s = Tex(r"The Problem: Given a transformation matrix (R, p) $\in SE(3)$, one can find a screw axis $S=(w,v)$ and a scalar $\theta$ such that: ", color=RED).scale(0.4).next_to(img0, DOWN)
+
+        img1 = ImageMobject('../images/log1.png').scale(1).next_to(s, DOWN)
+        self.add(img0, img1, s)
+        self.wait()
+
+class Chap3_332(OPU_Slide):
+    def construct(self):
+        self.add_info()
+        title = Text("Chapter 3: Rigid-Body Motions").shift(UP*3).scale(0.65)
+        secondary_title = Text("3.3.3.2: Matrix Logarithm of Rigid-Body Motions", color=BLUE).next_to(title, DOWN).scale(0.4).shift(UP*0.2)
+        self.add(title, secondary_title)
+        img0 = ImageMobject('../images/log2.png').scale(1.15).shift(DOWN*0.1)
         
-        self.add(img1, img0)
-
-        # tsb = Tex(r"The frame $\{b\}$ represnted in frame $\{s\}$ by:").scale(0.4).next_to(img1, DOWN).align_to(mini_title, LEFT)
-        img2 = ImageMobject('../images/exe0.png').next_to(img1, RIGHT).shift(UP*0.7+LEFT*0.5).scale(0.75)
-
-        self.add(img2)
-
-        fixed = Tex(r"Whats the configuration of object \{e\} in respect to the robot EE ?", color=RED).scale(0.4).next_to(question, RIGHT).shift(RIGHT)
-        img3 = ImageMobject('../images/exe3.png').next_to(img2, RIGHT).scale(0.85).shift(UP*0.5+LEFT*0.56)
-        img4 = ImageMobject('../images/exe5.png').next_to(img3, DOWN).scale(0.85)
-
-        self.add(fixed, img3, img4)
+        self.add(img0)
         self.wait()
