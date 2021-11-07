@@ -6,12 +6,16 @@ from OPU import *
 from manim_slide import MyBullets
 import random
 class Empty(OPU_Slide):
-    def construct(self):
+   def construct(self):
+        note = ""
+        self.create_note(note)
         self.add_info()
         self.wait()
 
 class Chap3_00(OPU_Slide):
-    def construct(self):
+   def construct(self):
+        note = ""
+        self.create_note(note)
         self.add_info()
 
         title = Text("Chapter 3: Rigid-Body Motions").shift(UP*3).scale(0.65)
@@ -30,7 +34,9 @@ class Chap3_00(OPU_Slide):
         self.play(FadeIn(title, secondary_title, blist, img))
 
 class Chap3_01(OPU_Slide):
-    def construct(self):
+   def construct(self):
+        note = ""
+        self.create_note(note)
         self.add_info()
 
         title = Text("Chapter 3: Rigid-Body Motions").shift(UP*3).scale(0.65)
@@ -50,7 +56,9 @@ class Chap3_01(OPU_Slide):
 
 
 class Chap3_10(OPU_Slide):
-    def construct(self):
+   def construct(self):
+        note = ""
+        self.create_note(note)
         self.add_info()
 
         title = Text("Chapter 3: Rigid-Body Motions").shift(UP*3).scale(0.65)
@@ -69,7 +77,9 @@ class Chap3_10(OPU_Slide):
 
 
 class Chap3_11(OPU_Slide, VectorScene):
-    def construct(self):
+   def construct(self):
+        note = ""
+        self.create_note(note)
         self.add_info()
 
         title = Text("Chapter 3: Rigid-Body Motions").shift(UP*3).scale(0.65)
@@ -91,7 +101,9 @@ class Chap3_11(OPU_Slide, VectorScene):
 
 
 class Chap3_12(OPU_Slide, VectorScene):
-    def construct(self):
+   def construct(self):
+        note = ""
+        self.create_note(note)
         self.add_info()
 
         title = Text("Chapter 3: Rigid-Body Motions").shift(UP*3).scale(0.65)
@@ -135,7 +147,9 @@ class Chap3_12(OPU_Slide, VectorScene):
         self.wait()
 
 class Chap3_13(OPU_Slide, VectorScene):
-    def construct(self):
+   def construct(self):
+        note = ""
+        self.create_note(note)
         self.add_info()
 
         title = Text("Chapter 3: Rigid-Body Motions").shift(UP*3).scale(0.65)
@@ -189,7 +203,9 @@ class Chap3_13(OPU_Slide, VectorScene):
         self.wait()
 
 class Chap3_14(OPU_Slide, VectorScene):
-    def construct(self):
+   def construct(self):
+        note = ""
+        self.create_note(note)
         self.add_info()
 
         title = Text("Chapter 3: Rigid-Body Motions").shift(UP*3).scale(0.65)
@@ -236,7 +252,9 @@ class Chap3_14(OPU_Slide, VectorScene):
         self.wait()
 
 class Chap3_15(OPU_Slide, VectorScene):
-    def construct(self):
+   def construct(self):
+        note = ""
+        self.create_note(note)
         self.add_info()
 
         title = Text("Chapter 3: Rigid-Body Motions").shift(UP*3).scale(0.65)
@@ -291,7 +309,9 @@ class Chap3_15(OPU_Slide, VectorScene):
         self.wait()
 
 class Chap3_16(OPU_Slide, VectorScene):
-    def construct(self):
+   def construct(self):
+        note = ""
+        self.create_note(note)
         self.add_info()
 
         title = Text("Chapter 3: Rigid-Body Motions").shift(UP*3).scale(0.65)
@@ -346,7 +366,9 @@ class Chap3_16(OPU_Slide, VectorScene):
 
 
 class Chap3_17(OPU_Slide, VectorScene):
-    def construct(self):
+   def construct(self):
+        note = ""
+        self.create_note(note)
         self.add_info()
 
         title = Text("Chapter 3: Rigid-Body Motions").shift(UP*3).scale(0.65)
@@ -404,7 +426,9 @@ class Chap3_17(OPU_Slide, VectorScene):
         self.wait()
 
 class Chap3_18(OPU_Slide, VectorScene):
-    def construct(self):
+   def construct(self):
+        note = ""
+        self.create_note(note)
         self.add_info()
 
         title = Text("Chapter 3: Rigid-Body Motions").shift(UP*3).scale(0.65)
@@ -465,7 +489,9 @@ class Chap3_18(OPU_Slide, VectorScene):
 
 
 class Chap3_19(OPU_Slide, VectorScene):
-    def construct(self):
+   def construct(self):
+        note = ""
+        self.create_note(note)
         self.add_info()
 
         title = Text("Chapter 3: Rigid-Body Motions").shift(UP*3).scale(0.65)
@@ -489,7 +515,9 @@ class Chap3_19(OPU_Slide, VectorScene):
 
 
 class Chap3_210(OPU_Slide, VectorScene):
-    def construct(self):
+   def construct(self):
+        note = ""
+        self.create_note(note)
         self.add_info()
 
         title = Text("Chapter 3: Rigid-Body Motions").shift(UP*3).scale(0.65)
@@ -512,7 +540,9 @@ class Chap3_210(OPU_Slide, VectorScene):
         self.wait()
 
 class Chap3_211(OPU_Slide, VectorScene):
-    def construct(self):
+   def construct(self):
+        note = ""
+        self.create_note(note)
         self.add_info()
 
         title = Text("Chapter 3: Rigid-Body Motions").shift(UP*3).scale(0.65)
@@ -534,7 +564,9 @@ class Chap3_211(OPU_Slide, VectorScene):
 
 
 class Chap3_212(OPU_Slide, VectorScene):
-    def construct(self):
+   def construct(self):
+        note = ""
+        self.create_note(note)
         self.add_info()
 
         title = Text("Chapter 3: Rigid-Body Motions").shift(UP*3).scale(0.65)
@@ -563,7 +595,9 @@ class Chap3_212(OPU_Slide, VectorScene):
 
 
 class Chap3_213(OPU_Slide, VectorScene):
-    def construct(self):
+   def construct(self):
+        note = ""
+        self.create_note(note)
         self.add_info()
 
         title = Text("Chapter 3: Rigid-Body Motions").shift(UP*3).scale(0.65)
@@ -576,7 +610,9 @@ class Chap3_213(OPU_Slide, VectorScene):
         self.wait()
 
 class Chap3_214(OPU_Slide, VectorScene):
-    def construct(self):
+   def construct(self):
+        note = ""
+        self.create_note(note)
         self.add_info()
 
         title = Text("Chapter 3: Rigid-Body Motions").shift(UP*3).scale(0.65)
@@ -595,7 +631,9 @@ class Chap3_214(OPU_Slide, VectorScene):
 
 
 class Chap3_215(OPU_Slide):
-    def construct(self):
+   def construct(self):
+        note = ""
+        self.create_note(note)
         self.add_info()
 
         title = Text("Chapter 3: Rigid-Body Motions").shift(UP*3).scale(0.65)
@@ -618,7 +656,9 @@ class Chap3_215(OPU_Slide):
 
 
 class Chap3_216(OPU_Slide):
-    def construct(self):
+   def construct(self):
+        note = ""
+        self.create_note(note)
         self.add_info()
 
         title = Text("Chapter 3: Rigid-Body Motions").shift(UP*3).scale(0.65)
@@ -647,7 +687,9 @@ class Chap3_216(OPU_Slide):
         self.wait()
 
 class Chap3_217(OPU_Slide):
-    def construct(self):
+   def construct(self):
+        note = ""
+        self.create_note(note)
         self.add_info()
 
         title = Text("Chapter 3: Rigid-Body Motions").shift(UP*3).scale(0.65)
@@ -668,7 +710,9 @@ class Chap3_217(OPU_Slide):
         self.wait()
 
 class Chap3_218(OPU_Slide):
-    def construct(self):
+   def construct(self):
+        note = ""
+        self.create_note(note)
         self.add_info()
 
         title = Text("Chapter 3: Rigid-Body Motions").shift(UP*3).scale(0.65)
@@ -690,7 +734,9 @@ class Chap3_218(OPU_Slide):
         self.wait()
 
 class Chap3_219(OPU_Slide):
-    def construct(self):
+   def construct(self):
+        note = ""
+        self.create_note(note)
         self.add_info()
 
         title = Text("Chapter 3: Rigid-Body Motions").shift(UP*3).scale(0.65)
@@ -711,7 +757,9 @@ class Chap3_219(OPU_Slide):
         self.wait()
 
 class Chap3_2120(OPU_Slide):
-    def construct(self):
+   def construct(self):
+        note = ""
+        self.create_note(note)
         self.add_info()
 
         title = Text("Chapter 3: Rigid-Body Motions").shift(UP*3).scale(0.65)
@@ -735,7 +783,9 @@ class Chap3_2120(OPU_Slide):
         self.wait()
 
 class Chap3_2121(OPU_Slide):
-    def construct(self):
+   def construct(self):
+        note = ""
+        self.create_note(note)
         self.add_info()
 
         title = Text("Chapter 3: Rigid-Body Motions").shift(UP*3).scale(0.65)
@@ -754,7 +804,9 @@ class Chap3_2121(OPU_Slide):
         self.wait()
 
 class Chap3_2122(OPU_Slide):
-    def construct(self):
+   def construct(self):
+        note = ""
+        self.create_note(note)
         self.add_info()
 
         title = Text("Chapter 3: Rigid-Body Motions").shift(UP*3).scale(0.65)
@@ -774,7 +826,9 @@ class Chap3_2122(OPU_Slide):
         self.wait()
 
 class Chap3_2123(OPU_Slide):
-    def construct(self):
+   def construct(self):
+        note = ""
+        self.create_note(note)
         self.add_info()
 
         title = Text("Chapter 3: Rigid-Body Motions").shift(UP*3).scale(0.65)
@@ -791,7 +845,9 @@ class Chap3_2123(OPU_Slide):
         self.wait()
 
 class Chap3_2124(OPU_Slide):
-    def construct(self):
+   def construct(self):
+        note = ""
+        self.create_note(note)
         self.add_info()
 
         title = Text("Chapter 3: Rigid-Body Motions").shift(UP*3).scale(0.65)
@@ -809,7 +865,9 @@ class Chap3_2124(OPU_Slide):
         self.wait()
 
 class Chap3_2125(OPU_Slide):
-    def construct(self):
+   def construct(self):
+        note = ""
+        self.create_note(note)
         self.add_info()
 
         title = Text("Chapter 3: Rigid-Body Motions").shift(UP*3).scale(0.65)
@@ -827,7 +885,9 @@ class Chap3_2125(OPU_Slide):
         self.wait()
 
 class Chap3_2126(OPU_Slide):
-    def construct(self):
+   def construct(self):
+        note = ""
+        self.create_note(note)
         self.add_info()
 
         title = Text("Chapter 3: Rigid-Body Motions").shift(UP*3).scale(0.65)
@@ -846,7 +906,9 @@ class Chap3_2126(OPU_Slide):
 
 
 class Chap3_220(OPU_Slide):
-    def construct(self):
+   def construct(self):
+        note = "  אז עד כה ראינו איך משתמשים במטריצת רוטציה. אם נסתכל מזוית שונה נוכל לתאר רוטציה אר כפונקציה של זמן. כלומר המסגרת מסתובבת סביב ציר דבליו ואחרי דלתא טי הסתובבה דלתא טטא מעלות. אם משאיפים את דלתא טי לאפס הרי מהגדרה מדובר בנגזרת של הזוית טטא  "
+        self.create_note(note)
         self.add_info()
 
         title = Text("Chapter 3: Rigid-Body Motions").shift(UP*3).scale(0.65)
@@ -863,7 +925,9 @@ class Chap3_220(OPU_Slide):
         self.wait()
 
 class Chap3_221(OPU_Slide):
-    def construct(self):
+   def construct(self):
+        note = "הוא בעצם השינוי של זוית הרוטציה כתלות בזמן. המהירות הזויותית אומגה - מוגדרת כווקטור המכפלה בין אומגה האט לטטא דוט. מכפלה קרטזית של המהירות הזויתית בצירי המסגרת תתן את וקטור המהירות הקווית האורטוגונלי לשני הווקטורים   "
+        self.create_note(note)
         self.add_info()
 
         title = Text("Chapter 3: Rigid-Body Motions").shift(UP*3).scale(0.65)
@@ -881,6 +945,8 @@ class Chap3_221(OPU_Slide):
 
 class Chap3_222(OPU_Slide):
     def construct(self):
+        note = "אוקיי אז בהנתן מטריצת רוטציה כלשהי אר, ומהירות זויות דבליו . המהירות הלינארית של כל אחד מהצירים הוא אר אי (תוצאה של המכפלה הוקטורית של המהירות הזויות עם וקטור הציר) ושל המטריצה כולה הוא אר גדולה דוט. "
+        self.create_note(note)
         self.add_info()
 
         title = Text("Chapter 3: Rigid-Body Motions").shift(UP*3).scale(0.65)
@@ -898,7 +964,9 @@ class Chap3_222(OPU_Slide):
         self.wait()
 
 class Chap3_223(OPU_Slide):
-    def construct(self):
+   def construct(self):
+        note = "לחשב מכפלה וקטורית שכזאת בין וקטור למטריצה זאת עבודה קשה. למזלינו ניתן לבצע זאת באמצעות מכפלה בין שתי מטריצות כאשר את ניצור מוקטור המהירות הזויותית מטריצה סקיו סימטרית לפי התבנית שמופיעה פה"
+        self.create_note(note)
         self.add_info()
 
         title = Text("Chapter 3: Rigid-Body Motions").shift(UP*3).scale(0.65)
@@ -924,7 +992,11 @@ class Chap3_223(OPU_Slide):
 
 
 class Chap3_224(OPU_Slide):
-    def construct(self):
+   def construct(self):
+        note = "הספר ממשיך ועוסק בפיתוח והוכחה של משוואות המתארות תכונות של מטריצה סקיו סימטרית ואת היחס המעניין בינה לבין המטריצה הופכית. חשבתי שיהיה נכון לשים לכם הכל במקום אחד למקרה שתתקלו בסוג של תרגילים בנושא הזה.  חשוב לציין שני דברים :\
+            1. שניתן להפל על וקטור המהירות מטריצת רוטציה ובכך לשנות את מערכת היחוס שלו.\
+                2. פרופוזישיון 3.9 מציינת שאם מכפילים את אר דוא באר מינוס אחד מימין מכפלים את הסק'יו סימטריק מטריקס של אומגה ביחיס למסגרת אס  ואילו אם מכפילים את אר מינוס אחד משמאל מקבלים את הסקיו סימטריק מטריקס שבה ציר הסיבוב הוא ביחס למסגרת הבודי -בי. "
+        self.create_note(note)
         self.add_info()
 
         title = Text("Chapter 3: Rigid-Body Motions").shift(UP*3).scale(0.65)
@@ -943,7 +1015,11 @@ class Chap3_224(OPU_Slide):
         self.wait()
 
 class Chap3_2320(OPU_Slide):
-    def construct(self):
+   def construct(self):
+        note = "אז אתם שואלים את עצמכם למה אנחנו צריכים את זה? ובכן מבלי לעשות ספויילר - אם אנחנו חושבים על זה - אם יש לי את המהירות כנגזרת של הזוית אני מסוגל לעשות אינטגרציה ולקבל ממנה רוטציה. וזה בדיוק מה שנראה בסעיף המאד חשוב הזה.\
+            נסתכל על הנקודה פי שמסתובבת מסביב לאומגה טטא מעלות. \
+                אם נניח שקצה השינוי של טטא הוא ראדיאן לשנייה - אז אומגה שווה לאומגה גג והמהירות שזה נע הוקטור פי הוא פי דוט ששווה לסקיו סימטריק של אומגה מוכפל בוקטור פי."
+        self.create_note(note)
         self.add_info()
 
         title = Text("Chapter 3: Rigid-Body Motions").shift(UP*3).scale(0.65)
@@ -960,14 +1036,17 @@ class Chap3_2320(OPU_Slide):
         skew5 = Tex(r"Its solution id given by:", color=GREEN).scale(0.5).next_to(skew4, DOWN).align_to(skew1, LEFT)
         skew51 = Tex(r"$p(t) = e^{[\hat{w}]t}p(0)$", color=RED).scale(0.5).next_to(skew5, RIGHT)
         skew6 = Tex(r"Change parameter and get:", color=GREEN).scale(0.5).next_to(skew5, DOWN).align_to(skew1, LEFT)
-        skew61 = Tex(r" $p(\theta) = e^{[\hat{w}]\theta}p(0) = Rot(\hat{w}, \theta)$", color=RED).scale(0.5).next_to(skew6, RIGHT)
+        skew61 = Tex(r" $p(\theta) = e^{[\hat{w}]\theta}p(0) = Rot(\hat{w}, \theta)p(0)$", color=RED).scale(0.5).next_to(skew6, RIGHT)
 
         self.add(skew1, skew2, skew3, skew0, img3)
         self.wait()
 
 
 class Chap3_2321(OPU_Slide):
-    def construct(self):
+   def construct(self):
+        note = "זוהי משוואה דיפרנציאלי לינארית מהצורה איקס דוט שווה לאיי איקס שהפתרון שלה הוא פי של טי = אי בחזקת סקיו של אומגה מוכפל בטי - האקפוננט מוכפל בוקטור ההתחלה פי של אפס.\
+            נבצע החלפת פרמטרים ונקבל שאי בחזקת סקיו מוכפל בטטא שקול למטריצת הרוטציה סביב אומגה בטטא מעלות. זאת לא הוכחה - את ההוכחה והנכונות תוכלו למצוא בספר - . "
+        self.create_note(note)
         self.add_info()
 
         title = Text("Chapter 3: Rigid-Body Motions").shift(UP*3).scale(0.65)
@@ -984,14 +1063,16 @@ class Chap3_2321(OPU_Slide):
         skew5 = Tex(r"Its solution id given by:", color=GREEN).scale(0.5).next_to(skew4, DOWN).align_to(skew1, LEFT)
         skew51 = Tex(r"$p(t) = e^{[\hat{w}]t}p(0)$", color=RED).scale(0.5).next_to(skew5, RIGHT)
         skew6 = Tex(r"Change parameter and get:", color=GREEN).scale(0.5).next_to(skew5, DOWN).align_to(skew1, LEFT)
-        skew61 = Tex(r" $p(\theta) = e^{[\hat{w}]\theta}p(0) = Rot(\hat{w}, \theta)$", color=RED).scale(0.5).next_to(skew6, RIGHT)
+        skew61 = Tex(r" $p(\theta) = e^{[\hat{w}]\theta}p(0) = Rot(\hat{w}, \theta)p(0)$", color=RED).scale(0.5).next_to(skew6, RIGHT)
 
         self.add(skew1, skew2, skew3, skew4, skew0, img3, skew5,skew51, skew61, skew6)
         self.wait()
 
 
 class Chap3_2322(OPU_Slide):
-    def construct(self):
+   def construct(self):
+        note = "אם כך אומגה וטטא משמשות כקואורדינטות האקספוננציאליות המבטאות אופרטור רוטציה מתאים, שימו לב לחיסכון מכיון שמדובר ב3 ולא 9 פרמטרים - ספויילר אלרט בפרק הבאנראה כיצד החיסכון הזה בא לידי ביטוי שנבצע מכפלה של אקפוננטים. "
+        self.create_note(note)
         self.add_info()
 
         title = Text("Chapter 3: Rigid-Body Motions").shift(UP*3).scale(0.65)
@@ -1000,20 +1081,24 @@ class Chap3_2322(OPU_Slide):
         self.add(title, secondary_title)
 
         img3 = ImageMobject('../images/prot.png').scale(1.2).shift(UP*0.75+RIGHT*4)
-        skew0 = Tex(r"The Rodrigues’ formula for rotations:", color=GREEN).scale(0.5).shift(LEFT*2+UP*1.5)
+        skew0 = Tex(r"The Rodrigues’ formula for rotations:", color=GREEN).scale(0.5).shift(LEFT*2+UP*0.4)
         skew1 = Tex(r"$Rot(\hat{w}, \theta) = e^{[\hat{w}]\theta} = I + sin\theta[\hat{w}] + (1-cos\theta)[\hat{w}]^2$", color=BLUE).scale(0.5).next_to(skew0, DOWN)
         skew2 = Tex(r"$R' = Rot(\hat{w}, \theta)R$", color=RED).scale(0.5).shift(DOWN+LEFT*4)
         skew21 = Tex(r"is the orientation achieved by the rotation R by $\theta$ about the axis $\hat{w}$ in the fixed frame", color=GREEN).scale(0.5).next_to(skew2, RIGHT).shift(DOWN*0.12)
         skew3 = Tex(r"$R'' = R Rot(\hat{w}, \theta)$", color=RED).scale(0.5).shift(DOWN*1.8+LEFT*4)
         skew31 = Tex(r"is the orientation achieved by the rotation R by $\theta$ about the axis $\hat{w}$ in the body frame", color=GREEN).scale(0.5).next_to(skew3, RIGHT).shift(DOWN*0.12)
+        skew32 = Tex(r"The vector $\hat{w}\theta \in \mathbb{R}^3$ is the three-parameter exponential coordinate representation of the rotation", color=WHITE).scale(0.5).next_to(skew2, UP).align_to(skew2, LEFT).shift (UP*1.8)
         
 
-        self.add(skew1, skew2, skew3, skew0, img3, skew21, skew31)
+        self.add(skew1, skew2, skew3, skew0, img3, skew21, skew31, skew32)
         self.wait()
 
 
 class Chap3_2323(OPU_Slide):
-    def construct(self):
+   def construct(self):
+        note = "בוא נסתכל על דוגמה 3.2 מהספר : פריים בי היא בעצם רוטציה של פריים אס סביב אומגה 1 בטטא שווה 30 מעלות. חשבו את מטריצת הרוטציה של בי.\
+            הפתרון הוא פשוט להציב בנוסחת רודריגז"
+        self.create_note(note)
         self.add_info()
 
         title = Text("Chapter 3: Rigid-Body Motions").shift(UP*3).scale(0.65)
@@ -1031,7 +1116,9 @@ class Chap3_2323(OPU_Slide):
         self.wait()
 
 class Chap3_2324(OPU_Slide):
-    def construct(self):
+   def construct(self):
+        note = "מציבים את טטא ומייצרים את הסקיו סימטריק של אומגה ומחברים בין 3 המטריצות לקבלת מטריצת רוטציה סופית אר- אס בי"
+        self.create_note(note)
         self.add_info()
 
         title = Text("Chapter 3: Rigid-Body Motions").shift(UP*3).scale(0.65)
@@ -1050,7 +1137,9 @@ class Chap3_2324(OPU_Slide):
         self.wait()
 
 class Chap3_2325(OPU_Slide):
-    def construct(self):
+   def construct(self):
+        note = " בסעיף בי  - אנחנו נדרשים לסובב את בי שוב בטטא שתיים מעלות סביב ציר אומגה 2 ביחס לפיקסד פריים - אז כמובן שיש להכפיל אופרטור רוטציה סביב אומגה 2 מימין לאר "
+        self.create_note(note)
         self.add_info()
 
         title = Text("Chapter 3: Rigid-Body Motions").shift(UP*3).scale(0.65)
@@ -1063,13 +1152,15 @@ class Chap3_2325(OPU_Slide):
         skew1 = Tex(r"The frame ${b}$ is obtained by rotation from an initial orientation aligned with the", color=GREEN).scale(0.4).next_to(skew0, DOWN).align_to(skew0, LEFT)
         skew2 = Tex(r"fixed frame ${s}$ about a unit axis $\hat{w}_1 = (0, 0.866, 0.5)$ by an angle of $\theta_1=30=0.524rad$", color=GREEN).scale(0.4).next_to(skew1, DOWN).align_to(skew0, LEFT)
         skew3 = Tex(r"a) Calculate the rotation matrix representation of ${b}$", color=RED).scale(0.4).next_to(skew2, DOWN).align_to(skew0, LEFT)
-        skew4 = Tex(r"b) ${b}$ got rotated again by $\theta_2$ about a fixed frame axis $\hat{w}_1 \neq \hat{w}_1$", color=RED).scale(0.4).next_to(skew3, DOWN).align_to(skew0, LEFT)
+        skew4 = Tex(r"b) ${b}$ got rotated again by $\theta_2$ about a fixed frame axis $\hat{w}_2 \neq \hat{w}_1$", color=RED).scale(0.4).next_to(skew3, DOWN).align_to(skew0, LEFT)
 
         self.add(skew1, skew2, skew3, skew0, img3, skew4)
         self.wait()
 
 class Chap3_2326(OPU_Slide):
-    def construct(self):
+   def construct(self):
+        note = " בסעיף בי  - אנחנו נדרשים לסובב את בי שוב בטטא שתיים מעלות סביב ציר אומגה 2 ביחס לפיקסד פריים - אז כמובן שיש להכפיל אופרטור רוטציה סביב אומגה 2 מימין לאר "
+        self.create_note(note)
         self.add_info()
 
         title = Text("Chapter 3: Rigid-Body Motions").shift(UP*3).scale(0.65)
@@ -1088,7 +1179,9 @@ class Chap3_2326(OPU_Slide):
         self.wait()
 
 class Chap3_2327(OPU_Slide):
-    def construct(self):
+   def construct(self):
+        note = "ואם הסיבוב הוא ביחס לבודי פריים - אז סדר ההכפלה משתנה"
+        self.create_note(note)
         self.add_info()
 
         title = Text("Chapter 3: Rigid-Body Motions").shift(UP*3).scale(0.65)
@@ -1108,7 +1201,9 @@ class Chap3_2327(OPU_Slide):
 
 
 class Chap3_2328(OPU_Slide):
-    def construct(self):
+   def construct(self):
+        note = "וההכפלה היא כאשר האופרטור מימין לאר"
+        self.create_note(note)
         self.add_info()
 
         title = Text("Chapter 3: Rigid-Body Motions").shift(UP*3).scale(0.65)
@@ -1129,7 +1224,10 @@ class Chap3_2328(OPU_Slide):
 
 
 class Chap3_2330(OPU_Slide):
-    def construct(self):
+   def construct(self):
+        note = "שאלות ? \
+            אז ראינו שבעזרת נוסחת רודריג אפשר הגיע מקואורדינטות אקפוננציאליות למטריצת רוטציה. עכשיו נכיר פעולה הפוכה - היא הלוגריתם שבאמצעותה אפשר לקבל קואורדינטות אקפוננציאליות מתוך מטריצת רוטציה"
+        self.create_note(note)
         self.add_info()
 
         title = Text("Chapter 3: Rigid-Body Motions").shift(UP*3).scale(0.65)
@@ -1145,7 +1243,10 @@ class Chap3_2330(OPU_Slide):
 
 
 class Chap3_2331(OPU_Slide):
-    def construct(self):
+   def construct(self):
+        note = "את הפיתוח המתמטי כדאי להכיר אבל הוא לא נכלל בחומר לבחינה. והאלגוריתם שלפנינו יחסית פשוט ומציג שלושה מקרים שונים אפשריים .\
+            ניתן לקרוא ישירות מהאלגוריתם ולעקוב אחר ההוראות בו לקבלת אומגה וטטא."
+        self.create_note(note)
         self.add_info()
 
         title = Text("Chapter 3: Rigid-Body Motions").shift(UP*3).scale(0.65)
@@ -1164,7 +1265,9 @@ class Chap3_2331(OPU_Slide):
 #3.3.1
 
 class Chap3_310(OPU_Slide):
-    def construct(self):
+   def construct(self):
+        note = "עד כה דנו במטריצות רוטציה והגיע הזמן להשתדרג למטריצות טרנפורמציה שהן באמת כלי העבודה שלנו מהסיבה שמריצת רוטציה 4 על 4 היא שילוב של מטריצת רוטציה עם וקטור טרנסלציה - או הזזה. כדי לייצר מטריצה ריבועית יש לשים שלושה אפסים תחת הרוטציה ואחד תחת וקטור המיקום"
+        self.create_note(note)
         self.add_info()
 
         title = Text("Chapter 3: Rigid-Body Motions").shift(UP*3).scale(0.65)
@@ -1180,7 +1283,10 @@ class Chap3_310(OPU_Slide):
 
 
 class Chap3_3110(OPU_Slide):
-    def construct(self):
+   def construct(self):
+        note = "גם כאן מדובר בקבוצה המקיימת את תכונות הקבוצה - וגם לה יש אינברס שניתן לחשב אותו כך:\
+            --- באותו אופן מכפלה בוקטור איקס תתן וקטור מסובב ומוזז. שימו לב שיש להוסיף אחד כדי להתאים מידות ולאפשר את פעולת המכפלה "
+        self.create_note(note)
         self.add_info()
 
         title = Text("Chapter 3: Rigid-Body Motions").shift(UP*3).scale(0.65)
@@ -1196,7 +1302,9 @@ class Chap3_3110(OPU_Slide):
 
 
 class Chap3_3120(OPU_Slide):
-    def construct(self):
+   def construct(self):
+        note = "אנחנו עכשיו נראה כיצד משתמשים במטריצות טרנספורמציה בשביל : 1. לייצג קונפיגורציה של גוף קשיח (מיקום ואוריינטציה) 2. לשנות מסגרת ייחוס 3. להזיז וקטור או פריים "
+        self.create_note(note)
         self.add_info()
 
         title = Text("Chapter 3: Rigid-Body Motions").shift(UP*3).scale(0.65)
@@ -1211,7 +1319,9 @@ class Chap3_3120(OPU_Slide):
         self.wait()
 
 class Chap3_3121(OPU_Slide):
-    def construct(self):
+   def construct(self):
+        note = " אז בואו נייצג קונפיגורציה באמצעות מטריצות טרנספורמציה - בהינתן המסגרות איי בי וסי והנקודה וי ביחס לבי - ניתן בשלב ראשון מניתוח ויזואלי לייצר מטריצות רוטציה כאשר נניח שמסגרת איי חופפת ומלוכדת עם הפיקסד פריים אס"
+        self.create_note(note)
         self.add_info()
 
         title = Text("Chapter 3: Rigid-Body Motions").shift(UP*3).scale(0.65)
@@ -1234,7 +1344,9 @@ class Chap3_3121(OPU_Slide):
         self.wait()
 
 class Chap3_3122(OPU_Slide):
-    def construct(self):
+   def construct(self):
+        note = "שלושת מטריצות הרוטציה מתארות את האוריינטציה של כל אחד מהמסגרות ביחס לאס. ושלושת הוקטורים את המיקום של כל אחד מהמסגרות בקואורדינטות של אס"
+        self.create_note(note)
         self.add_info()
 
         title = Text("Chapter 3: Rigid-Body Motions").shift(UP*3).scale(0.65)
@@ -1256,7 +1368,9 @@ class Chap3_3122(OPU_Slide):
         self.wait()
 
 class Chap3_3123(OPU_Slide):
-    def construct(self):
+   def construct(self):
+        note = "נעשה קצת מקום ונשאל את השאלה הבאה:"
+        self.create_note(note)
         self.add_info()
 
         title = Text("Chapter 3: Rigid-Body Motions").shift(UP*3).scale(0.65)
@@ -1282,7 +1396,9 @@ class Chap3_3123(OPU_Slide):
 
 
 class Chap3_3124(OPU_Slide):
-    def construct(self):
+   def construct(self):
+        note = "איך נייצג את מטריצת הטרנספורמציה טי אס סי?"
+        self.create_note(note)
         self.add_info()
 
         title = Text("Chapter 3: Rigid-Body Motions").shift(UP*3).scale(0.65)
@@ -1308,7 +1424,9 @@ class Chap3_3124(OPU_Slide):
 
 
 class Chap3_3125(OPU_Slide):
-    def construct(self):
+   def construct(self):
+        note = "כפי שראינו יש למקם את מטריצת הרוטציה 3 על 3 משמאל כשמתחתיה שלולשה אפסים ואת וקטור המיקום מימין ומתחתיו המספר 1"
+        self.create_note(note)
         self.add_info()
 
         title = Text("Chapter 3: Rigid-Body Motions").shift(UP*3).scale(0.65)
@@ -1339,7 +1457,9 @@ class Chap3_3125(OPU_Slide):
 
 
 class Chap3_3126(OPU_Slide):
-    def construct(self):
+   def construct(self):
+        note = "וכך נראית המטריצה עם הנתונים עצמם"
+        self.create_note(note)
         self.add_info()
 
         title = Text("Chapter 3: Rigid-Body Motions").shift(UP*3).scale(0.65)
@@ -1374,7 +1494,9 @@ class Chap3_3126(OPU_Slide):
 
 
 class Chap3_3127(OPU_Slide):
-    def construct(self):
+   def construct(self):
+        note = "ואם נרצה לשנות מסגרת ייחוס כלומר לייצג את הקונפיגורציה של סי מנקודת המבט של בי?"
+        self.create_note(note)
         self.add_info()
 
         title = Text("Chapter 3: Rigid-Body Motions").shift(UP*3).scale(0.65)
@@ -1399,7 +1521,9 @@ class Chap3_3127(OPU_Slide):
         self.wait()
 
 class Chap3_3128(OPU_Slide):
-    def construct(self):
+   def construct(self):
+        note = "אז העקרון שלמדנו ממכפלת מטריצות רוטציה מתקיים כמובן גם במטריצות טרנפורמציה וניתן להכפיל בין מטריצות לקבלת הטרנפורמציה הרצויה"
+        self.create_note(note)
         self.add_info()
 
         title = Text("Chapter 3: Rigid-Body Motions").shift(UP*3).scale(0.65)
@@ -1426,7 +1550,9 @@ class Chap3_3128(OPU_Slide):
         self.wait()
 
 class Chap3_3129(OPU_Slide):
-    def construct(self):
+   def construct(self):
+        note = "שימו לב שהמטריצה האינברס מתארת את נקודת המבט ההפוכה אבל לא שקולה לטרנספוז  "
+        self.create_note(note)
         self.add_info()
 
         title = Text("Chapter 3: Rigid-Body Motions").shift(UP*3).scale(0.65)
@@ -1458,7 +1584,9 @@ class Chap3_3129(OPU_Slide):
 
 
 class Chap3_31210(OPU_Slide):
-    def construct(self):
+   def construct(self):
+        note = "אפשר להסתכל ולוודא שאכן קיבלנו טרנספורמציה תקינה "
+        self.create_note(note)
         self.add_info()
 
         title = Text("Chapter 3: Rigid-Body Motions").shift(UP*3).scale(0.65)
@@ -1494,7 +1622,9 @@ class Chap3_31210(OPU_Slide):
 
 
 class Chap3_31211(OPU_Slide):
-    def construct(self):
+   def construct(self):
+        note = "ואם אנחנו רוצים לתאר את הנקודה וי מנקודת המבט של אי?"
+        self.create_note(note)
         self.add_info()
 
         title = Text("Chapter 3: Rigid-Body Motions").shift(UP*3).scale(0.65)
@@ -1519,7 +1649,9 @@ class Chap3_31211(OPU_Slide):
         self.wait()
 
 class Chap3_31212(OPU_Slide):
-    def construct(self):
+   def construct(self):
+        note = "נכפיל במטריצת הטרנפסורמציה מאיי לבי"
+        self.create_note(note)
         self.add_info()
 
         title = Text("Chapter 3: Rigid-Body Motions").shift(UP*3).scale(0.65)
@@ -1546,7 +1678,9 @@ class Chap3_31212(OPU_Slide):
         self.wait()
 
 class Chap3_31213(OPU_Slide):
-    def construct(self):
+   def construct(self):
+        note = "מבחינת מידות המכפלה אפשרית"
+        self.create_note(note)
         self.add_info()
 
         title = Text("Chapter 3: Rigid-Body Motions").shift(UP*3).scale(0.65)
@@ -1578,7 +1712,9 @@ class Chap3_31213(OPU_Slide):
 
 
 class Chap3_31214(OPU_Slide):
-    def construct(self):
+   def construct(self):
+        note = "ונקבל את הוקטור הזה - ניתן לבדוק ויזואליות ולראות שאכן ביחס לאיי וי נמצאת ב ...."
+        self.create_note(note)
         self.add_info()
 
         title = Text("Chapter 3: Rigid-Body Motions").shift(UP*3).scale(0.65)
@@ -1614,7 +1750,9 @@ class Chap3_31214(OPU_Slide):
 
 
 class Chap3_31215(OPU_Slide):
-    def construct(self):
+   def construct(self):
+        note = "הספר משתמש בסאבסקריפט קאנסליישן רול שעוזר לזכור כיצד לבצע מכפלות בסדר הנכון."
+        self.create_note(note)
         self.add_info()
 
         title = Text("Chapter 3: Rigid-Body Motions").shift(UP*3).scale(0.65)
@@ -1629,7 +1767,9 @@ class Chap3_31215(OPU_Slide):
 
 
 class Chap3_31216(OPU_Slide):
-    def construct(self):
+   def construct(self):
+        note = "אפשרות נוספת להזזה של מסגרת או וקטור היא הפרדה של פעולת הרוטציה מהטרנסלציה"
+        self.create_note(note)
         self.add_info()
 
         title = Text("Chapter 3: Rigid-Body Motions").shift(UP*3).scale(0.65)
@@ -1644,7 +1784,10 @@ class Chap3_31216(OPU_Slide):
 
 
 class Chap3_31217(OPU_Slide):
-    def construct(self):
+   def construct(self):
+        note = "כלומר אם (משמאל) נאכלס את מטריצת הטרנספורמציה באפסים במקום בוקטור מיקום - נאפס את פעולת הטרנסלציה ויתקבל אופרטור רוטציה.\
+            ואילו אם (מימין) במקום החלק של הרוטציה נשים את מטריצת היחידה יתקבל אופרטור טרנלציה בלבד."
+        self.create_note(note)
         self.add_info()
 
         title = Text("Chapter 3: Rigid-Body Motions").shift(UP*3).scale(0.65)
@@ -1659,7 +1802,9 @@ class Chap3_31217(OPU_Slide):
         self.wait()
 
 class Chap3_31218(OPU_Slide):
-    def construct(self):
+   def construct(self):
+        note = "שימו לב שמכפלה בין אופרטור טרנסלציה מימין לאופרטור רוטציה תתן חזרה את מטריצת הטרנספורמציה טי. יש כמובן לשמור על הסדר בין האופרטורים וניתן להשתמש בו כדי לקבוע האם הטרנספורמציה ביחס לפיקסד או לבודי פריים בדיוק כפי שראינו במקרים קודמים. "
+        self.create_note(note)
         self.add_info()
 
         title = Text("Chapter 3: Rigid-Body Motions").shift(UP*3).scale(0.65)
@@ -1676,7 +1821,9 @@ class Chap3_31218(OPU_Slide):
 
 
 class Chap3_31219(OPU_Slide):
-    def construct(self):
+   def construct(self):
+        note = "בואו ניתן דגש על סדר ההכפלה. בהנתן טרנספורמציה טי סביב אומגה ב90 מעלות והזזה פי."
+        self.create_note(note)
         self.add_info()
 
         title = Text("Chapter 3: Rigid-Body Motions").shift(UP*3).scale(0.65)
@@ -1688,33 +1835,15 @@ class Chap3_31219(OPU_Slide):
         img1 = ImageMobject('../images/tranfwz.png').next_to(question, DOWN)
         
         self.add(img1)
-        self.wait()
-
-
-
-class Chap3_31219(OPU_Slide):
-    def construct(self):
-        self.add_info()
-
-        title = Text("Chapter 3: Rigid-Body Motions").shift(UP*3).scale(0.65)
-        secondary_title = Text("3.3.1.2: Uses of Transformation Matrices", color=BLUE).next_to(title, DOWN).scale(0.4).shift(UP*0.2)
-        mini_title = Text("(c) Displacing a vector or a frame", color=GREEN).scale(0.3).next_to(secondary_title, DOWN).shift(LEFT*4.2)
-        question = Tex(r"Transformation T with $\hat{w} = (0,0,1)$, $\theta = 90 $ and $p = (0,2,0)$").scale(0.4).next_to(mini_title, DOWN).align_to(mini_title, LEFT)
-        self.add(title, secondary_title, mini_title ,question)
-
-        img1 = ImageMobject('../images/tranfwz.png').next_to(question, DOWN)
-        
-        self.add(img1)
-
-
-        
         self.wait()
 
 
 
 
 class Chap3_31220(OPU_Slide):
-    def construct(self):
+   def construct(self):
+        note = "וטרנספורמציה נוספת המתארת את הקונפיגורציה של בי ביחס לאס"
+        self.create_note(note)
         self.add_info()
 
         title = Text("Chapter 3: Rigid-Body Motions").shift(UP*3).scale(0.65)
@@ -1736,7 +1865,9 @@ class Chap3_31220(OPU_Slide):
         self.wait()
 
 class Chap3_31221(OPU_Slide):
-    def construct(self):
+   def construct(self):
+        note = "כשנתאר את הטרנספורמציה ביחס לפיקסד פריים - אפשר לתאר את הפעולות כרוטציה סביב אומגה ביחס לאס וולאחר מכן הזזה לפי וקטור פי גם לפי אס"
+        self.create_note(note)
         self.add_info()
 
         title = Text("Chapter 3: Rigid-Body Motions").shift(UP*3).scale(0.65)
@@ -1762,7 +1893,9 @@ class Chap3_31221(OPU_Slide):
         self.wait()
 
 class Chap3_31222(OPU_Slide):
-    def construct(self):
+   def construct(self):
+        note = "וכאמור טרנפורמציה ביחס לפיקסד פריים היא הכפלה בין המטריצות כשטי היא משמאל (קרוב ל אס)"
+        self.create_note(note)
         self.add_info()
 
         title = Text("Chapter 3: Rigid-Body Motions").shift(UP*3).scale(0.65)
@@ -1788,7 +1921,9 @@ class Chap3_31222(OPU_Slide):
         self.wait()
 
 class Chap3_31223(OPU_Slide):
-    def construct(self):
+   def construct(self):
+        note = "ובמקרה האחר כשמדברים על טרנפורמציה ביחס לבודי פריים ההזזה מתבצעת תחילה ביחס לבודי פריים ורק לאחר מכן הרוטציה  - גם היא ביחס לבודי פריים"
+        self.create_note(note)
         self.add_info()
 
         title = Text("Chapter 3: Rigid-Body Motions").shift(UP*3).scale(0.65)
@@ -1813,7 +1948,9 @@ class Chap3_31223(OPU_Slide):
         self.wait()
 
 class Chap3_31224(OPU_Slide):
-    def construct(self):
+   def construct(self):
+        note = " סדר המכפלות הפוף - כלומר יש למקם את הטרנספורמציה טי מימין (קרוב לבי)"
+        self.create_note(note)
         self.add_info()
 
         title = Text("Chapter 3: Rigid-Body Motions").shift(UP*3).scale(0.65)
@@ -1840,7 +1977,9 @@ class Chap3_31224(OPU_Slide):
 
 
 class Chap3_31225(OPU_Slide):
-    def construct(self):
+   def construct(self):
+        note = "בואו נעשה תרגיל לדוגמה מהספר - בהנתן הטרנפורמציות הבאות - איך תתארו את הקונפיגורציה של הקובייה אי ביחס לאנד אפקטור של הרובוט? "
+        self.create_note(note)
         self.add_info()
 
         title = Text("Chapter 3: Rigid-Body Motions").shift(UP*3).scale(0.65)
@@ -1867,7 +2006,9 @@ class Chap3_31225(OPU_Slide):
         self.wait()
 
 class Chap3_31226(OPU_Slide):
-    def construct(self):
+   def construct(self):
+        note = "זהו הפתרון שמופיע בספר"
+        self.create_note(note)
         self.add_info()
 
         title = Text("Chapter 3: Rigid-Body Motions").shift(UP*3).scale(0.65)
@@ -1895,7 +2036,11 @@ class Chap3_31226(OPU_Slide):
 
 
 class Chap3_320(OPU_Slide):
-    def construct(self):
+   def construct(self):
+        note = "אוקיי אז לפני נמשיך אני רוצה רגע לעשות לכם סדר. \
+            בתחילת הפרק דיברנו על רוטציות ואז השתמשנו בפתרון של משוואה דיפרנציאלית המתארת מהירות זויתית כדי להגיע לייצוג אקספוננציאלי של רוטציה. החלק האחרון של הפרק גם הוא מדבר על ייצוג אקספוננציאלי אך של טרנספורמציה. \
+                הוא מתחיל בהגדרה של טוויסט כוקטור בעל שישה מימדים שהשלושה העליונים הם המהירות הזויתית והשלושה התחתונים הם המהירות הלינארית של גוף קשיח."
+        self.create_note(note)
         self.add_info()
 
         title = Text("Chapter 3: Rigid-Body Motions").shift(UP*3).scale(0.65)
@@ -1909,7 +2054,9 @@ class Chap3_320(OPU_Slide):
         self.wait()
 
 class Chap3_321(OPU_Slide):
-    def construct(self):
+   def construct(self):
+        note = "בדומה למה שראינו בהקשר לרוטציה - קיים קשר בין הטרנספורמציה לנגזרת שלה בכך שהמכפלה בינהם יוצרת ייצוג מטריציוני של טוויסט. גם פה סדר המכפלה מתאים לייצוג ביחס לפיקס או לבודי פריים. בשקף הבא יש סיכום של היחסים הללו:"
+        self.create_note(note)
         self.add_info()
 
         title = Text("Chapter 3: Rigid-Body Motions").shift(UP*3).scale(0.65)
@@ -1931,7 +2078,10 @@ class Chap3_321(OPU_Slide):
 
 
 class Chap3_322(OPU_Slide):
-    def construct(self):
+   def construct(self):
+        note = "בהנתן טרנספורמציה טי אס בי - אז מטריצת הבודי טוויסט נוצרת כאשר הנגזרת מימין להופכית ומטריצת הספיישיאל טוויסט נוצרת כשהסדר הפוך. \
+            שימו לב לחלק התחתון שמתאר כיצד משתמשים במטריצה צמודה 6 על 6 כדי לקבל טוויסט ביחס למסגרת אחת מטוויסט ביחס למסגרת אחרת."
+        self.create_note(note)
         self.add_info()
 
         title = Text("Chapter 3: Rigid-Body Motions").shift(UP*3).scale(0.65)
@@ -1944,7 +2094,9 @@ class Chap3_322(OPU_Slide):
         self.wait()
 
 class Chap3_3220(OPU_Slide):
-    def construct(self):
+   def construct(self):
+        note = "מה שנראה עכשיו זה אפשר לפרש את הטוויסט לתנועת בורג - לפי התאוריה של מוצי כל תנועה של גוף קשיח יכולה להיות מתוארת כתנועה התואמת סיבוב לפי ציר בורג אס"
+        self.create_note(note)
         self.add_info()
 
         title = Text("Chapter 3: Rigid-Body Motions").shift(UP*3).scale(0.65)
@@ -1974,7 +2126,9 @@ class Chap3_3220(OPU_Slide):
         self.wait()
 
 class Chap3_3221(OPU_Slide):
-    def construct(self):
+   def construct(self):
+        note = "אס הוא שלשה כאשר קיו היא נקודה על ציר הבורג , אס זהו וקטור יחידה המתאר את כיוונו ואייצ זהו הפיטש - היחס בין המהירות הלינארית לזויתית של הגוף המסתובב"
+        self.create_note(note)
         self.add_info()
 
         title = Text("Chapter 3: Rigid-Body Motions").shift(UP*3).scale(0.65)
@@ -1987,7 +2141,9 @@ class Chap3_3221(OPU_Slide):
         self.wait()
 
 class Chap3_3222(OPU_Slide):
-    def construct(self):
+   def construct(self):
+        note = "אז אנחנו רואים את הקשר בין טוויסט לציר הבורג אס בכך שהמהירות הזויותית של הטוויסט - אומגה הוא ציר הסיבוב מוכפל בשינוי בזוית והמהירות הלינארית היא הקרוס פרודקט של ציר הסיבוב בנקודה קיו מחובר למכפלה המתארת את התנועה לאורך ציר הבורג "
+        self.create_note(note)
         self.add_info()
 
         title = Text("Chapter 3: Rigid-Body Motions").shift(UP*3).scale(0.65)
@@ -2003,7 +2159,9 @@ class Chap3_3222(OPU_Slide):
         self.wait()
 
 class Chap3_3223(OPU_Slide):
-    def construct(self):
+   def construct(self):
+        note = "ואחרי שהכרנו את הקשר בין הטוויסט לציר הבורג אס - במקום להשתמש בשלשה קיו , אס גג והפיטש  - ניתן לייצג את ציר הבורג באמצעות הגרסא המנורמלת של הטוויסט. כאשר אם יש מהירות זויותית אז ננרמל בגודל של הוקטור אומגה . ואם אין מהירות זויותית אז התנועה היא לינארית בלבד משמע ננרמל לפי גודל הוקטור וי. כפי שניתן לראות הנרמול מתבצע פשוט על ידי חלוקה בטטא דוט  "
+        self.create_note(note)
         self.add_info()
 
         title = Text("Chapter 3: Rigid-Body Motions").shift(UP*3).scale(0.65)
@@ -2021,7 +2179,9 @@ class Chap3_3223(OPU_Slide):
         self.wait()
 
 class Chap3_3224(OPU_Slide):
-    def construct(self):
+   def construct(self):
+        note = "כלומר ציר הסיבוב אס הוא גרסה מנורמלת של הטוויסט וכל הייצוגים המטריציונים שלו זהים"
+        self.create_note(note)
         self.add_info()
         title = Text("Chapter 3: Rigid-Body Motions").shift(UP*3).scale(0.65)
         secondary_title = Text("3.3.2.2: The Screw Interpretation of a Twist", color=BLUE).next_to(title, DOWN).scale(0.4).shift(UP*0.2)
@@ -2040,7 +2200,10 @@ class Chap3_3224(OPU_Slide):
         self.wait()
 
 class Chap3_330(OPU_Slide):
-    def construct(self):
+   def construct(self):
+        note = "ובכך בעצם הגענו לייצוג חסכוני של טרנספורמציה באמצעות קואורדינטות אקספוננציאליות במימד 6 בצורה של ציר בורג אס מוכפל בזוית טטא. אז מטריצת הטרנספורמציה ההומוגנית טי שקולה לאקספוננט אי בחזקת הייצוג המטריציוני של ציר הבורג מוכפל בזוית טטא. \
+            כפי שניתן לראות את המטריצה עצמה ניתן לשחזר על ידי נוסחת רודריגז ( עבור האקספוננט) ומכפלה של המטריצה שבסוגריים בוקטור המהירות וי. אם אין מהירות זויותית אז התנוע היא לינארית - משמע טרנסלציה בלבד."
+        self.create_note(note)
         self.add_info()
         title = Text("Chapter 3: Rigid-Body Motions").shift(UP*3).scale(0.65)
         secondary_title = Text("3.3.3.1: Exponential Coordinates of Rigid-Body Motions", color=BLUE).next_to(title, DOWN).scale(0.4).shift(UP*0.2)
@@ -2052,7 +2215,9 @@ class Chap3_330(OPU_Slide):
         self.wait()
 
 class Chap3_331(OPU_Slide):
-    def construct(self):
+   def construct(self):
+        note = "הנושא האחרון של הפרק הוא האלגוריתם לקבלת הייצוג האקספוננציאלי מתוך מטריצת טרנספורמציה. בהינתן מטריצת טרנספורמציה הומוגנית טי - ניתן לחשב באמצעות האלגוריתם את ציר הבורג אס ואת הזוית טטא."
+        self.create_note(note)
         self.add_info()
         title = Text("Chapter 3: Rigid-Body Motions").shift(UP*3).scale(0.65)
         secondary_title = Text("3.3.3.2: Matrix Logarithm of Rigid-Body Motions", color=BLUE).next_to(title, DOWN).scale(0.4).shift(UP*0.2)
@@ -2065,7 +2230,9 @@ class Chap3_331(OPU_Slide):
         self.wait()
 
 class Chap3_332(OPU_Slide):
-    def construct(self):
+   def construct(self):
+        note = "האלגוריתם מאד פשוט והוא בעצם עוף את האלגוריתם הלוגריטמי שראינו עבור מטריצת הרוטציה. אני לא אעבור עליו עכשיו אלא כשנפתור תרגילים בנושא."
+        self.create_note(note)
         self.add_info()
         title = Text("Chapter 3: Rigid-Body Motions").shift(UP*3).scale(0.65)
         secondary_title = Text("3.3.3.2: Matrix Logarithm of Rigid-Body Motions", color=BLUE).next_to(title, DOWN).scale(0.4).shift(UP*0.2)
