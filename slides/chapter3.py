@@ -1,10 +1,7 @@
-from math import e
-from colour import Color
-from cv2 import FILLED, FastFeatureDetector
-from numpy import WRAP, right_shift
 from OPU import *
 from manim_slide import MyBullets
-import random
+
+
 class Empty(OPU_Slide):
    def construct(self):
         note = ""
