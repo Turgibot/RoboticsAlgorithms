@@ -303,7 +303,944 @@ class DH_06(OPU_Slide):
         rule21 = Tex(r"Set the origin of the link by finding the line that orthogonally intersects both joint axis.").scale(0.4).next_to(rule2, RIGHT).shift(DOWN*0.123)
         self.add(rule2, rule21)
 
-        orthogonal = Line(start=[-4.5,-1.5,0], end=[-1.8,-1.3,0], stroke_width=2.1, color=BLUE)
+        orthogonal = Line(start=[-4.25,-1.5,0], end=[-1.9,-1.3,0], stroke_width=2.1, color=BLUE)
+        nl = Line(start=[-4.2,-1.4,0], end=[-4.06,-1.38,0], stroke_width=2.1, color=BLUE)
+        nl1 = Line(start=[-4.06,-1.38,0], end=[-4.03,-1.48,0], stroke_width=2.1, color=BLUE)
+        nr = Line(start=[-2.1,-1.2,0], end=[-1.94,-1.18,0], stroke_width=2.1, color=BLUE)
+        nr1 = Line(start=[-2.1,-1.2,0], end=[-2.08,-1.31,0], stroke_width=2.1, color=BLUE)
+        self.play(Create(orthogonal),Create(nl), Create(nl1), Create(nr), Create(nr1))
+        self.wait()
+
+class DH_07(OPU_Slide):
+   def construct(self):
+        note = ""
+        self.create_note(note)
+        self.add_info()
+
+        title = Text("Appendix C: Denavit–Hartenberg Parameters").shift(UP*3).scale(0.65)
+        secondary_title = Text("Frame assignment:", color=BLUE).next_to(title, DOWN).scale(0.4)
+        img = ImageMobject('../images/dh0.png').scale(1.5).shift(LEFT*3+DOWN*0.05)
+        ll = Line(start=[-4,-1,0], end=[-5,-3,0], stroke_width=2.1)
+        lr = Line(start=[-2.035,-1,0], end=[-1.035,-3,0], stroke_width=2.1)
+        rule1 = Tex(r"1. Set the Z axis:", color=RED).scale(0.4).shift(UP+LEFT*0.5)
+        rule1 = Tex(r"Rule 1: ", color=RED).scale(0.4).shift(UP*1.5+LEFT*0.5)
+        rule11 = Tex(r"The $\hat{z}_i$ axis coincides with joint axis i and the $\hat{z}_{i-1}$ axis coincides with joint axis $i-1$.\\\
+                For prismatic joints, the $\hat{z}$-direction of the link reference frame is along the positive direction of translation.").scale(0.4).next_to(rule1, RIGHT).shift(DOWN*0.36)
+        zl = Arrow(start=[-4,-1,0], end=[-3.52,0,0], color=RED)
+        zr = Arrow(start=[-2.035,-1,0], end=[-2.51,0,0], color=RED)
+        zl_ = Tex(r"$\hat{z}_{i-1}$", color=RED).scale(0.35).next_to(zl, UP).shift(DOWN*0.2+LEFT*0.05)
+        zr_ = Tex(r"$\hat{z}_{i}$", color=RED).scale(0.35).next_to(zr, UP).shift(DOWN*0.2)
+        self.add(title, secondary_title, img, ll, lr, rule1, rule11, zl, zr, zl_, zr_)
+
+        rule2 = Tex(r"Rule 2:", color=RED).scale(0.4).next_to(rule11, DOWN).align_to(rule1, LEFT)
+        rule21 = Tex(r"Set the origin of the link by finding the line that orthogonally intersects both joint axis.").scale(0.4).next_to(rule2, RIGHT).shift(DOWN*0.123)
+        self.add(rule2, rule21)
+
+        orthogonal = DashedLine(start=[-4.25,-1.5,0], end=[-1.9,-1.3,0], stroke_width=2.1, color=BLUE)
+       
         self.add(orthogonal)
+        zim1 = VGroup(zl, zl_)
+        self.play(zim1.animate.move_to([-4.14,-1.12,0]))
+        self.wait()
+
+class DH_08(OPU_Slide):
+   def construct(self):
+        note = ""
+        self.create_note(note)
+        self.add_info()
+
+        title = Text("Appendix C: Denavit–Hartenberg Parameters").shift(UP*3).scale(0.65)
+        secondary_title = Text("Frame assignment:", color=BLUE).next_to(title, DOWN).scale(0.4)
+        img = ImageMobject('../images/dh0.png').scale(1.5).shift(LEFT*3+DOWN*0.05)
+        ll = Line(start=[-4,-1,0], end=[-5,-3,0], stroke_width=2.1)
+        lr = Line(start=[-2.035,-1,0], end=[-1.035,-3,0], stroke_width=2.1)
+        rule1 = Tex(r"1. Set the Z axis:", color=RED).scale(0.4).shift(UP+LEFT*0.5)
+        rule1 = Tex(r"Rule 1: ", color=RED).scale(0.4).shift(UP*1.5+LEFT*0.5)
+        rule11 = Tex(r"The $\hat{z}_i$ axis coincides with joint axis i and the $\hat{z}_{i-1}$ axis coincides with joint axis $i-1$.\\\
+                For prismatic joints, the $\hat{z}$-direction of the link reference frame is along the positive direction of translation.").scale(0.4).next_to(rule1, RIGHT).shift(DOWN*0.36)
+        zl = Arrow(start=[-4,-1,0], end=[-3.52,0,0], color=RED)
+        zr = Arrow(start=[-2.035,-1,0], end=[-2.51,0,0], color=RED)
+        zl_ = Tex(r"$\hat{z}_{i-1}$", color=RED).scale(0.35).next_to(zl, UP).shift(DOWN*0.2+LEFT*0.05)
+        zr_ = Tex(r"$\hat{z}_{i}$", color=RED).scale(0.35).next_to(zr, UP).shift(DOWN*0.2)
+        self.add(title, secondary_title, img, ll, lr, rule1, rule11, zl, zr, zl_, zr_)
+
+        rule2 = Tex(r"Rule 2:", color=RED).scale(0.4).next_to(rule11, DOWN).align_to(rule1, LEFT)
+        rule21 = Tex(r"Set the origin of the link by finding the line that orthogonally intersects both joint axis.\\\
+                 - If the axis are parallel choose the best option (minimal param values).\\\
+                        - If the axis cross set the origin at the crossing point.").scale(0.4).next_to(rule2, RIGHT).shift(DOWN*0.37)
+        self.add(rule2, rule21)
+
+        orthogonal = DashedLine(start=[-4.25,-1.5,0], end=[-1.9,-1.3,0], stroke_width=2.1, color=BLUE)
+       
+        zim1 = VGroup(zl, zl_)
+        zim1.move_to([-4.14,-1.12,0])
+        self.add(orthogonal, zim1)
+
+        self.wait()
+
+class DH_09(OPU_Slide):
+   def construct(self):
+        note = ""
+        self.create_note(note)
+        self.add_info()
+
+        title = Text("Appendix C: Denavit–Hartenberg Parameters").shift(UP*3).scale(0.65)
+        secondary_title = Text("Frame assignment:", color=BLUE).next_to(title, DOWN).scale(0.4)
+        img = ImageMobject('../images/dh0.png').scale(1.5).shift(LEFT*3+DOWN*0.05)
+        ll = Line(start=[-4,-1,0], end=[-5,-3,0], stroke_width=2.1)
+        lr = Line(start=[-2.035,-1,0], end=[-1.035,-3,0], stroke_width=2.1)
+        rule1 = Tex(r"1. Set the Z axis:", color=RED).scale(0.4).shift(UP+LEFT*0.5)
+        rule1 = Tex(r"Rule 1: ", color=RED).scale(0.4).shift(UP*1.5+LEFT*0.5)
+        rule11 = Tex(r"The $\hat{z}_i$ axis coincides with joint axis i and the $\hat{z}_{i-1}$ axis coincides with joint axis $i-1$.\\\
+                For prismatic joints, the $\hat{z}$-direction of the link reference frame is along the positive direction of translation.").scale(0.4).next_to(rule1, RIGHT).shift(DOWN*0.36)
+        zl = Arrow(start=[-4,-1,0], end=[-3.52,0,0], color=RED)
+        zr = Arrow(start=[-2.035,-1,0], end=[-2.51,0,0], color=RED)
+        zl_ = Tex(r"$\hat{z}_{i-1}$", color=RED).scale(0.35).next_to(zl, UP).shift(DOWN*0.2+LEFT*0.05)
+        zr_ = Tex(r"$\hat{z}_{i}$", color=RED).scale(0.35).next_to(zr, UP).shift(DOWN*0.2)
+        self.add(title, secondary_title, img, ll, lr, rule1, rule11, zl, zr, zl_, zr_)
+
+        rule2 = Tex(r"Rule 2:", color=RED).scale(0.4).next_to(rule11, DOWN).align_to(rule1, LEFT)
+        rule21 = Tex(r"Set the origin of the link by finding the line that orthogonally intersects both joint axis.\\\
+                 - If the axis are parallel choose the best option (minimal param values).\\\
+                        - If the axis cross set the origin at the crossing point.").scale(0.4).next_to(rule2, RIGHT).shift(DOWN*0.37)
+        self.add(rule2, rule21)
+
+        orthogonal = DashedLine(start=[-4.25,-1.5,0], end=[-1.9,-1.3,0], stroke_width=2.1, color=BLUE)
+       
+        zim1 = VGroup(zl, zl_)
+        zim1.move_to([-4.14,-1.12,0])
+        self.add(orthogonal, zim1)
+
+        rule3 = Tex(r"Rule 3:", color=RED).scale(0.4).next_to(rule21, DOWN).align_to(rule2, LEFT)
+        rule31 = Tex(r"Set the $\hat{x}$ axis in the direction of the mutually perpendicular line from the (i-1) axis to the i axis.").scale(0.4).next_to(rule3, RIGHT).shift(DOWN*0.123)
+        self.add(rule3, rule31)
+
+        self.wait()
+
+class DH_10(OPU_Slide):
+   def construct(self):
+        note = ""
+        self.create_note(note)
+        self.add_info()
+
+        title = Text("Appendix C: Denavit–Hartenberg Parameters").shift(UP*3).scale(0.65)
+        secondary_title = Text("Frame assignment:", color=BLUE).next_to(title, DOWN).scale(0.4)
+        img = ImageMobject('../images/dh0.png').scale(1.5).shift(LEFT*3+DOWN*0.05)
+        ll = Line(start=[-4,-1,0], end=[-5,-3,0], stroke_width=2.1)
+        lr = Line(start=[-2.035,-1,0], end=[-1.035,-3,0], stroke_width=2.1)
+        rule1 = Tex(r"1. Set the Z axis:", color=RED).scale(0.4).shift(UP+LEFT*0.5)
+        rule1 = Tex(r"Rule 1: ", color=RED).scale(0.4).shift(UP*1.5+LEFT*0.5)
+        rule11 = Tex(r"The $\hat{z}_i$ axis coincides with joint axis i and the $\hat{z}_{i-1}$ axis coincides with joint axis $i-1$.\\\
+                For prismatic joints, the $\hat{z}$-direction of the link reference frame is along the positive direction of translation.").scale(0.4).next_to(rule1, RIGHT).shift(DOWN*0.36)
+        zl = Arrow(start=[-4,-1,0], end=[-3.52,0,0], color=RED)
+        zr = Arrow(start=[-2.035,-1,0], end=[-2.51,0,0], color=RED)
+        zl_ = Tex(r"$\hat{z}_{i-1}$", color=RED).scale(0.35).next_to(zl, UP).shift(DOWN*0.2+LEFT*0.05)
+        zr_ = Tex(r"$\hat{z}_{i}$", color=RED).scale(0.35).next_to(zr, UP).shift(DOWN*0.2)
+        self.add(title, secondary_title, img, ll, lr, rule1, rule11, zl, zr, zl_, zr_)
+
+        rule2 = Tex(r"Rule 2:", color=RED).scale(0.4).next_to(rule11, DOWN).align_to(rule1, LEFT)
+        rule21 = Tex(r"Set the origin of the link by finding the line that orthogonally intersects both joint axis.\\\
+                 - If the axis are parallel choose the best option (minimal param values).\\\
+                        - If the axis cross set the origin at the crossing point.").scale(0.4).next_to(rule2, RIGHT).shift(DOWN*0.37)
+        self.add(rule2, rule21)
+
+        orthogonal = DashedLine(start=[-4.25,-1.5,0], end=[-1.9,-1.3,0], stroke_width=2.1, color=BLUE)
+       
+        zim1 = VGroup(zl, zl_)
+        zim1.move_to([-4.14,-1.12,0])
+        self.add(orthogonal, zim1)
+
+        rule3 = Tex(r"Rule 3:", color=RED).scale(0.4).next_to(rule21, DOWN).align_to(rule2, LEFT)
+        rule31 = Tex(r"Set the $\hat{x}_{i-1}$ axis in the direction of the mutually perpendicular line from the (i-1) axis to the i axis.").scale(0.4).next_to(rule3, RIGHT).shift(DOWN*0.123)
+        self.add(rule3, rule31)
+        x = Arrow(start=[-4.5,-1.53,0], end=[-3.5,-1.43,0], stroke_width=2.1, color=DARK_BLUE)
+        x_ = Tex(r"$\hat{x}_{i-1}$", color=DARK_BLUE).scale(0.35).next_to(x, RIGHT).shift(DOWN*0.2+LEFT*0.5)
+
+        self.play(Create(x), Create(x_))
+
+
+class DH_11(OPU_Slide):
+   def construct(self):
+        note = ""
+        self.create_note(note)
+        self.add_info()
+
+        title = Text("Appendix C: Denavit–Hartenberg Parameters").shift(UP*3).scale(0.65)
+        secondary_title = Text("Frame assignment:", color=BLUE).next_to(title, DOWN).scale(0.4)
+        img = ImageMobject('../images/dh0.png').scale(1.5).shift(LEFT*3+DOWN*0.05)
+        ll = Line(start=[-4,-1,0], end=[-5,-3,0], stroke_width=2.1)
+        lr = Line(start=[-2.035,-1,0], end=[-1.035,-3,0], stroke_width=2.1)
+        rule1 = Tex(r"1. Set the Z axis:", color=RED).scale(0.4).shift(UP+LEFT*0.5)
+        rule1 = Tex(r"Rule 1: ", color=RED).scale(0.4).shift(UP*1.5+LEFT*0.5)
+        rule11 = Tex(r"The $\hat{z}_i$ axis coincides with joint axis i and the $\hat{z}_{i-1}$ axis coincides with joint axis $i-1$.\\\
+                For prismatic joints, the $\hat{z}$-direction of the link reference frame is along the positive direction of translation.").scale(0.4).next_to(rule1, RIGHT).shift(DOWN*0.36)
+        zl = Arrow(start=[-4,-1,0], end=[-3.52,0,0], color=RED)
+        zr = Arrow(start=[-2.035,-1,0], end=[-2.51,0,0], color=RED)
+        zl_ = Tex(r"$\hat{z}_{i-1}$", color=RED).scale(0.35).next_to(zl, UP).shift(DOWN*0.2+LEFT*0.05)
+        zr_ = Tex(r"$\hat{z}_{i}$", color=RED).scale(0.35).next_to(zr, UP).shift(DOWN*0.2)
+        self.add(title, secondary_title, img, ll, lr, rule1, rule11, zl, zr, zl_, zr_)
+
+        rule2 = Tex(r"Rule 2:", color=RED).scale(0.4).next_to(rule11, DOWN).align_to(rule1, LEFT)
+        rule21 = Tex(r"Set the origin of the link by finding the line that orthogonally intersects both joint axis.\\\
+                 - If the axis are parallel choose the best option (minimal param values).\\\
+                        - If the axis cross set the origin at the crossing point.").scale(0.4).next_to(rule2, RIGHT).shift(DOWN*0.37)
+        self.add(rule2, rule21)
+
+        orthogonal = DashedLine(start=[-4.25,-1.5,0], end=[-1.9,-1.3,0], stroke_width=2.1, color=BLUE)
+       
+        zim1 = VGroup(zl, zl_)
+        zim1.move_to([-4.14,-1.12,0])
+        self.add(orthogonal, zim1)
+
+        rule3 = Tex(r"Rule 3:", color=RED).scale(0.4).next_to(rule21, DOWN).align_to(rule2, LEFT)
+        rule31 = Tex(r"Set the $\hat{x}_{i-1}$ axis in the direction of the mutually perpendicular line from the (i-1) axis to the i axis.\\- If the pependicular line doesn't exist choose $\hat{x}_{i-1}$ to be perpendicular to the plane spanned by $\hat{z}_{i-1}$ and $\hat{z}_{i}$.").scale(0.4).next_to(rule3, RIGHT).shift(DOWN*0.4)
+        self.add(rule3, rule31)
+        x = Arrow(start=[-4.5,-1.53,0], end=[-3.5,-1.43,0], stroke_width=2.1, color=DARK_BLUE)
+        x_ = Tex(r"$\hat{x}_{i-1}$", color=DARK_BLUE).scale(0.35).next_to(x, RIGHT).shift(DOWN*0.2+LEFT*0.5)
+
+        self.add(x,x_)
+        self.wait()
+
+
+class DH_12(OPU_Slide):
+   def construct(self):
+        note = ""
+        self.create_note(note)
+        self.add_info()
+
+        title = Text("Appendix C: Denavit–Hartenberg Parameters").shift(UP*3).scale(0.65)
+        secondary_title = Text("Frame assignment:", color=BLUE).next_to(title, DOWN).scale(0.4)
+        img = ImageMobject('../images/dh0.png').scale(1.5).shift(LEFT*3+DOWN*0.05)
+        ll = Line(start=[-4,-1,0], end=[-5,-3,0], stroke_width=2.1)
+        lr = Line(start=[-2.035,-1,0], end=[-1.035,-3,0], stroke_width=2.1)
+        rule1 = Tex(r"1. Set the Z axis:", color=RED).scale(0.4).shift(UP+LEFT*0.5)
+        rule1 = Tex(r"Rule 1: ", color=RED).scale(0.4).shift(UP*1.5+LEFT*0.5)
+        rule11 = Tex(r"The $\hat{z}_i$ axis coincides with joint axis i and the $\hat{z}_{i-1}$ axis coincides with joint axis $i-1$.\\\
+                For prismatic joints, the $\hat{z}$-direction of the link reference frame is along the positive direction of translation.").scale(0.4).next_to(rule1, RIGHT).shift(DOWN*0.36)
+        zl = Arrow(start=[-4,-1,0], end=[-3.52,0,0], color=RED)
+        zr = Arrow(start=[-2.035,-1,0], end=[-2.51,0,0], color=RED)
+        zl_ = Tex(r"$\hat{z}_{i-1}$", color=RED).scale(0.35).next_to(zl, UP).shift(DOWN*0.2+LEFT*0.05)
+        zr_ = Tex(r"$\hat{z}_{i}$", color=RED).scale(0.35).next_to(zr, UP).shift(DOWN*0.2)
+        self.add(title, secondary_title, img, ll, lr, rule1, rule11, zl, zr, zl_, zr_)
+
+        rule2 = Tex(r"Rule 2:", color=RED).scale(0.4).next_to(rule11, DOWN).align_to(rule1, LEFT)
+        rule21 = Tex(r"Set the origin of the link by finding the line that orthogonally intersects both joint axis.\\\
+                 - If the axis are parallel choose the best option (minimal param values).\\\
+                        - If the axis cross set the origin at the crossing point.").scale(0.4).next_to(rule2, RIGHT).shift(DOWN*0.37)
+        self.add(rule2, rule21)
+
+        orthogonal = DashedLine(start=[-4.25,-1.5,0], end=[-1.9,-1.3,0], stroke_width=2.1, color=BLUE)
+       
+        zim1 = VGroup(zl, zl_)
+        zim1.move_to([-4.14,-1.12,0])
+        self.add(orthogonal, zim1)
+
+        rule3 = Tex(r"Rule 3:", color=RED).scale(0.4).next_to(rule21, DOWN).align_to(rule2, LEFT)
+        rule31 = Tex(r"Set the $\hat{x}_{i-1}$ axis in the direction of the mutually perpendicular line from the (i-1) axis to the i axis.\\- If the pependicular line doesn't exist choose $\hat{x}_{i-1}$ to be perpendicular to the plane spanned by $\hat{z}_{i-1}$ and $\hat{z}_{i}$.").scale(0.4).next_to(rule3, RIGHT).shift(DOWN*0.4)
+        self.add(rule3, rule31)
+        x = Arrow(start=[-4.5,-1.53,0], end=[-3.5,-1.43,0], stroke_width=2.1, color=DARK_BLUE)
+        x_ = Tex(r"$\hat{x}_{i-1}$", color=DARK_BLUE).scale(0.35).next_to(x, RIGHT).shift(DOWN*0.2+LEFT*0.5)
+
+        self.add(x,x_)
+
+        rule4 = Tex(r"Rule 4:", color=RED).scale(0.4).next_to(rule31, DOWN).align_to(rule2, LEFT)
+        rule41 = Tex(r"Determine the $\hat{y}_{i-1}$ axis from the cross product equasion $\hat{y}_{i-1} = \hat{z}\times\hat{x}_{i-1}$.").scale(0.4).next_to(rule4, RIGHT).shift(DOWN*0.026)
+        self.add(rule4, rule41)
+        self.wait()
+
+class DH_13(OPU_Slide):
+   def construct(self):
+        note = ""
+        self.create_note(note)
+        self.add_info()
+
+        title = Text("Appendix C: Denavit–Hartenberg Parameters").shift(UP*3).scale(0.65)
+        secondary_title = Text("Frame assignment:", color=BLUE).next_to(title, DOWN).scale(0.4)
+        img = ImageMobject('../images/dh0.png').scale(1.5).shift(LEFT*3+DOWN*0.05)
+        ll = Line(start=[-4,-1,0], end=[-5,-3,0], stroke_width=2.1)
+        lr = Line(start=[-2.035,-1,0], end=[-1.035,-3,0], stroke_width=2.1)
+        rule1 = Tex(r"1. Set the Z axis:", color=RED).scale(0.4).shift(UP+LEFT*0.5)
+        rule1 = Tex(r"Rule 1: ", color=RED).scale(0.4).shift(UP*1.5+LEFT*0.5)
+        rule11 = Tex(r"The $\hat{z}_i$ axis coincides with joint axis i and the $\hat{z}_{i-1}$ axis coincides with joint axis $i-1$.\\\
+                For prismatic joints, the $\hat{z}$-direction of the link reference frame is along the positive direction of translation.").scale(0.4).next_to(rule1, RIGHT).shift(DOWN*0.36)
+        zl = Arrow(start=[-4,-1,0], end=[-3.52,0,0], color=RED)
+        zr = Arrow(start=[-2.035,-1,0], end=[-2.51,0,0], color=RED)
+        zl_ = Tex(r"$\hat{z}_{i-1}$", color=RED).scale(0.35).next_to(zl, UP).shift(DOWN*0.2+LEFT*0.05)
+        zr_ = Tex(r"$\hat{z}_{i}$", color=RED).scale(0.35).next_to(zr, UP).shift(DOWN*0.2)
+        self.add(title, secondary_title, img, ll, lr, rule1, rule11, zl, zr, zl_, zr_)
+
+        rule2 = Tex(r"Rule 2:", color=RED).scale(0.4).next_to(rule11, DOWN).align_to(rule1, LEFT)
+        rule21 = Tex(r"Set the origin of the link by finding the line that orthogonally intersects both joint axis.\\\
+                 - If the axis are parallel choose the best option (minimal param values).\\\
+                        - If the axis cross set the origin at the crossing point.").scale(0.4).next_to(rule2, RIGHT).shift(DOWN*0.37)
+        self.add(rule2, rule21)
+
+        orthogonal = DashedLine(start=[-4.25,-1.5,0], end=[-1.9,-1.3,0], stroke_width=2.1, color=BLUE)
+       
+        zim1 = VGroup(zl, zl_)
+        zim1.move_to([-4.14,-1.12,0])
+        self.add(orthogonal, zim1)
+
+        rule3 = Tex(r"Rule 3:", color=RED).scale(0.4).next_to(rule21, DOWN).align_to(rule2, LEFT)
+        rule31 = Tex(r"Set the $\hat{x}_{i-1}$ axis in the direction of the mutually perpendicular line from the (i-1) axis to the i axis.\\- If the pependicular line doesn't exist choose $\hat{x}_{i-1}$ to be perpendicular to the plane spanned by $\hat{z}_{i-1}$ and $\hat{z}_{i}$.").scale(0.4).next_to(rule3, RIGHT).shift(DOWN*0.4)
+        self.add(rule3, rule31)
+        x = Arrow(start=[-4.5,-1.53,0], end=[-3.5,-1.43,0], stroke_width=2.1, color=DARK_BLUE)
+        x_ = Tex(r"$\hat{x}_{i-1}$", color=DARK_BLUE).scale(0.35).next_to(x, RIGHT).shift(DOWN*0.2+LEFT*0.5)
+
+        self.add(x,x_)
+
+        rule4 = Tex(r"Rule 4:", color=RED).scale(0.4).next_to(rule31, DOWN).align_to(rule2, LEFT)
+        rule41 = Tex(r"Determine the $\hat{y}_{i-1}$ axis from the cross product equasion $\hat{y}_{i-1} = \hat{z}\times\hat{x}_{i-1}$.").scale(0.4).next_to(rule4, RIGHT).shift(DOWN*0.026)
+        self.add(rule4, rule41)
+
+        y = Arrow(start=[-4.13,-1.73,0], end=[-4.53,-0.83,0], stroke_width=2.1, color=GREEN)
+        y_ = Tex(r"$\hat{y}_{i-1}$", color=GREEN).scale(0.35).next_to(y, LEFT).shift(RIGHT*0.2+UP*0.3)
+
+        self.add(y,y_)
+        self.wait()
+
+
+class DH_14(OPU_Slide):
+   def construct(self):
+        note = ""
+        self.create_note(note)
+        self.add_info()
+
+        title = Text("Appendix C: Denavit–Hartenberg Parameters").shift(UP*3).scale(0.65)
+        secondary_title = Text("The 4 parameters:", color=BLUE).next_to(title, DOWN).scale(0.4)
+        img = ImageMobject('../images/dh0.png').scale(1.5).shift(LEFT*3+DOWN*0.05)
+        ll = Line(start=[-4,-1,0], end=[-5,-3,0], stroke_width=2.1)
+        lr = Line(start=[-2.035,-1,0], end=[-1.035,-3,0], stroke_width=2.1)
+        rule1 = Tex(r"$a_{i-1}$", color=RED).scale(0.4).shift(UP*1.5+LEFT*0.5)
+        rule11 = Tex(r"is the link length, which is the length of the mutually perpendicular line $\hat{a}_{i-1}$.").scale(0.4).next_to(rule1, RIGHT)
+        zl = Arrow(start=[-4,-1,0], end=[-3.52,0,0], color=RED)
+        zr = Arrow(start=[-2.035,-1,0], end=[-2.51,0,0], color=RED)
+        zl_ = Tex(r"$\hat{z}_{i-1}$", color=RED).scale(0.35).next_to(zl, UP).shift(DOWN*0.4+RIGHT*0.33)
+        zr_ = Tex(r"$\hat{z}_{i}$", color=RED).scale(0.35).next_to(zr, UP).shift(DOWN*0.2)
+        self.add(title, secondary_title, img, ll, lr, rule1, rule11, zl, zr, zl_, zr_)
+
+
+        orthogonal = DashedLine(start=[-4.25,-1.5,0], end=[-1.9,-1.3,0], stroke_width=2.1, color=BLUE).add_tip(tip_length=0.1)
+        nl = Line(start=[-4.2,-1.4,0], end=[-4.06,-1.38,0], stroke_width=2.1, color=BLUE)
+        nl1 = Line(start=[-4.06,-1.38,0], end=[-4.03,-1.48,0], stroke_width=2.1, color=BLUE)
+        nr = Line(start=[-2.1,-1.2,0], end=[-1.94,-1.18,0], stroke_width=2.1, color=BLUE)
+        nr1 = Line(start=[-2.1,-1.2,0], end=[-2.08,-1.31,0], stroke_width=2.1, color=BLUE)
+        self.add(nl, nl1, nr, nr1)
+        zim1 = VGroup(zl, zl_)
+        zim1.move_to([-3.94,-1.22,0])
+        self.add(orthogonal, zim1)
+
+        x = Arrow(start=[-4.5,-1.53,0], end=[-3.5,-1.43,0], stroke_width=2.1, color=DARK_BLUE)
+        x_ = Tex(r"$\hat{x}_{i-1}$", color=DARK_BLUE).scale(0.35).next_to(x, RIGHT).shift(DOWN*0.2+LEFT*0.5)
+
+        self.add(x,x_)
+        y = Arrow(start=[-4.13,-1.73,0], end=[-4.53,-0.83,0], stroke_width=2.1, color=GREEN)
+        y_ = Tex(r"$\hat{y}_{i-1}$", color=GREEN).scale(0.35).next_to(y, LEFT).shift(RIGHT*0.2+UP*0.3)
+
+        self.add(y,y_)
+
+        xr = Arrow(start=[-2.35,-0.92,0], end=[-1.45,-0.25,0], stroke_width=2.1, color=DARK_BLUE)
+        xr_ = Tex(r"$\hat{x}_{i}$", color=DARK_BLUE).scale(0.35).next_to(xr, RIGHT).shift(DOWN*0.2+LEFT*0.5)
+        yr = Arrow(start=[-1.92,-0.9,0], end=[-2.9,-0.35,0], stroke_width=2.1, color=GREEN)
+        yr_ = Tex(r"$\hat{y}_{i}$", color=GREEN).scale(0.35).next_to(yr, LEFT).shift(RIGHT*0.2+UP*0.3)
+        a = Tex(r"$a_{i-1}$", color=BLUE).scale(0.35).next_to(x, RIGHT).shift(RIGHT*0.4+UP*0.2)
+
+        self.add(xr, xr_, yr, yr_, a)
+        self.wait()
+
+
+class DH_15(OPU_Slide):
+   def construct(self):
+        note = ""
+        self.create_note(note)
+        self.add_info()
+
+        title = Text("Appendix C: Denavit–Hartenberg Parameters").shift(UP*3).scale(0.65)
+        secondary_title = Text("The 4 parameters:", color=BLUE).next_to(title, DOWN).scale(0.4)
+        img = ImageMobject('../images/dh0.png').scale(1.5).shift(LEFT*3+DOWN*0.05)
+        ll = Line(start=[-4,-1,0], end=[-5,-3,0], stroke_width=2.1)
+        lr = Line(start=[-2.035,-1,0], end=[-1.035,-3,0], stroke_width=2.1)
+        rule1 = Tex(r"$a_{i-1}$", color=RED).scale(0.4).shift(UP*1.5+LEFT*0.5)
+        rule11 = Tex(r"is the link length, which is the length of the mutually perpendicular line $\hat{a}_{i-1}$.").scale(0.4).next_to(rule1, RIGHT)
+        zl = Arrow(start=[-4,-1,0], end=[-3.52,0,0], color=RED)
+        zr = Arrow(start=[-2.035,-1,0], end=[-2.51,0,0], color=RED)
+        zl_ = Tex(r"$\hat{z}_{i-1}$", color=RED).scale(0.35).next_to(zl, UP).shift(DOWN*0.4+RIGHT*0.33)
+        zr_ = Tex(r"$\hat{z}_{i}$", color=RED).scale(0.35).next_to(zr, UP).shift(DOWN*0.2)
+        self.add(title, secondary_title, img, ll, lr, rule1, rule11, zl, zr, zl_, zr_)
+
+
+        orthogonal = DashedLine(start=[-4.25,-1.5,0], end=[-1.9,-1.3,0], stroke_width=2.1, color=BLUE).add_tip(tip_length=0.1)
+        nl = Line(start=[-4.2,-1.4,0], end=[-4.06,-1.38,0], stroke_width=2.1, color=BLUE)
+        nl1 = Line(start=[-4.06,-1.38,0], end=[-4.03,-1.48,0], stroke_width=2.1, color=BLUE)
+        nr = Line(start=[-2.1,-1.2,0], end=[-1.94,-1.18,0], stroke_width=2.1, color=BLUE)
+        nr1 = Line(start=[-2.1,-1.2,0], end=[-2.08,-1.31,0], stroke_width=2.1, color=BLUE)
+        self.add(nl, nl1, nr, nr1)
+
+        zim1 = VGroup(zl, zl_)
+        zim1.move_to([-3.94,-1.22,0])
+        self.add(orthogonal, zim1)
+
+        x = Arrow(start=[-4.5,-1.53,0], end=[-3.5,-1.43,0], stroke_width=2.1, color=DARK_BLUE)
+        x_ = Tex(r"$\hat{x}_{i-1}$", color=DARK_BLUE).scale(0.35).next_to(x, RIGHT).shift(DOWN*0.2+LEFT*0.5)
+
+        self.add(x,x_)
+        y = Arrow(start=[-4.13,-1.73,0], end=[-4.53,-0.83,0], stroke_width=2.1, color=GREEN)
+        y_ = Tex(r"$\hat{y}_{i-1}$", color=GREEN).scale(0.35).next_to(y, LEFT).shift(RIGHT*0.2+UP*0.3)
+
+        self.add(y,y_)
+
+        xr = Arrow(start=[-2.35,-0.92,0], end=[-1.45,-0.25,0], stroke_width=2.1, color=DARK_BLUE)
+        xr_ = Tex(r"$\hat{x}_{i}$", color=DARK_BLUE).scale(0.35).next_to(xr, RIGHT).shift(DOWN*0.2+LEFT*0.5)
+        yr = Arrow(start=[-1.92,-0.9,0], end=[-2.9,-0.35,0], stroke_width=2.1, color=GREEN)
+        yr_ = Tex(r"$\hat{y}_{i}$", color=GREEN).scale(0.35).next_to(yr, LEFT).shift(RIGHT*0.2+UP*0.3)
+        a = Tex(r"$a_{i-1}$", color=BLUE).scale(0.35).next_to(x, RIGHT).shift(RIGHT*0.4+UP*0.2)
+
+        self.add(xr, xr_, yr, yr_, a)
+
+        rule2 = Tex(r"$\alpha_{i-1}$", color=RED).scale(0.4).next_to(rule11, DOWN).align_to(rule1, LEFT)
+        rule21 = Tex(r"is called the link twist, which is the angle from $\hat{z}_{i-1}$ to $\hat{z}_{i}$  measured about $\hat{x}_{i-1}$ .").scale(0.4).next_to(rule2, RIGHT)
+        self.add(rule2, rule21)
+
+
+        self.wait()
+
+
+class DH_16(OPU_Slide):
+   def construct(self):
+        note = ""
+        self.create_note(note)
+        self.add_info()
+
+        title = Text("Appendix C: Denavit–Hartenberg Parameters").shift(UP*3).scale(0.65)
+        secondary_title = Text("The 4 parameters:", color=BLUE).next_to(title, DOWN).scale(0.4)
+        img = ImageMobject('../images/dh0.png').scale(1.5).shift(LEFT*3+DOWN*0.05)
+        ll = Line(start=[-4,-1,0], end=[-5,-3,0], stroke_width=2.1)
+        lr = Line(start=[-2.035,-1,0], end=[-1.035,-3,0], stroke_width=2.1)
+        rule1 = Tex(r"$a_{i-1}$", color=RED).scale(0.4).shift(UP*1.5+LEFT*0.5)
+        rule11 = Tex(r"is the link length, which is the length of the mutually perpendicular line $\hat{a}_{i-1}$.").scale(0.4).next_to(rule1, RIGHT)
+        zl = Arrow(start=[-4,-1,0], end=[-3.52,0,0], color=RED)
+        zr = Arrow(start=[-2.035,-1,0], end=[-2.51,0,0], color=RED)
+        zl_ = Tex(r"$\hat{z}_{i-1}$", color=RED).scale(0.35).next_to(zl, UP).shift(DOWN*0.4+RIGHT*0.33)
+        zr_ = Tex(r"$\hat{z}_{i}$", color=RED).scale(0.35).next_to(zr, UP).shift(DOWN*0.2)
+        self.add(title, secondary_title, img, ll, lr, rule1, rule11, zl, zr, zl_, zr_)
+
+
+        orthogonal = DashedLine(start=[-4.25,-1.5,0], end=[-1.9,-1.3,0], stroke_width=2.1, color=BLUE).add_tip(tip_length=0.1)
+        nl = Line(start=[-4.2,-1.4,0], end=[-4.06,-1.38,0], stroke_width=2.1, color=BLUE)
+        nl1 = Line(start=[-4.06,-1.38,0], end=[-4.03,-1.48,0], stroke_width=2.1, color=BLUE)
+        nr = Line(start=[-2.1,-1.2,0], end=[-1.94,-1.18,0], stroke_width=2.1, color=BLUE)
+        nr1 = Line(start=[-2.1,-1.2,0], end=[-2.08,-1.31,0], stroke_width=2.1, color=BLUE)
+        self.add(nl, nl1, nr, nr1)
+
+        zim1 = VGroup(zl, zl_)
+        zim1.move_to([-3.94,-1.22,0])
+        self.add(orthogonal, zim1)
+
+        x = Arrow(start=[-4.5,-1.53,0], end=[-3.5,-1.43,0], stroke_width=2.1, color=DARK_BLUE)
+        x_ = Tex(r"$\hat{x}_{i-1}$", color=DARK_BLUE).scale(0.35).next_to(x, RIGHT).shift(DOWN*0.2+LEFT*0.5)
+
+        self.add(x,x_)
+        y = Arrow(start=[-4.13,-1.73,0], end=[-4.53,-0.83,0], stroke_width=2.1, color=GREEN)
+        y_ = Tex(r"$\hat{y}_{i-1}$", color=GREEN).scale(0.35).next_to(y, LEFT).shift(RIGHT*0.2+UP*0.3)
+
+        self.add(y,y_)
+
+        xr = Arrow(start=[-2.35,-0.92,0], end=[-1.45,-0.25,0], stroke_width=2.1, color=DARK_BLUE)
+        xr_ = Tex(r"$\hat{x}_{i}$", color=DARK_BLUE).scale(0.35).next_to(xr, RIGHT).shift(DOWN*0.2+LEFT*0.5)
+        yr = Arrow(start=[-1.92,-0.9,0], end=[-2.9,-0.35,0], stroke_width=2.1, color=GREEN)
+        yr_ = Tex(r"$\hat{y}_{i}$", color=GREEN).scale(0.35).next_to(yr, LEFT).shift(RIGHT*0.2+UP*0.3)
+        a = Tex(r"$a_{i-1}$", color=BLUE).scale(0.35).next_to(x, RIGHT).shift(RIGHT*0.4+UP*0.2)
+
+        self.add(xr, xr_, yr, yr_, a)
+
+        rule2 = Tex(r"$\alpha_{i-1}$", color=RED).scale(0.4).next_to(rule11, DOWN).align_to(rule1, LEFT)
+        rule21 = Tex(r"is called the link twist, which is the angle from $\hat{z}_{i-1}$ to $\hat{z}_{i}$  measured about $\hat{x}_{i-1}$ .").scale(0.4).next_to(rule2, RIGHT)
+        self.add(rule2, rule21)
+
+        alpha = DashedLine(start=[-3.75,-0.5,0], end=[-4.25,-1.5,0], stroke_width=2.1, color=RED).add_tip(at_start=True,  tip_length=0.1)
+        alpha_ = Tex(r"$\alpha_{i-1}$", color=RED).scale(0.3).next_to(zl, UP).shift(DOWN*0.25+LEFT*0.1)
+        alpha__ = CurvedArrow(start_point=[-4.1,-1.2,0], end_point=[-4.35,-1.1,0],  color=RED, stroke_width=2, tip_length=0.06)
+        # self.add(alpha, alpha_, alpha__)
+
+        # self.wait()
+
+        self.play(alpha.animate().rotate(angle=40*DEGREES, about_point=[-4.25,-1.5,0]), run_time = 2)
+        self.play(Create(alpha_), Write(alpha__))
+
+
+class DH_17(OPU_Slide):
+   def construct(self):
+        note = ""
+        self.create_note(note)
+        self.add_info()
+
+        title = Text("Appendix C: Denavit–Hartenberg Parameters").shift(UP*3).scale(0.65)
+        secondary_title = Text("The 4 parameters:", color=BLUE).next_to(title, DOWN).scale(0.4)
+        img = ImageMobject('../images/dh0.png').scale(1.5).shift(LEFT*3+DOWN*0.05)
+        ll = Line(start=[-4,-1,0], end=[-5,-3,0], stroke_width=2.1)
+        lr = Line(start=[-2.035,-1,0], end=[-1.035,-3,0], stroke_width=2.1)
+        rule1 = Tex(r"$a_{i-1}$", color=RED).scale(0.4).shift(UP*1.5+LEFT*0.5)
+        rule11 = Tex(r"is the link length, which is the length of the mutually perpendicular line $\hat{a}_{i-1}$.").scale(0.4).next_to(rule1, RIGHT)
+        zl = Arrow(start=[-4,-1,0], end=[-3.52,0,0], color=RED)
+        zr = Arrow(start=[-2.035,-1,0], end=[-2.51,0,0], color=RED)
+        zl_ = Tex(r"$\hat{z}_{i-1}$", color=RED).scale(0.35).next_to(zl, UP).shift(DOWN*0.4+RIGHT*0.33)
+        zr_ = Tex(r"$\hat{z}_{i}$", color=RED).scale(0.35).next_to(zr, UP).shift(DOWN*0.2)
+        self.add(title, secondary_title, img, ll, lr, rule1, rule11, zl, zr, zl_, zr_)
+
+
+        orthogonal = DashedLine(start=[-4.25,-1.5,0], end=[-1.9,-1.3,0], stroke_width=2.1, color=BLUE).add_tip(tip_length=0.1)
+        nl = Line(start=[-4.2,-1.4,0], end=[-4.06,-1.38,0], stroke_width=2.1, color=BLUE)
+        nl1 = Line(start=[-4.06,-1.38,0], end=[-4.03,-1.48,0], stroke_width=2.1, color=BLUE)
+        nr = Line(start=[-2.1,-1.2,0], end=[-1.94,-1.18,0], stroke_width=2.1, color=BLUE)
+        nr1 = Line(start=[-2.1,-1.2,0], end=[-2.08,-1.31,0], stroke_width=2.1, color=BLUE)
+        self.add(nl, nl1, nr, nr1)
+
+        zim1 = VGroup(zl, zl_)
+        zim1.move_to([-3.94,-1.22,0])
+        self.add(orthogonal, zim1)
+
+        x = Arrow(start=[-4.5,-1.53,0], end=[-3.5,-1.43,0], stroke_width=2.1, color=DARK_BLUE)
+        x_ = Tex(r"$\hat{x}_{i-1}$", color=DARK_BLUE).scale(0.35).next_to(x, RIGHT).shift(DOWN*0.2+LEFT*0.5)
+
+        self.add(x,x_)
+        y = Arrow(start=[-4.13,-1.73,0], end=[-4.53,-0.83,0], stroke_width=2.1, color=GREEN)
+        y_ = Tex(r"$\hat{y}_{i-1}$", color=GREEN).scale(0.35).next_to(y, LEFT).shift(RIGHT*0.2+UP*0.3)
+
+        self.add(y,y_)
+
+        xr = Arrow(start=[-2.35,-0.92,0], end=[-1.45,-0.25,0], stroke_width=2.1, color=DARK_BLUE)
+        xr_ = Tex(r"$\hat{x}_{i}$", color=DARK_BLUE).scale(0.35).next_to(xr, RIGHT).shift(DOWN*0.2+LEFT*0.5)
+        yr = Arrow(start=[-1.92,-0.9,0], end=[-2.9,-0.35,0], stroke_width=2.1, color=GREEN)
+        yr_ = Tex(r"$\hat{y}_{i}$", color=GREEN).scale(0.35).next_to(yr, LEFT).shift(RIGHT*0.2+UP*0.3)
+        a = Tex(r"$a_{i-1}$", color=BLUE).scale(0.35).next_to(x, RIGHT).shift(RIGHT*0.4+UP*0.2)
+
+        self.add(xr, xr_, yr, yr_, a)
+
+        rule2 = Tex(r"$\alpha_{i-1}$", color=RED).scale(0.4).next_to(rule11, DOWN).align_to(rule1, LEFT)
+        rule21 = Tex(r"is called the link twist, which is the angle from $\hat{z}_{i-1}$ to $\hat{z}_{i}$  measured about $\hat{x}_{i-1}$ .").scale(0.4).next_to(rule2, RIGHT)
+        self.add(rule2, rule21)
+
+        alpha = DashedLine(start=[-3.75,-0.5,0], end=[-4.25,-1.5,0], stroke_width=2.1, color=RED).add_tip(at_start=True,  tip_length=0.1).rotate(angle=40*DEGREES, about_point=[-4.25,-1.5,0])
+        alpha_ = Tex(r"$\alpha_{i-1}$", color=RED).scale(0.3).next_to(zl, UP).shift(DOWN*0.25+LEFT*0.1)
+        alpha__ = CurvedArrow(start_point=[-4.1,-1.2,0], end_point=[-4.35,-1.1,0],  color=RED, stroke_width=2, tip_length=0.06)
+        self.add(alpha, alpha_, alpha__)
+
+        rule3 = Tex(r"$d_i$:", color=RED).scale(0.4).next_to(rule21, DOWN).align_to(rule2, LEFT)
+        rule31 = Tex(r"is the link offset, which is the distance from the intersection of $\hat{x}_{i-1}$ and $\hat{z}_{i}$ to the origin of the link-i frame.").scale(0.4).next_to(rule3, RIGHT).shift(DOWN*0.123)
+        self.add(rule3, rule31)
+
+        self.wait()
+
+
+class DH_18(OPU_Slide):
+   def construct(self):
+        note = ""
+        self.create_note(note)
+        self.add_info()
+
+        title = Text("Appendix C: Denavit–Hartenberg Parameters").shift(UP*3).scale(0.65)
+        secondary_title = Text("The 4 parameters:", color=BLUE).next_to(title, DOWN).scale(0.4)
+        img = ImageMobject('../images/dh0.png').scale(1.5).shift(LEFT*3+DOWN*0.05)
+        ll = Line(start=[-4,-1,0], end=[-5,-3,0], stroke_width=2.1)
+        lr = Line(start=[-2.035,-1,0], end=[-1.035,-3,0], stroke_width=2.1)
+        rule1 = Tex(r"$a_{i-1}$", color=RED).scale(0.4).shift(UP*1.5+LEFT*0.5)
+        rule11 = Tex(r"is the link length, which is the length of the mutually perpendicular line $\hat{a}_{i-1}$.").scale(0.4).next_to(rule1, RIGHT)
+        zl = Arrow(start=[-4,-1,0], end=[-3.52,0,0], color=RED)
+        zr = Arrow(start=[-2.035,-1,0], end=[-2.51,0,0], color=RED)
+        zl_ = Tex(r"$\hat{z}_{i-1}$", color=RED).scale(0.35).next_to(zl, UP).shift(DOWN*0.4+RIGHT*0.33)
+        zr_ = Tex(r"$\hat{z}_{i}$", color=RED).scale(0.35).next_to(zr, UP).shift(DOWN*0.2)
+        self.add(title, secondary_title, img, ll, lr, rule1, rule11, zl, zr, zl_, zr_)
+
+
+        orthogonal = DashedLine(start=[-4.25,-1.5,0], end=[-1.9,-1.3,0], stroke_width=2.1, color=BLUE).add_tip(tip_length=0.1)
+        nl = Line(start=[-4.2,-1.4,0], end=[-4.06,-1.38,0], stroke_width=2.1, color=BLUE)
+        nl1 = Line(start=[-4.06,-1.38,0], end=[-4.03,-1.48,0], stroke_width=2.1, color=BLUE)
+        nr = Line(start=[-2.1,-1.2,0], end=[-1.94,-1.18,0], stroke_width=2.1, color=BLUE)
+        nr1 = Line(start=[-2.1,-1.2,0], end=[-2.08,-1.31,0], stroke_width=2.1, color=BLUE)
+        self.add(nl, nl1, nr, nr1)
+
+        zim1 = VGroup(zl, zl_)
+        zim1.move_to([-3.94,-1.22,0])
+        self.add(orthogonal, zim1)
+
+        x = Arrow(start=[-4.5,-1.53,0], end=[-3.5,-1.43,0], stroke_width=2.1, color=DARK_BLUE)
+        x_ = Tex(r"$\hat{x}_{i-1}$", color=DARK_BLUE).scale(0.35).next_to(x, RIGHT).shift(DOWN*0.2+LEFT*0.5)
+
+        self.add(x,x_)
+        y = Arrow(start=[-4.13,-1.73,0], end=[-4.53,-0.83,0], stroke_width=2.1, color=GREEN)
+        y_ = Tex(r"$\hat{y}_{i-1}$", color=GREEN).scale(0.35).next_to(y, LEFT).shift(RIGHT*0.2+UP*0.3)
+
+        self.add(y,y_)
+
+        xr = Arrow(start=[-2.35,-0.92,0], end=[-1.45,-0.25,0], stroke_width=2.1, color=DARK_BLUE)
+        xr_ = Tex(r"$\hat{x}_{i}$", color=DARK_BLUE).scale(0.35).next_to(xr, RIGHT).shift(DOWN*0.2+LEFT*0.5)
+        yr = Arrow(start=[-1.92,-0.9,0], end=[-2.9,-0.35,0], stroke_width=2.1, color=GREEN)
+        yr_ = Tex(r"$\hat{y}_{i}$", color=GREEN).scale(0.35).next_to(yr, LEFT).shift(RIGHT*0.2+UP*0.3)
+        a = Tex(r"$a_{i-1}$", color=BLUE).scale(0.35).next_to(x, RIGHT).shift(RIGHT*0.4+UP*0.2)
+
+        self.add(xr, xr_, yr, yr_, a)
+
+        rule2 = Tex(r"$\alpha_{i-1}$", color=RED).scale(0.4).next_to(rule11, DOWN).align_to(rule1, LEFT)
+        rule21 = Tex(r"is called the link twist, which is the angle from $\hat{z}_{i-1}$ to $\hat{z}_{i}$  measured about $\hat{x}_{i-1}$ .").scale(0.4).next_to(rule2, RIGHT)
+        self.add(rule2, rule21)
+
+        alpha = DashedLine(start=[-3.75,-0.5,0], end=[-4.25,-1.5,0], stroke_width=2.1, color=RED).add_tip(at_start=True,  tip_length=0.1).rotate(angle=40*DEGREES, about_point=[-4.25,-1.5,0])
+        alpha_ = Tex(r"$\alpha_{i-1}$", color=RED).scale(0.3).next_to(zl, UP).shift(DOWN*0.25+LEFT*0.1)
+        alpha__ = CurvedArrow(start_point=[-4.1,-1.2,0], end_point=[-4.35,-1.1,0],  color=RED, stroke_width=2, tip_length=0.06)
+        self.add(alpha, alpha_, alpha__)
+
+        rule3 = Tex(r"$d_i$:", color=RED).scale(0.4).next_to(rule21, DOWN).align_to(rule2, LEFT)
+        rule31 = Tex(r"is the link offset, which is the distance from the intersection of $\hat{x}_{i-1}$ and $\hat{z}_{i}$ to the origin of the link-i frame.").scale(0.4).next_to(rule3, RIGHT).shift(DOWN*0.123)
+        self.add(rule3, rule31)
+
+        di = DashedLine(start=[-1.88,-1.3,0], end=[-2.15,-0.75,0], stroke_width=3.5, color=ORANGE).add_tip(tip_length=0.1)
+        di_ = Tex(r"$d_{i}$", color=ORANGE).scale(0.35).next_to(di, LEFT).shift(RIGHT*0.25)
+
+        self.play(Create(di), Write(di_))
+        self.wait()
+
+
+class DH_19(OPU_Slide):
+   def construct(self):
+        note = ""
+        self.create_note(note)
+        self.add_info()
+
+        title = Text("Appendix C: Denavit–Hartenberg Parameters").shift(UP*3).scale(0.65)
+        secondary_title = Text("The 4 parameters:", color=BLUE).next_to(title, DOWN).scale(0.4)
+        img = ImageMobject('../images/dh0.png').scale(1.5).shift(LEFT*3+DOWN*0.05)
+        ll = Line(start=[-4,-1,0], end=[-5,-3,0], stroke_width=2.1)
+        lr = Line(start=[-2.035,-1,0], end=[-1.035,-3,0], stroke_width=2.1)
+        rule1 = Tex(r"$a_{i-1}$", color=RED).scale(0.4).shift(UP*1.5+LEFT*0.5)
+        rule11 = Tex(r"is the link length, which is the length of the mutually perpendicular line $\hat{a}_{i-1}$.").scale(0.4).next_to(rule1, RIGHT)
+        zl = Arrow(start=[-4,-1,0], end=[-3.52,0,0], color=RED)
+        zr = Arrow(start=[-2.035,-1,0], end=[-2.51,0,0], color=RED)
+        zl_ = Tex(r"$\hat{z}_{i-1}$", color=RED).scale(0.35).next_to(zl, UP).shift(DOWN*0.4+RIGHT*0.33)
+        zr_ = Tex(r"$\hat{z}_{i}$", color=RED).scale(0.35).next_to(zr, UP).shift(DOWN*0.2)
+        self.add(title, secondary_title, img, ll, lr, rule1, rule11, zl, zr, zl_, zr_)
+
+
+        orthogonal = DashedLine(start=[-4.25,-1.5,0], end=[-1.9,-1.3,0], stroke_width=2.1, color=BLUE).add_tip(tip_length=0.1)
+        nl = Line(start=[-4.2,-1.4,0], end=[-4.06,-1.38,0], stroke_width=2.1, color=BLUE)
+        nl1 = Line(start=[-4.06,-1.38,0], end=[-4.03,-1.48,0], stroke_width=2.1, color=BLUE)
+        nr = Line(start=[-2.1,-1.2,0], end=[-1.94,-1.18,0], stroke_width=2.1, color=BLUE)
+        nr1 = Line(start=[-2.1,-1.2,0], end=[-2.08,-1.31,0], stroke_width=2.1, color=BLUE)
+        self.add(nl, nl1, nr, nr1)
+
+        zim1 = VGroup(zl, zl_)
+        zim1.move_to([-3.94,-1.22,0])
+        self.add(orthogonal, zim1)
+
+        x = Arrow(start=[-4.5,-1.53,0], end=[-3.5,-1.43,0], stroke_width=2.1, color=DARK_BLUE)
+        x_ = Tex(r"$\hat{x}_{i-1}$", color=DARK_BLUE).scale(0.35).next_to(x, RIGHT).shift(DOWN*0.2+LEFT*0.5)
+
+        self.add(x,x_)
+        y = Arrow(start=[-4.13,-1.73,0], end=[-4.53,-0.83,0], stroke_width=2.1, color=GREEN)
+        y_ = Tex(r"$\hat{y}_{i-1}$", color=GREEN).scale(0.35).next_to(y, LEFT).shift(RIGHT*0.2+UP*0.3)
+
+        self.add(y,y_)
+
+        xr = Arrow(start=[-2.35,-0.92,0], end=[-1.45,-0.25,0], stroke_width=2.1, color=DARK_BLUE)
+        xr_ = Tex(r"$\hat{x}_{i}$", color=DARK_BLUE).scale(0.35).next_to(xr, RIGHT).shift(DOWN*0.2+LEFT*0.5)
+        yr = Arrow(start=[-1.92,-0.9,0], end=[-2.9,-0.35,0], stroke_width=2.1, color=GREEN)
+        yr_ = Tex(r"$\hat{y}_{i}$", color=GREEN).scale(0.35).next_to(yr, LEFT).shift(RIGHT*0.2+UP*0.3)
+        a = Tex(r"$a_{i-1}$", color=BLUE).scale(0.35).next_to(x, RIGHT).shift(RIGHT*0.4+UP*0.2)
+
+        self.add(xr, xr_, yr, yr_, a)
+
+        rule2 = Tex(r"$\alpha_{i-1}$", color=RED).scale(0.4).next_to(rule11, DOWN).align_to(rule1, LEFT)
+        rule21 = Tex(r"is called the link twist, which is the angle from $\hat{z}_{i-1}$ to $\hat{z}_{i}$  measured about $\hat{x}_{i-1}$ .").scale(0.4).next_to(rule2, RIGHT)
+        self.add(rule2, rule21)
+
+        alpha = DashedLine(start=[-3.75,-0.5,0], end=[-4.25,-1.5,0], stroke_width=2.1, color=RED).add_tip(at_start=True,  tip_length=0.1).rotate(angle=40*DEGREES, about_point=[-4.25,-1.5,0])
+        alpha_ = Tex(r"$\alpha_{i-1}$", color=RED).scale(0.3).next_to(zl, UP).shift(DOWN*0.25+LEFT*0.1)
+        alpha__ = CurvedArrow(start_point=[-4.1,-1.2,0], end_point=[-4.35,-1.1,0],  color=RED, stroke_width=2, tip_length=0.06)
+        self.add(alpha, alpha_, alpha__)
+
+        rule3 = Tex(r"$d_i$:", color=RED).scale(0.4).next_to(rule21, DOWN).align_to(rule2, LEFT)
+        rule31 = Tex(r"is the link offset, which is the distance from the intersection of $\hat{x}_{i-1}$ and $\hat{z}_{i}$ to the origin of the link-i frame.").scale(0.4).next_to(rule3, RIGHT).shift(DOWN*0.123)
+        self.add(rule3, rule31)
+
+        di = DashedLine(start=[-1.88,-1.3,0], end=[-2.15,-0.75,0], stroke_width=3.5, color=ORANGE).add_tip(tip_length=0.1)
+        di_ = Tex(r"$d_{i}$", color=ORANGE).scale(0.35).next_to(di, LEFT).shift(RIGHT*0.25)
+
+        self.add(di,di_)
+        
+        rule4 = Tex(r"$\phi_i$:", color=RED).scale(0.4).next_to(rule31, DOWN).align_to(rule2, LEFT)
+        rule41 = Tex(r"is called the joint angle, which is the angle from $\hat{x}_{i-1}$ to $\hat{x}_{i}$ measured about the $\hat{z}_{i}$-axis.").scale(0.4).next_to(rule4, RIGHT).shift(DOWN*0.123)
+        self.add(rule4, rule41)
+
+
+        self.wait()
+
+
+class DH_20(OPU_Slide):
+   def construct(self):
+        note = ""
+        self.create_note(note)
+        self.add_info()
+
+        title = Text("Appendix C: Denavit–Hartenberg Parameters").shift(UP*3).scale(0.65)
+        secondary_title = Text("The 4 parameters:", color=BLUE).next_to(title, DOWN).scale(0.4)
+        img = ImageMobject('../images/dh0.png').scale(1.5).shift(LEFT*3+DOWN*0.05)
+        ll = Line(start=[-4,-1,0], end=[-5,-3,0], stroke_width=2.1)
+        lr = Line(start=[-2.035,-1,0], end=[-1.035,-3,0], stroke_width=2.1)
+        rule1 = Tex(r"$a_{i-1}$", color=RED).scale(0.4).shift(UP*1.5+LEFT*0.5)
+        rule11 = Tex(r"is the link length, which is the length of the mutually perpendicular line $\hat{a}_{i-1}$.").scale(0.4).next_to(rule1, RIGHT)
+        zl = Arrow(start=[-4,-1,0], end=[-3.52,0,0], color=RED)
+        zr = Arrow(start=[-2.035,-1,0], end=[-2.51,0,0], color=RED)
+        zl_ = Tex(r"$\hat{z}_{i-1}$", color=RED).scale(0.35).next_to(zl, UP).shift(DOWN*0.4+RIGHT*0.33)
+        zr_ = Tex(r"$\hat{z}_{i}$", color=RED).scale(0.35).next_to(zr, UP).shift(DOWN*0.2)
+        self.add(title, secondary_title, img, ll, lr, rule1, rule11, zl, zr, zl_, zr_)
+
+
+        orthogonal = DashedLine(start=[-4.25,-1.5,0], end=[-1.9,-1.3,0], stroke_width=2.1, color=BLUE).add_tip(tip_length=0.1)
+        nl = Line(start=[-4.2,-1.4,0], end=[-4.06,-1.38,0], stroke_width=2.1, color=BLUE)
+        nl1 = Line(start=[-4.06,-1.38,0], end=[-4.03,-1.48,0], stroke_width=2.1, color=BLUE)
+        nr = Line(start=[-2.1,-1.2,0], end=[-1.94,-1.18,0], stroke_width=2.1, color=BLUE)
+        nr1 = Line(start=[-2.1,-1.2,0], end=[-2.08,-1.31,0], stroke_width=2.1, color=BLUE)
+        self.add(nl, nl1, nr, nr1)
+
+        zim1 = VGroup(zl, zl_)
+        zim1.move_to([-3.94,-1.22,0])
+        self.add(orthogonal, zim1)
+
+        x = Arrow(start=[-4.5,-1.53,0], end=[-3.5,-1.43,0], stroke_width=2.1, color=DARK_BLUE)
+        x_ = Tex(r"$\hat{x}_{i-1}$", color=DARK_BLUE).scale(0.35).next_to(x, RIGHT).shift(DOWN*0.2+LEFT*0.5)
+
+        self.add(x,x_)
+        y = Arrow(start=[-4.13,-1.73,0], end=[-4.53,-0.83,0], stroke_width=2.1, color=GREEN)
+        y_ = Tex(r"$\hat{y}_{i-1}$", color=GREEN).scale(0.35).next_to(y, LEFT).shift(RIGHT*0.2+UP*0.3)
+
+        self.add(y,y_)
+
+        xr = Arrow(start=[-2.35,-0.92,0], end=[-1.45,-0.25,0], stroke_width=2.1, color=DARK_BLUE)
+        xr_ = Tex(r"$\hat{x}_{i}$", color=DARK_BLUE).scale(0.35).next_to(xr, RIGHT).shift(DOWN*0.2+LEFT*0.5)
+        yr = Arrow(start=[-1.92,-0.9,0], end=[-2.9,-0.35,0], stroke_width=2.1, color=GREEN)
+        yr_ = Tex(r"$\hat{y}_{i}$", color=GREEN).scale(0.35).next_to(yr, LEFT).shift(RIGHT*0.2+UP*0.3)
+        a = Tex(r"$a_{i-1}$", color=BLUE).scale(0.35).next_to(x, RIGHT).shift(RIGHT*0.4+UP*0.2)
+
+        self.add(xr, xr_, yr, yr_, a)
+
+        rule2 = Tex(r"$\alpha_{i-1}$", color=RED).scale(0.4).next_to(rule11, DOWN).align_to(rule1, LEFT)
+        rule21 = Tex(r"is called the link twist, which is the angle from $\hat{z}_{i-1}$ to $\hat{z}_{i}$  measured about $\hat{x}_{i-1}$ .").scale(0.4).next_to(rule2, RIGHT)
+        self.add(rule2, rule21)
+
+        alpha = DashedLine(start=[-3.75,-0.5,0], end=[-4.25,-1.5,0], stroke_width=2.1, color=RED).add_tip(at_start=True,  tip_length=0.1).rotate(angle=40*DEGREES, about_point=[-4.25,-1.5,0])
+        alpha_ = Tex(r"$\alpha_{i-1}$", color=RED).scale(0.3).next_to(zl, UP).shift(DOWN*0.25+LEFT*0.1)
+        alpha__ = CurvedArrow(start_point=[-4.1,-1.2,0], end_point=[-4.35,-1.1,0],  color=RED, stroke_width=2, tip_length=0.06)
+        self.add(alpha, alpha_, alpha__)
+
+        rule3 = Tex(r"$d_i$:", color=RED).scale(0.4).next_to(rule21, DOWN).align_to(rule2, LEFT)
+        rule31 = Tex(r"is the link offset, which is the distance from the intersection of $\hat{x}_{i-1}$ and $\hat{z}_{i}$ to the origin of the link-i frame.").scale(0.4).next_to(rule3, RIGHT).shift(DOWN*0.123)
+        self.add(rule3, rule31)
+
+        di = DashedLine(start=[-1.88,-1.3,0], end=[-2.15,-0.75,0], stroke_width=3.5, color=ORANGE).add_tip(tip_length=0.1)
+        di_ = Tex(r"$d_{i}$", color=ORANGE).scale(0.35).next_to(di, LEFT).shift(RIGHT*0.25)
+
+        self.add(di,di_)
+        
+        rule4 = Tex(r"$\phi_i$:", color=RED).scale(0.4).next_to(rule31, DOWN).align_to(rule2, LEFT)
+        rule41 = Tex(r"is called the joint angle, which is the angle from $\hat{x}_{i-1}$ to $\hat{x}_{i}$ measured about the $\hat{z}_{i}$-axis.").scale(0.4).next_to(rule4, RIGHT).shift(DOWN*0.123)
+        self.add(rule4, rule41)
+
+        xc = DashedLine(start=[-4.25,-1.5,0], end=[-3.3,-1.425,0], stroke_width=3).add_tip(tip_length=0.1)
+        self.play(xc.animate().move_to([-1.425,-1.235,0]), run_time=2)
+        # self.wait()
+
+
+class DH_21(OPU_Slide):
+   def construct(self):
+        note = ""
+        self.create_note(note)
+        self.add_info()
+
+        title = Text("Appendix C: Denavit–Hartenberg Parameters").shift(UP*3).scale(0.65)
+        secondary_title = Text("The 4 parameters:", color=BLUE).next_to(title, DOWN).scale(0.4)
+        img = ImageMobject('../images/dh0.png').scale(1.5).shift(LEFT*3+DOWN*0.05)
+        ll = Line(start=[-4,-1,0], end=[-5,-3,0], stroke_width=2.1)
+        lr = Line(start=[-2.035,-1,0], end=[-1.035,-3,0], stroke_width=2.1)
+        rule1 = Tex(r"$a_{i-1}$", color=RED).scale(0.4).shift(UP*1.5+LEFT*0.5)
+        rule11 = Tex(r"is the link length, which is the length of the mutually perpendicular line $\hat{a}_{i-1}$.").scale(0.4).next_to(rule1, RIGHT)
+        zl = Arrow(start=[-4,-1,0], end=[-3.52,0,0], color=RED)
+        zr = Arrow(start=[-2.035,-1,0], end=[-2.51,0,0], color=RED)
+        zl_ = Tex(r"$\hat{z}_{i-1}$", color=RED).scale(0.35).next_to(zl, UP).shift(DOWN*0.4+RIGHT*0.33)
+        zr_ = Tex(r"$\hat{z}_{i}$", color=RED).scale(0.35).next_to(zr, UP).shift(DOWN*0.2)
+        self.add(title, secondary_title, img, ll, lr, rule1, rule11, zl, zr, zl_, zr_)
+
+
+        orthogonal = DashedLine(start=[-4.25,-1.5,0], end=[-1.9,-1.3,0], stroke_width=2.1, color=BLUE).add_tip(tip_length=0.1)
+        nl = Line(start=[-4.2,-1.4,0], end=[-4.06,-1.38,0], stroke_width=2.1, color=BLUE)
+        nl1 = Line(start=[-4.06,-1.38,0], end=[-4.03,-1.48,0], stroke_width=2.1, color=BLUE)
+        nr = Line(start=[-2.1,-1.2,0], end=[-1.94,-1.18,0], stroke_width=2.1, color=BLUE)
+        nr1 = Line(start=[-2.1,-1.2,0], end=[-2.08,-1.31,0], stroke_width=2.1, color=BLUE)
+        self.add(nl, nl1, nr, nr1)
+
+        zim1 = VGroup(zl, zl_)
+        zim1.move_to([-3.94,-1.22,0])
+        self.add(orthogonal, zim1)
+
+        x = Arrow(start=[-4.5,-1.53,0], end=[-3.5,-1.43,0], stroke_width=2.1, color=DARK_BLUE)
+        x_ = Tex(r"$\hat{x}_{i-1}$", color=DARK_BLUE).scale(0.35).next_to(x, RIGHT).shift(DOWN*0.2+LEFT*0.5)
+
+        self.add(x,x_)
+        y = Arrow(start=[-4.13,-1.73,0], end=[-4.53,-0.83,0], stroke_width=2.1, color=GREEN)
+        y_ = Tex(r"$\hat{y}_{i-1}$", color=GREEN).scale(0.35).next_to(y, LEFT).shift(RIGHT*0.2+UP*0.3)
+
+        self.add(y,y_)
+
+        xr = Arrow(start=[-2.35,-0.92,0], end=[-1.45,-0.25,0], stroke_width=2.1, color=DARK_BLUE)
+        xr_ = Tex(r"$\hat{x}_{i}$", color=DARK_BLUE).scale(0.35).next_to(xr, RIGHT).shift(DOWN*0.2+LEFT*0.5)
+        yr = Arrow(start=[-1.92,-0.9,0], end=[-2.9,-0.35,0], stroke_width=2.1, color=GREEN)
+        yr_ = Tex(r"$\hat{y}_{i}$", color=GREEN).scale(0.35).next_to(yr, LEFT).shift(RIGHT*0.2+UP*0.3)
+        a = Tex(r"$a_{i-1}$", color=BLUE).scale(0.35).next_to(x, RIGHT).shift(RIGHT*0.4+UP*0.2)
+
+        self.add(xr, xr_, yr, yr_, a)
+
+        rule2 = Tex(r"$\alpha_{i-1}$", color=RED).scale(0.4).next_to(rule11, DOWN).align_to(rule1, LEFT)
+        rule21 = Tex(r"is called the link twist, which is the angle from $\hat{z}_{i-1}$ to $\hat{z}_{i}$  measured about $\hat{x}_{i-1}$ .").scale(0.4).next_to(rule2, RIGHT)
+        self.add(rule2, rule21)
+
+        alpha = DashedLine(start=[-3.75,-0.5,0], end=[-4.25,-1.5,0], stroke_width=2.1, color=RED).add_tip(at_start=True,  tip_length=0.1).rotate(angle=40*DEGREES, about_point=[-4.25,-1.5,0])
+        alpha_ = Tex(r"$\alpha_{i-1}$", color=RED).scale(0.3).next_to(zl, UP).shift(DOWN*0.25+LEFT*0.1)
+        alpha__ = CurvedArrow(start_point=[-4.1,-1.2,0], end_point=[-4.35,-1.1,0],  color=RED, stroke_width=2, tip_length=0.06)
+        self.add(alpha, alpha_, alpha__)
+
+        rule3 = Tex(r"$d_i$:", color=RED).scale(0.4).next_to(rule21, DOWN).align_to(rule2, LEFT)
+        rule31 = Tex(r"is the link offset, which is the distance from the intersection of $\hat{x}_{i-1}$ and $\hat{z}_{i}$ to the origin of the link-i frame.").scale(0.4).next_to(rule3, RIGHT).shift(DOWN*0.123)
+        self.add(rule3, rule31)
+
+        di = DashedLine(start=[-1.88,-1.3,0], end=[-2.15,-0.75,0], stroke_width=3.5, color=ORANGE).add_tip(tip_length=0.1)
+        di_ = Tex(r"$d_{i}$", color=ORANGE).scale(0.35).next_to(di, LEFT).shift(RIGHT*0.25)
+
+        self.add(di,di_)
+        
+        rule4 = Tex(r"$\phi_i$:", color=RED).scale(0.4).next_to(rule31, DOWN).align_to(rule2, LEFT)
+        rule41 = Tex(r"is called the joint angle, which is the angle from $\hat{x}_{i-1}$ to $\hat{x}_{i}$ measured about the $\hat{z}_{i}$-axis.").scale(0.4).next_to(rule4, RIGHT).shift(DOWN*0.123)
+        self.add(rule4, rule41)
+
+        xc = DashedLine(start=[-4.25,-1.5,0], end=[-3.3,-1.425,0], stroke_width=3).add_tip(tip_length=0.1).move_to([-1.425,-1.235,0])
+        self.add(xc)
+
+        xic = DashedLine(start=[-2.35,-0.92,0], end=[-1.45,-0.25,0], stroke_width=3).add_tip(tip_length=0.1).shift(RIGHT*0.22+UP*0.175)
+        # xic = DashedLine(start=[-2.35,-0.92,0], end=[-1.45,-0.25,0], stroke_width=3).add_tip(tip_length=0.1).shift(RIGHT*0.22+UP*0.175).move_to([-1.425,-0.93,0])
+        self.add(xic)
+        phi = CurvedArrow(start_point=[-1.425,-1.235,0], end_point=[-1.425,-0.93,0], stroke_width=2, tip_length=0.06)
+        phii = Tex(r"$\phi_i$").scale(0.3).next_to(phi, RIGHT).shift(LEFT*0.23)
+        self.play(xic.animate().move_to([-1.425,-0.93,0]), run_time=2)
+        self.play(Create(phi), Write(phii))
+
+        # self.wait()
+
+
+
+class DH_22(OPU_Slide):
+   def construct(self):
+        note = ""
+        self.create_note(note)
+        self.add_info()
+
+        title = Text("Appendix C: Denavit–Hartenberg Parameters").shift(UP*3).scale(0.65)
+        secondary_title = Text("Assigning the Ground and End-E↵ector Frames:", color=BLUE).next_to(title, DOWN).scale(0.4)
+        self.add(title, secondary_title)
+
+        rule1 = Tex(r"We would like to simplify as many of the D.H. parametes as possible.").scale(0.4).shift(UP*1.5+LEFT*0.5)
+        rule2 = Tex(r"The ground frame is usually chosen to coincide with the link-1 frame in its zero (rest) position.").scale(0.4).next_to(rule1, DOWN).align_to(rule1, LEFT)
+        rule3 = Tex(r"If the joint is revolute this choice forces $a_0 = \alpha_0 = d_1 = 0$.").scale(0.4).next_to(rule2, DOWN).align_to(rule1, LEFT)
+        rule4 = Tex(r"If the joint is prismatic joint we have $a_0 = \alpha_0 = \phi_1 = 0$.").scale(0.4).next_to(rule3, DOWN).align_to(rule1, LEFT)
+        rule5 = Tex(r"The end-effector frame is attached to some reference point on the end-effector, usually at a location that makes the description of the task intuitive and natural and also simplifies as many of the D–H parameters as possible").scale(0.4).next_to(rule4, DOWN).align_to(rule1, LEFT)
+        self.play(Write(rule1),Write(rule2),Write(rule3),Write(rule4),Write(rule5))
+        self.wait()
+
+
+class DH_23(OPU_Slide):
+   def construct(self):
+        note = ""
+        self.create_note(note)
+        self.add_info()
+
+        title = Text("Appendix C: Denavit–Hartenberg Parameters").shift(UP*3).scale(0.65)
+        secondary_title = Text("Manipulator Forward Kinematics:", color=BLUE).next_to(title, DOWN).scale(0.4)
+        self.add(title, secondary_title)
+
+        ti = ImageMobject("../images/ti.png").next_to(secondary_title, DOWN).shift(LEFT*2.5+DOWN*0.3)
+        ti1 = ImageMobject("../images/ti1.png").next_to(ti, RIGHT)
+        ti2 = ImageMobject("../images/ti2.png").shift(DOWN*1.3)
+        
+        self.add(ti, ti1, ti2)
+        self.wait()
+
+
+class DH_24(OPU_Slide):
+   def construct(self):
+        note = ""
+        self.create_note(note)
+        self.add_info()
+
+        title = Text("Appendix C: Denavit–Hartenberg Parameters").shift(UP*3).scale(0.65)
+        secondary_title = Text("Manipulator Forward Kinematics:", color=BLUE).next_to(title, DOWN).scale(0.4)
+
+        img = ImageMobject('../images/dh0.png').scale(1.5).shift(LEFT*3+DOWN*0.05)
+        ll = Line(start=[-4,-1,0], end=[-5,-3,0], stroke_width=2.1)
+        lr = Line(start=[-2.035,-1,0], end=[-1.035,-3,0], stroke_width=2.1)
+        zl = Arrow(start=[-4,-1,0], end=[-3.52,0,0], color=RED)
+        zr = Arrow(start=[-2.035,-1,0], end=[-2.51,0,0], color=RED)
+        zl_ = Tex(r"$\hat{z}_{i-1}$", color=RED).scale(0.35).next_to(zl, UP).shift(DOWN*0.4+RIGHT*0.33)
+        zr_ = Tex(r"$\hat{z}_{i}$", color=RED).scale(0.35).next_to(zr, UP).shift(DOWN*0.2)
+        self.add(title, secondary_title, img, ll, lr, zl, zr, zl_, zr_)
+
+
+        orthogonal = DashedLine(start=[-4.25,-1.5,0], end=[-1.9,-1.3,0], stroke_width=2.1, color=BLUE).add_tip(tip_length=0.1)
+        nl = Line(start=[-4.2,-1.4,0], end=[-4.06,-1.38,0], stroke_width=2.1, color=BLUE)
+        nl1 = Line(start=[-4.06,-1.38,0], end=[-4.03,-1.48,0], stroke_width=2.1, color=BLUE)
+        nr = Line(start=[-2.1,-1.2,0], end=[-1.94,-1.18,0], stroke_width=2.1, color=BLUE)
+        nr1 = Line(start=[-2.1,-1.2,0], end=[-2.08,-1.31,0], stroke_width=2.1, color=BLUE)
+        self.add(nl, nl1, nr, nr1)
+
+        zim1 = VGroup(zl, zl_)
+        zim1.move_to([-3.94,-1.22,0])
+        self.add(orthogonal, zim1)
+
+        x = Arrow(start=[-4.5,-1.53,0], end=[-3.5,-1.43,0], stroke_width=2.1, color=DARK_BLUE)
+        x_ = Tex(r"$\hat{x}_{i-1}$", color=DARK_BLUE).scale(0.35).next_to(x, RIGHT).shift(DOWN*0.2+LEFT*0.5)
+
+        self.add(x,x_)
+        y = Arrow(start=[-4.13,-1.73,0], end=[-4.53,-0.83,0], stroke_width=2.1, color=GREEN)
+        y_ = Tex(r"$\hat{y}_{i-1}$", color=GREEN).scale(0.35).next_to(y, LEFT).shift(RIGHT*0.2+UP*0.3)
+
+        self.add(y,y_)
+
+        xr = Arrow(start=[-2.35,-0.92,0], end=[-1.45,-0.25,0], stroke_width=2.1, color=DARK_BLUE)
+        xr_ = Tex(r"$\hat{x}_{i}$", color=DARK_BLUE).scale(0.35).next_to(xr, RIGHT).shift(DOWN*0.2+LEFT*0.5)
+        yr = Arrow(start=[-1.92,-0.9,0], end=[-2.9,-0.35,0], stroke_width=2.1, color=GREEN)
+        yr_ = Tex(r"$\hat{y}_{i}$", color=GREEN).scale(0.35).next_to(yr, LEFT).shift(RIGHT*0.2+UP*0.3)
+        a = Tex(r"$a_{i-1}$", color=BLUE).scale(0.35).next_to(x, RIGHT).shift(RIGHT*0.4+UP*0.2)
+
+        self.add(xr, xr_, yr, yr_, a)
+
+        alpha = DashedLine(start=[-3.75,-0.5,0], end=[-4.25,-1.5,0], stroke_width=2.1, color=RED).add_tip(at_start=True,  tip_length=0.1).rotate(angle=40*DEGREES, about_point=[-4.25,-1.5,0])
+        alpha_ = Tex(r"$\alpha_{i-1}$", color=RED).scale(0.3).next_to(zl, UP).shift(DOWN*0.25+LEFT*0.1)
+        alpha__ = CurvedArrow(start_point=[-4.1,-1.2,0], end_point=[-4.35,-1.1,0],  color=RED, stroke_width=2, tip_length=0.06)
+        self.add(alpha, alpha_, alpha__)
+
+
+        di = DashedLine(start=[-1.88,-1.3,0], end=[-2.15,-0.75,0], stroke_width=3.5, color=ORANGE).add_tip(tip_length=0.1)
+        di_ = Tex(r"$d_{i}$", color=ORANGE).scale(0.35).next_to(di, LEFT).shift(RIGHT*0.25)
+
+        self.add(di,di_)
+
+        xc = DashedLine(start=[-4.25,-1.5,0], end=[-3.3,-1.425,0], stroke_width=3).add_tip(tip_length=0.1).move_to([-1.425,-1.235,0])
+        self.add(xc)
+
+        xic = DashedLine(start=[-2.35,-0.92,0], end=[-1.45,-0.25,0], stroke_width=3).add_tip(tip_length=0.1).shift(RIGHT*0.22+UP*0.175).move_to([-1.425,-0.93,0])
+        phi = CurvedArrow(start_point=[-1.425,-1.235,0], end_point=[-1.425,-0.93,0], stroke_width=2, tip_length=0.06)
+        phii = Tex(r"$\phi_i$").scale(0.3).next_to(phi, RIGHT).shift(LEFT*0.23)
+        self.add(xic, phi, phii)
+
+        ti = ImageMobject("../images/ti.png").next_to(secondary_title, DOWN).shift(RIGHT)
+        ti4 = ImageMobject("../images/ti3.png").shift(RIGHT*2.7+DOWN*0.4)
+       
+        
+        self.add(ti, ti4)
         self.wait()
 
