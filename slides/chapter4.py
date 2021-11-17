@@ -142,7 +142,7 @@ class Chap4_07(OPU_Slide):
         self.add_info()
 
         title = Text("Chapter 4: Forward Kintematics").shift(UP*3).scale(0.65)
-        secondary_title = Text("In this course ", color=BLUE).next_to(title, DOWN).scale(0.4)
+        secondary_title = Text("In this chapter ", color=BLUE).next_to(title, DOWN).scale(0.4)
  
         prob = Tex(r"We only deal with open chain robots where the joints to consider are:", color=RED).next_to(secondary_title, DOWN).scale(0.5)
         img = ImageMobject('../images/joints.png').scale(0.7).shift(DOWN*1.1)
@@ -412,7 +412,7 @@ class DH_09(OPU_Slide):
         self.add(orthogonal, zim1)
 
         rule3 = Tex(r"Rule 3:", color=RED).scale(0.4).next_to(rule21, DOWN).align_to(rule2, LEFT)
-        rule31 = Tex(r"Set the $\hat{x}$ axis in the direction of the mutually perpendicular line from the (i-1) axis to the i axis.").scale(0.4).next_to(rule3, RIGHT).shift(DOWN*0.123)
+        rule31 = Tex(r"Set the $\hat{x}_{i-1}$ axis in the direction of the mutually perpendicular line from the (i-1) axis to the i axis.").scale(0.4).next_to(rule3, RIGHT).shift(DOWN*0.123)
         self.add(rule3, rule31)
 
         self.wait()
@@ -544,7 +544,7 @@ class DH_12(OPU_Slide):
         self.add(x,x_)
 
         rule4 = Tex(r"Rule 4:", color=RED).scale(0.4).next_to(rule31, DOWN).align_to(rule2, LEFT)
-        rule41 = Tex(r"Determine the $\hat{y}_{i-1}$ axis from the cross product equasion $\hat{y}_{i-1} = \hat{z}\times\hat{x}_{i-1}$.").scale(0.4).next_to(rule4, RIGHT).shift(DOWN*0.026)
+        rule41 = Tex(r"Determine the $\hat{y}_{i-1}$ axis from the cross product equasion $\hat{y}_{i-1} = \hat{z}_{i-1}\times\hat{x}_{i-1}$.").scale(0.4).next_to(rule4, RIGHT).shift(DOWN*0.026)
         self.add(rule4, rule41)
         self.wait()
 
@@ -590,7 +590,7 @@ class DH_13(OPU_Slide):
         self.add(x,x_)
 
         rule4 = Tex(r"Rule 4:", color=RED).scale(0.4).next_to(rule31, DOWN).align_to(rule2, LEFT)
-        rule41 = Tex(r"Determine the $\hat{y}_{i-1}$ axis from the cross product equasion $\hat{y}_{i-1} = \hat{z}\times\hat{x}_{i-1}$.").scale(0.4).next_to(rule4, RIGHT).shift(DOWN*0.026)
+        rule41 = Tex(r"Determine the $\hat{y}_{i-1}$ axis from the cross product equasion $\hat{y}_{i-1} = \hat{z}_{i-1}\times\hat{x}_{i-1}$.").scale(0.4).next_to(rule4, RIGHT).shift(DOWN*0.026)
         self.add(rule4, rule41)
 
         y = Arrow(start=[-4.13,-1.73,0], end=[-4.53,-0.83,0], stroke_width=2.1, color=GREEN)
@@ -1244,3 +1244,199 @@ class DH_24(OPU_Slide):
         self.add(ti, ti4)
         self.wait()
 
+
+class DH_25(OPU_Slide):
+   def construct(self):
+        note = ""
+        self.create_note(note)
+        self.add_info()
+
+        title = Text("Appendix C: Denavit–Hartenberg Parameters").shift(UP*3).scale(0.65)
+        secondary_title = Text("Exercises ...", color=BLUE).scale(2)
+        self.add(title, secondary_title)
+
+        self.wait()
+
+
+
+class Chap4_08(OPU_Slide):
+   def construct(self):
+        note = ""
+        self.create_note(note)
+        self.add_info()
+
+        title = Text("Chapter 4: Forward Kintematics").shift(UP*3).scale(0.65)
+        secondary_title = Text("4.1 Product of Exponentials:", color=BLUE).next_to(title, DOWN).scale(0.4)
+        
+        prob = Tex(r"Home or Zero position of a robot is when all the joints are set to zero", color=GREEN).next_to(secondary_title, DOWN).scale(0.5)
+        img = ImageMobject('../images/4.1.png').scale(1.3).shift(DOWN*1+LEFT*3)
+        self.add(title, secondary_title, prob, img)
+
+        circ1, rect1, in_circ1, circ2, rect2, in_circ2, circ3, rect3, in_circ3, rect0 = get_robot_1dof()
+        moving_arm = VGroup(circ1, rect1, in_circ1, circ2, rect2, in_circ2 , circ3, rect3, in_circ3).scale(0.4).shift(DOWN*2.3)
+        rect0.scale(0.4).next_to(circ1, DOWN).shift(UP*0.5)
+        moving_arm.rotate(30*DEGREES, about_point=circ1.get_center())
+        rect2.rotate(30*DEGREES, about_point=circ2.get_center())
+       
+        circ3.rotate(30*DEGREES, about_point=circ2.get_center())
+        rect3.rotate(30*DEGREES, about_point=circ2.get_center())
+        in_circ3.rotate(30*DEGREES, about_point=circ2.get_center())
+       
+        circ3.rotate(-60*DEGREES, about_point=circ3.get_center())
+        rect3.rotate(-60*DEGREES, about_point=circ3.get_center())
+        in_circ3.rotate(-60*DEGREES, about_point=circ3.get_center())
+        self.play(FadeIn(moving_arm,rect0))
+        self.play(Rotate(in_circ3,60*DEGREES,about_point=circ3.get_center()),
+                        Rotate(rect3,60*DEGREES,about_point=circ3.get_center()),
+                                Rotate(circ3,60*DEGREES,about_point=circ3.get_center()), rate_func=linear)
+
+        self.play(Rotate(in_circ3,-30*DEGREES,about_point=circ2.get_center()),
+                                Rotate(rect3,-30*DEGREES,about_point=circ2.get_center()),
+                                        Rotate(circ3,-30*DEGREES,about_point=circ2.get_center()),
+                                                 Rotate(rect2,-30*DEGREES,about_point=circ2.get_center()), rate_func=linear)
+        
+        self.play(Rotate(moving_arm,-30*DEGREES,about_point=circ1.get_center()), rate_func=linear)
+
+        self.wait()
+
+def get_robot_1dof(dof=1):
+    rect1 = Rectangle(BLUE, 0.75,3)
+    circ1 = Circle(0.5).next_to(rect1, LEFT).shift(RIGHT*0.5)
+    in_circ1= Circle(0.05, color=BLUE).move_to(circ1.get_center())
+    rect2 = Rectangle(BLUE, 0.75,3).move_to(rect1.get_right()+RIGHT*2)
+    circ2 = Circle(0.5).next_to(rect2, LEFT).shift(RIGHT*0.5)
+    in_circ2= Circle(0.05, color=BLUE).move_to(circ2.get_center())
+    rect3 = Rectangle(BLUE, 0.75,3).move_to(rect2.get_right()+RIGHT*2)
+    circ3 = Circle(0.5).next_to(rect3, LEFT).shift(RIGHT*0.5)
+    in_circ3= Circle(0.05, color=BLUE).move_to(circ3.get_center())
+    rect0 = Rectangle(BLUE, 0.75,0.75).next_to(circ1, DOWN).shift(UP*0.5)
+    return circ1, rect1, in_circ1, circ2, rect2, in_circ2, circ3, rect3, in_circ3, rect0
+
+
+
+class Chap4_09(OPU_Slide):
+   def construct(self):
+        note = ""
+        self.create_note(note)
+        self.add_info()
+
+        title = Text("Chapter 4: Forward Kintematics").shift(UP*3).scale(0.65)
+        secondary_title = Text("4.1 Product of Exponentials:", color=BLUE).next_to(title, DOWN).scale(0.4)
+        
+        prob = Tex(r"Define M to be the position and orientation of frame \{4\} when the robot is at its home position.", color=GREEN).next_to(secondary_title, DOWN).scale(0.5)
+        img = ImageMobject('../images/4.1.png').scale(1.3).shift(DOWN*1+LEFT*3)
+        img1 = ImageMobject('../images/fkm.png').scale(1.3).next_to(img, RIGHT)
+        self.add(title, secondary_title, prob, img, img1)
+
+        self.wait()
+
+
+
+class Chap4_10(OPU_Slide):
+   def construct(self):
+        note = ""
+        self.create_note(note)
+        self.add_info()
+
+        title = Text("Chapter 4: Forward Kintematics").shift(UP*3).scale(0.65)
+        secondary_title = Text("4.1 Product of Exponentials:", color=BLUE).next_to(title, DOWN).scale(0.4)
+        
+        prob = Tex(r"If $\theta_1$ and $\theta_2$ are held at their zero position then the screw axis corresponding to rotating about joint 3 can be expressed in the \{0\} frame as:", color=GREEN).next_to(secondary_title, DOWN).scale(0.5)
+        img = ImageMobject('../images/4.1.png').scale(1.3).shift(DOWN*1+LEFT*3)
+        img1 = ImageMobject('../images/fks3.png').scale(1.3).next_to(img, RIGHT).shift(UP*0.5)
+        img2 = ImageMobject('../images/fkv3.png').scale(1.3).next_to(img1, DOWN).shift(RIGHT*0.5)
+        self.add(title, secondary_title, prob, img, img1, img2)
+
+        self.wait()
+
+
+
+
+class Chap4_11(OPU_Slide):
+   def construct(self):
+        note = ""
+        self.create_note(note)
+        self.add_info()
+
+        title = Text("Chapter 4: Forward Kintematics").shift(UP*3).scale(0.65)
+        secondary_title = Text("4.1 Product of Exponentials:", color=BLUE).next_to(title, DOWN).scale(0.4)
+        
+        prob = Tex(r"", color=GREEN).next_to(secondary_title, DOWN).scale(0.5)
+        img = ImageMobject('../images/4.1.png').scale(1.3).shift(DOWN*1+LEFT*3)
+        img1 = ImageMobject('../images/fks3sqew.png').scale(1.3).next_to(img, RIGHT).shift(UP*0.5+LEFT*0.5)
+        # img2 = ImageMobject('../images/fkv3.png').scale(1.3).next_to(img1, DOWN).shift(RIGHT*0.5)
+        self.add(title, secondary_title, prob, img, img1,)
+
+        self.wait()
+
+
+class Chap4_12(OPU_Slide):
+   def construct(self):
+        note = ""
+        self.create_note(note)
+        self.add_info()
+
+        title = Text("Chapter 4: Forward Kintematics").shift(UP*3).scale(0.65)
+        secondary_title = Text("4.1 Product of Exponentials:", color=BLUE).next_to(title, DOWN).scale(0.4)
+        
+        prob = Tex(r"", color=GREEN).next_to(secondary_title, DOWN).scale(0.5)
+        img = ImageMobject('../images/4.1.png').scale(1.3).shift(DOWN*1+LEFT*3)
+        img1 = ImageMobject('../images/fks2sqew.png').scale(1.3).next_to(img, RIGHT).shift(UP*0.5+LEFT*0.5)
+        # img2 = ImageMobject('../images/fkv3.png').scale(1.3).next_to(img1, DOWN).shift(RIGHT*0.5)
+        self.add(title, secondary_title, prob, img, img1,)
+
+        self.wait()
+
+
+class Chap4_13(OPU_Slide):
+   def construct(self):
+        note = ""
+        self.create_note(note)
+        self.add_info()
+
+        title = Text("Chapter 4: Forward Kintematics").shift(UP*3).scale(0.65)
+        secondary_title = Text("4.1 Product of Exponentials:", color=BLUE).next_to(title, DOWN).scale(0.4)
+        
+        prob = Tex(r"", color=GREEN).next_to(secondary_title, DOWN).scale(0.5)
+        img = ImageMobject('../images/4.1.png').scale(1.3).shift(DOWN*1+LEFT*3)
+        img1 = ImageMobject('../images/fks1sqew.png').scale(1.3).next_to(img, RIGHT).shift(UP*0.5+LEFT*0.5)
+        # img2 = ImageMobject('../images/fkv3.png').scale(1.3).next_to(img1, DOWN).shift(RIGHT*0.5)
+        self.add(title, secondary_title, prob, img, img1,)
+
+        self.wait()
+
+
+class Chap4_14(OPU_Slide):
+   def construct(self):
+        note = "POE formula - Space form"
+        self.create_note(note)
+        self.add_info()
+
+        title = Text("Chapter 4: Forward Kintematics").shift(UP*3).scale(0.65)
+        secondary_title = Text("4.1 Product of Exponentials:", color=BLUE).next_to(title, DOWN).scale(0.4)
+        
+        prob = Tex(r"", color=GREEN).next_to(secondary_title, DOWN).scale(0.5)
+        img = ImageMobject('../images/4.1.png').scale(1.3).shift(DOWN*1+LEFT*3)
+        img1 = ImageMobject('../images/fks4.png').scale(1.3).next_to(img, RIGHT).shift(UP*0.5+LEFT*0.5)
+        # img2 = ImageMobject('../images/fkv3.png').scale(1.3).next_to(img1, DOWN).shift(RIGHT*0.5)
+        self.add(title, secondary_title, prob, img, img1,)
+
+        self.wait()
+
+
+class Chap4_15(OPU_Slide):
+   def construct(self):
+        note = "Example 4.1"
+        self.create_note(note)
+        self.add_info()
+
+        title = Text("Chapter 4: Forward Kintematics").shift(UP*3).scale(0.65)
+        secondary_title = Text("4.1 Product of Exponentials:", color=BLUE).next_to(title, DOWN).scale(0.4)
+        
+        prob = Tex(r"Derive the forward kinematics for the spatial open chain robot using the PoE formula", color=GREEN).next_to(secondary_title, DOWN).scale(0.5)
+        img = ImageMobject('../images/4.3.png').scale(1.3).shift(DOWN*1+LEFT*3)
+        # img1 = ImageMobject('../images/fks4.png').scale(1.3).next_to(img, RIGHT).shift(UP*0.5+LEFT*0.5)
+        # img2 = ImageMobject('../images/fkv3.png').scale(1.3).next_to(img1, DOWN).shift(RIGHT*0.5)
+        self.add(title, secondary_title, prob, img,)
+
+        self.wait()
