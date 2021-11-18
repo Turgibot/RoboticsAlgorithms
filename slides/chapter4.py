@@ -1141,7 +1141,7 @@ class DH_22(OPU_Slide):
         self.add_info()
 
         title = Text("Appendix C: Denavit–Hartenberg Parameters").shift(UP*3).scale(0.65)
-        secondary_title = Text("Assigning the Ground and End-E↵ector Frames:", color=BLUE).next_to(title, DOWN).scale(0.4)
+        secondary_title = Text("Assigning the Ground and End-Effector Frames:", color=BLUE).next_to(title, DOWN).scale(0.4)
         self.add(title, secondary_title)
 
         rule1 = Tex(r"We would like to simplify as many of the D.H. parametes as possible.").scale(0.4).shift(UP*1.5+LEFT*0.5)
@@ -1416,8 +1416,8 @@ class Chap4_14(OPU_Slide):
         secondary_title = Text("4.1 Product of Exponentials:", color=BLUE).next_to(title, DOWN).scale(0.4)
         
         prob = Tex(r"", color=GREEN).next_to(secondary_title, DOWN).scale(0.5)
-        img = ImageMobject('../images/4.1.png').scale(1.3).shift(DOWN*1+LEFT*3)
-        img1 = ImageMobject('../images/fks4.png').scale(1.3).next_to(img, RIGHT).shift(UP*0.5+LEFT*0.5)
+        img = ImageMobject('../images/fkilus.png').scale(1).shift(DOWN*1+LEFT*3.8)
+        img1 = ImageMobject('../images/fks4.png').scale(1.3).next_to(img, RIGHT).shift(UP*0.5)
         # img2 = ImageMobject('../images/fkv3.png').scale(1.3).next_to(img1, DOWN).shift(RIGHT*0.5)
         self.add(title, secondary_title, prob, img, img1,)
 
@@ -1439,4 +1439,103 @@ class Chap4_15(OPU_Slide):
         # img2 = ImageMobject('../images/fkv3.png').scale(1.3).next_to(img1, DOWN).shift(RIGHT*0.5)
         self.add(title, secondary_title, prob, img,)
 
+        self.wait()
+
+
+class Chap4_16(OPU_Slide):
+   def construct(self):
+        note = "Example 4.1"
+        self.create_note(note)
+        self.add_info()
+
+        title = Text("Chapter 4: Forward Kintematics").shift(UP*3).scale(0.65)
+        secondary_title = Text("4.1 Product of Exponentials:", color=BLUE).next_to(title, DOWN).scale(0.4)
+        
+        prob = Tex(r"Derive the forward kinematics for the spatial open chain robot using the PoE formula", color=GREEN).next_to(secondary_title, DOWN).scale(0.5)
+        img = ImageMobject('../images/4.3.png').scale(1.3).shift(DOWN*1+LEFT*3)
+        img1 = ImageMobject('../images/fks5.png').scale(1.3).next_to(img, RIGHT).shift(UP*0.5+LEFT*0.5)
+        # img2 = ImageMobject('../images/fkv3.png').scale(1.3).next_to(img1, DOWN).shift(RIGHT*0.5)
+        self.add(title, secondary_title, prob, img, img1)
+
+        squ1 = Rectangle(color=BLACK, width=2.2, height=0.4, fill_color=BLACK, fill_opacity=1).shift(UP*0.4+RIGHT*3.65)
+        squ2 = Rectangle(color=BLACK, width=1.6, height=1.4, fill_color=BLACK, fill_opacity=1).shift(DOWN*1.3+RIGHT*3.47)
+        self.add(squ1, squ2)
+        self.wait()
+
+
+class Chap4_17(OPU_Slide):
+   def construct(self):
+        note = "Example 4.1"
+        self.create_note(note)
+        self.add_info()
+
+        title = Text("Chapter 4: Forward Kintematics").shift(UP*3).scale(0.65)
+        secondary_title = Text("4.1 Product of Exponentials:", color=BLUE).next_to(title, DOWN).scale(0.4)
+        
+        prob = Tex(r"Derive the forward kinematics for the spatial open chain robot using the PoE formula", color=GREEN).next_to(secondary_title, DOWN).scale(0.5)
+        img = ImageMobject('../images/4.3.png').scale(1.3).shift(DOWN*1+LEFT*3)
+        img1 = ImageMobject('../images/fks5.png').scale(1.3).next_to(img, RIGHT).shift(UP*0.5+LEFT*0.5)
+        # img2 = ImageMobject('../images/fkv3.png').scale(1.3).next_to(img1, DOWN).shift(RIGHT*0.5)
+        self.add(title, secondary_title, prob, img, img1)
+
+        self.wait()
+
+
+class Chap4_18(OPU_Slide):
+   def construct(self):
+        note = "Example 4.1"
+        self.create_note(note)
+        self.add_info()
+
+        title = Text("Chapter 4: Forward Kintematics").shift(UP*3).scale(0.65)
+        secondary_title = Text("4.1 Product of Exponentials:", color=BLUE).next_to(title, DOWN).scale(0.4)
+        
+        prob = Tex(r"Derive the forward kinematics for the spatial open chain robot using the PoE formula", color=GREEN).next_to(secondary_title, DOWN).scale(0.5)
+        img = ImageMobject('../images/4.3.png').scale(1.3).shift(DOWN*1+LEFT*3)
+        img1 = ImageMobject('../images/fkstab.png').scale(1.3).next_to(img, RIGHT).shift(UP*0.5+LEFT*0.5)
+        # img2 = ImageMobject('../images/fkv3.png').scale(1.3).next_to(img1, DOWN).shift(RIGHT*0.5)
+        self.add(title, secondary_title, prob, img, img1)
+        # squ1 = Rectangle(color=BLACK, width=2.2, height=0.4, fill_color=BLACK, fill_opacity=1).shift(UP*0.4+RIGHT*3.65)
+        squ2 = Rectangle(color=BLACK, width=0.95, height=0.195, fill_color=BLACK, fill_opacity=1).shift(DOWN*0.59+RIGHT*2.85)
+        squ3 = squ2.copy().shift(RIGHT*1.2)
+        squ4 = squ2.copy().shift(DOWN*0.26 + RIGHT*1.15)
+        squ5 = squ2.copy().shift(DOWN*0.26)
+        squ6 = squ2.copy().shift(DOWN*0.52)
+        squ7 = squ2.copy().shift(DOWN*0.52 + RIGHT*1.2)
+        self.add(squ2, squ3, squ4, squ5, squ6, squ7)
+        self.wait()
+
+
+class Chap4_19(OPU_Slide):
+   def construct(self):
+        note = "Example 4.1"
+        self.create_note(note)
+        self.add_info()
+
+        title = Text("Chapter 4: Forward Kintematics").shift(UP*3).scale(0.65)
+        secondary_title = Text("4.1 Product of Exponentials:", color=BLUE).next_to(title, DOWN).scale(0.4)
+        
+        prob = Tex(r"Derive the forward kinematics for the spatial open chain robot using the PoE formula", color=GREEN).next_to(secondary_title, DOWN).scale(0.5)
+        img = ImageMobject('../images/4.3.png').scale(1.3).shift(DOWN*1+LEFT*3)
+        img1 = ImageMobject('../images/fkstab.png').scale(1.3).next_to(img, RIGHT).shift(UP*0.5+LEFT*0.5)
+        # img2 = ImageMobject('../images/fkv3.png').scale(1.3).next_to(img1, DOWN).shift(RIGHT*0.5)
+        self.add(title, secondary_title, prob, img, img1)
+      
+        self.wait()
+
+class Chap4_20(OPU_Slide):
+   def construct(self):
+        note = "Example 4.1"
+        self.create_note(note)
+        self.add_info()
+
+        title = Text("Chapter 4: Forward Kintematics").shift(UP*3).scale(0.65)
+        secondary_title = Text("4.1 Product of Exponentials:", color=BLUE).next_to(title, DOWN).scale(0.4)
+        
+        prob = Tex(r"Derive the forward kinematics for the spatial open chain robot using the PoE formula", color=GREEN).next_to(secondary_title, DOWN).scale(0.5)
+        img = ImageMobject('../images/4.3.png').scale(1.3).shift(DOWN*1+LEFT*3)
+        img1 = ImageMobject('../images/fkssum.png').scale(1.3).next_to(img, RIGHT).shift(LEFT*0.5)
+        # img2 = ImageMobject('../images/fkv3.png').scale(1.3).next_to(img1, DOWN).shift(RIGHT*0.5)
+        self.add(title, secondary_title, prob, img, img1)
+      
         self.wait()
