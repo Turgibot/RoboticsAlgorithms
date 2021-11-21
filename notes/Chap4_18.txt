@@ -1,1 +1,1 @@
-<aside class="notes">Example 4.1</aside>
+<aside class="notes">נמלא טבלה של וקטורי המהירות עבוד כל ג'וינט </aside>

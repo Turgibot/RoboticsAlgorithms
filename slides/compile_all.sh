@@ -78,119 +78,172 @@ echo Compiling all manim animation and uploading to website
 
 #Chapter 3
 
-manim chapter3.py Chap3_00
-manim chapter3.py Chap3_01
+# manim chapter3.py Chap3_00
+# manim chapter3.py Chap3_01
 
-#3.1
+# #3.1
 
-manim chapter3.py Chap3_10
-manim chapter3.py Chap3_11
-manim chapter3.py Chap3_12
-manim chapter3.py Chap3_13
-manim chapter3.py Chap3_14
-manim chapter3.py Chap3_15
-manim chapter3.py Chap3_16
-manim chapter3.py Chap3_17
-manim chapter3.py Chap3_18
-manim chapter3.py Chap3_19
+# manim chapter3.py Chap3_10
+# manim chapter3.py Chap3_11
+# manim chapter3.py Chap3_12
+# manim chapter3.py Chap3_13
+# manim chapter3.py Chap3_14
+# manim chapter3.py Chap3_15
+# manim chapter3.py Chap3_16
+# manim chapter3.py Chap3_17
+# manim chapter3.py Chap3_18
+# manim chapter3.py Chap3_19
 
-#3.2.1
+# #3.2.1
 
-manim chapter3.py Chap3_210
-manim chapter3.py Chap3_211
-manim chapter3.py Chap3_212
-manim chapter3.py Chap3_213
-manim chapter3.py Chap3_214
-manim chapter3.py Chap3_215
-manim chapter3.py Chap3_216
-manim chapter3.py Chap3_217
-manim chapter3.py Chap3_218
-manim chapter3.py Chap3_219
+# manim chapter3.py Chap3_210
+# manim chapter3.py Chap3_211
+# manim chapter3.py Chap3_212
+# manim chapter3.py Chap3_213
+# manim chapter3.py Chap3_214
+# manim chapter3.py Chap3_215
+# manim chapter3.py Chap3_216
+# manim chapter3.py Chap3_217
+# manim chapter3.py Chap3_218
+# manim chapter3.py Chap3_219
 
-#3.2.1.2
+# #3.2.1.2
 
-manim chapter3.py Chap3_2120
-manim chapter3.py Chap3_2121
-manim chapter3.py Chap3_2122
-manim chapter3.py Chap3_2123
-manim chapter3.py Chap3_2124
-manim chapter3.py Chap3_2125
+# manim chapter3.py Chap3_2120
+# manim chapter3.py Chap3_2121
+# manim chapter3.py Chap3_2122
+# manim chapter3.py Chap3_2123
+# manim chapter3.py Chap3_2124
+# manim chapter3.py Chap3_2125
 
-#3.2.2
+# #3.2.2
 
-manim chapter3.py Chap3_220
-manim chapter3.py Chap3_221
-manim chapter3.py Chap3_222
-manim chapter3.py Chap3_223
-manim chapter3.py Chap3_224
+# manim chapter3.py Chap3_220
+# manim chapter3.py Chap3_221
+# manim chapter3.py Chap3_222
+# manim chapter3.py Chap3_223
+# manim chapter3.py Chap3_224
 
-#3.2.3.2
+# #3.2.3.2
 
-manim chapter3.py Chap3_2320
-manim chapter3.py Chap3_2321
-manim chapter3.py Chap3_2322
-manim chapter3.py Chap3_2323
-manim chapter3.py Chap3_2324
-manim chapter3.py Chap3_2325
-manim chapter3.py Chap3_2326
-manim chapter3.py Chap3_2327
-manim chapter3.py Chap3_2328
+# manim chapter3.py Chap3_2320
+# manim chapter3.py Chap3_2321
+# manim chapter3.py Chap3_2322
+# manim chapter3.py Chap3_2323
+# manim chapter3.py Chap3_2324
+# manim chapter3.py Chap3_2325
+# manim chapter3.py Chap3_2326
+# manim chapter3.py Chap3_2327
+# manim chapter3.py Chap3_2328
 
-#3.2.3.3
+# #3.2.3.3
 
-manim chapter3.py Chap3_2330
-manim chapter3.py Chap3_2331
+# manim chapter3.py Chap3_2330
+# manim chapter3.py Chap3_2331
 
 
 
-#3.3.1
+# #3.3.1
 
-manim chapter3.py Chap3_310
+# manim chapter3.py Chap3_310
 
-manim chapter3.py Chap3_3110
+# manim chapter3.py Chap3_3110
 
-manim chapter3.py Chap3_3120
-manim chapter3.py Chap3_3121
-manim chapter3.py Chap3_3122
-manim chapter3.py Chap3_3123
-manim chapter3.py Chap3_3124
-manim chapter3.py Chap3_3125
-manim chapter3.py Chap3_3126
-manim chapter3.py Chap3_3127
-manim chapter3.py Chap3_3128
-manim chapter3.py Chap3_3129
-manim chapter3.py Chap3_31210
-manim chapter3.py Chap3_31211
-manim chapter3.py Chap3_31212
-manim chapter3.py Chap3_31213
-manim chapter3.py Chap3_31214
-manim chapter3.py Chap3_31215
-manim chapter3.py Chap3_31216
-manim chapter3.py Chap3_31217
-manim chapter3.py Chap3_31218
-manim chapter3.py Chap3_31219
-manim chapter3.py Chap3_31220
-manim chapter3.py Chap3_31221
-manim chapter3.py Chap3_31222
-manim chapter3.py Chap3_31223
-manim chapter3.py Chap3_31224
-manim chapter3.py Chap3_31225
-manim chapter3.py Chap3_31226
+# manim chapter3.py Chap3_3120
+# manim chapter3.py Chap3_3121
+# manim chapter3.py Chap3_3122
+# manim chapter3.py Chap3_3123
+# manim chapter3.py Chap3_3124
+# manim chapter3.py Chap3_3125
+# manim chapter3.py Chap3_3126
+# manim chapter3.py Chap3_3127
+# manim chapter3.py Chap3_3128
+# manim chapter3.py Chap3_3129
+# manim chapter3.py Chap3_31210
+# manim chapter3.py Chap3_31211
+# manim chapter3.py Chap3_31212
+# manim chapter3.py Chap3_31213
+# manim chapter3.py Chap3_31214
+# manim chapter3.py Chap3_31215
+# manim chapter3.py Chap3_31216
+# manim chapter3.py Chap3_31217
+# manim chapter3.py Chap3_31218
+# manim chapter3.py Chap3_31219
+# manim chapter3.py Chap3_31220
+# manim chapter3.py Chap3_31221
+# manim chapter3.py Chap3_31222
+# manim chapter3.py Chap3_31223
+# manim chapter3.py Chap3_31224
+# manim chapter3.py Chap3_31225
+# manim chapter3.py Chap3_31226
 
-manim chapter3.py Chap3_320
-manim chapter3.py Chap3_321
-manim chapter3.py Chap3_322
+# manim chapter3.py Chap3_320
+# manim chapter3.py Chap3_321
+# manim chapter3.py Chap3_322
 
-manim chapter3.py Chap3_3220
-manim chapter3.py Chap3_3221
-manim chapter3.py Chap3_3222
-manim chapter3.py Chap3_3223
-manim chapter3.py Chap3_3224
+# manim chapter3.py Chap3_3220
+# manim chapter3.py Chap3_3221
+# manim chapter3.py Chap3_3222
+# manim chapter3.py Chap3_3223
+# manim chapter3.py Chap3_3224
 
-manim chapter3.py Chap3_330
-manim chapter3.py Chap3_331
-manim chapter3.py Chap3_332
+# manim chapter3.py Chap3_330
+# manim chapter3.py Chap3_331
+# manim chapter3.py Chap3_332
 
+manim chapter4.py Chap4_00
+manim chapter4.py Chap4_01
+manim chapter4.py Chap4_02
+manim chapter4.py Chap4_03
+manim chapter4.py Chap4_04
+manim chapter4.py Chap4_05
+manim chapter4.py Chap4_06
+manim chapter4.py Chap4_07
+manim chapter4.py DH_00
+manim chapter4.py DH_01
+manim chapter4.py DH_02
+manim chapter4.py DH_03
+manim chapter4.py DH_04
+manim chapter4.py DH_05
+manim chapter4.py DH_06
+manim chapter4.py DH_07
+manim chapter4.py DH_08
+manim chapter4.py DH_09
+manim chapter4.py DH_10
+manim chapter4.py DH_11
+manim chapter4.py DH_12
+manim chapter4.py DH_13
+manim chapter4.py DH_14
+manim chapter4.py DH_15
+manim chapter4.py DH_16
+manim chapter4.py DH_17
+manim chapter4.py DH_18
+manim chapter4.py DH_19
+manim chapter4.py DH_20
+manim chapter4.py DH_21
+manim chapter4.py DH_22
+manim chapter4.py DH_23
+manim chapter4.py DH_24
+manim chapter4.py DH_25
+manim chapter4.py Chap4_08
+manim chapter4.py Chap4_09
+manim chapter4.py Chap4_10
+manim chapter4.py Chap4_11
+manim chapter4.py Chap4_12
+manim chapter4.py Chap4_13
+manim chapter4.py Chap4_14
+manim chapter4.py Chap4_15
+manim chapter4.py Chap4_16
+manim chapter4.py Chap4_17
+manim chapter4.py Chap4_18
+manim chapter4.py Chap4_19
+manim chapter4.py Chap4_20
+manim chapter4.py Chap4_21
+manim chapter4.py Chap4_22
+manim chapter4.py Chap4_23
+manim chapter4.py Chap4_24
+manim chapter4.py Chap4_25
+manim chapter4.py Chap4_26
 
 
 

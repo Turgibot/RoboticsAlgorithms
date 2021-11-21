@@ -31,7 +31,9 @@ class Chap4_00(OPU_Slide):
 
 class Chap4_01(OPU_Slide):
    def construct(self):
-        note = ""
+        note = "פורוורד קינמטיקס מוגדר להיות הבעיה הבאה:\
+                 בהינתן משתני המפרקים - מהו המיקום והאוריאנטציה של האנד אפקטור של הרובוט? \
+                         במילים אחרות נרצה למפות את הטטות (משתני המפרקים) לקונפיגורציה של האא."
         self.create_note(note)
         self.add_info()
 
@@ -48,7 +50,8 @@ class Chap4_01(OPU_Slide):
 
 class Chap4_02(OPU_Slide):
    def construct(self):
-        note = ""
+        note = "קיימים מספר פתרונות לבעיה כאשר הפתרון הראשון שנדון בו הוא הפתרון הטריגונומטרי.\
+                אפשר לחשב את איקס כסכומי הקוסנוסים את ט כסכומי הסינוסים ואת הזוית של האא כסכומי הטטות."
         self.create_note(note)
         self.add_info()
 
@@ -67,7 +70,8 @@ class Chap4_02(OPU_Slide):
 
 class Chap4_03(OPU_Slide):
    def construct(self):
-        note = ""
+        note = "אבל מה אם המערכת אותה אנחנו מנסים לנתח היא בעלת מספר רב של דרגות חופש?\
+                 פה הפתרון הטריגונומטרי הופך להיות מסובך ומסורבל וכפי שכבר ראינו ניתן בעצם לפתור את העיה בעזרת מכפלה של מטריצות טרנספורמציה."
         self.create_note(note)
         self.add_info()
 
@@ -86,7 +90,7 @@ class Chap4_03(OPU_Slide):
 
 class Chap4_04(OPU_Slide):
    def construct(self):
-        note = ""
+        note = "אז מה אנחנו צריכים בכדי לפתור את הבעיה בעצם? ראינו שניתן לבטא רוטציה ומיקום של כל מסגרת ביחס למסגרת אחרת אז ננסה לבטא את מסגרת האא ביחס למסגרת הבסיס"
         self.create_note(note)
         self.add_info()
 
@@ -102,7 +106,7 @@ class Chap4_04(OPU_Slide):
 
 class Chap4_05(OPU_Slide):
    def construct(self):
-        note = ""
+        note = "טי 04 היא הטרנפורמציה הרצויה שמתקבלת ממכפלה של כל הטרנפורמציות בנקודות 0 עד 4. כלומר מ0 ל1 מ1 ל2 וכן הלאה עד 4 . היום אנחנו נכיר את שיטת דנביט הרטנברג שבאמצעותה אנחנו יכולים לייצר טרנפורמציות הומוגניות מרחבית מ4 פרמטרים בלבד. בעוד שאנחנו יודעים שבשביל לייצג קונפיגורציה של גוף קשיח המספר המינימלי של פרמטרים הוא 6.  "
         self.create_note(note)
         self.add_info()
 
@@ -120,7 +124,9 @@ class Chap4_05(OPU_Slide):
 
 class Chap4_06(OPU_Slide):
    def construct(self):
-        note = ""
+        note = " השיטה השנייה שאותה נלמד היום נקראת שיטת מכפלת האקספוננטים. שמשתמשת בייצוג בורג כדי לפתור את הפורוורד קינמטיקס.\
+                 השיטה הזאת מודרנית ויש לה יתרון מהותי על השיטה הקודמת.\
+                          הספר מתמקד בפיאואי שכן הספר הוא מודרן-רובוטיקס אבל לא ללמד את שיטת די אייטש זה ממש חטא בקורס רובוטיקה בסיסי. די איטש מופיע בנספח סי בסוף הספר."
         self.create_note(note)
         self.add_info()
 
@@ -137,7 +143,8 @@ class Chap4_06(OPU_Slide):
 
 class Chap4_07(OPU_Slide):
    def construct(self):
-        note = ""
+        note = "אז בוא נתחיל ללמוד את שתי השיטות - חשוב לומר שאנחנו פותרים את בעיית הפ.ק. עבור רובוטים מסוג אופן ציין כאשר אנחנו דנים בשני סוגים של ג'וינטים - רוולוט ופריזמטיק - \
+                וזאת מכיון שאנחנו מבינים משילוב של מספר ג'וינטי רוולוט ניתן לייצר מפרקים מורכבים יותר."
         self.create_note(note)
         self.add_info()
 
@@ -159,7 +166,7 @@ class Chap4_07(OPU_Slide):
 
 class DH_00(OPU_Slide):
    def construct(self):
-        note = ""
+        note = "1שיטת ד.ה. בעצם בנויה מ4 שלבים. נעבור עליהם לפי הסדר. 1 2 3 4. נתחיל ב"
         self.create_note(note)
         self.add_info()
 
@@ -178,7 +185,8 @@ class DH_00(OPU_Slide):
 
 class DH_01(OPU_Slide):
    def construct(self):
-        note = ""
+        note = "אז מה שאנחנו מתבקשים לעשות זה להוסיף מסגרת לכל ג'וינט. ניתן אינקס אי לג'וינט אי מינוס אחד לג'וינט הקודם לו. בין שני הג'וינטים כמובן שיש לינק. כמו שציינתי בשיטה הזאת נצליח לבנות טרנספורמציות באמצעות 4 פרטרים בלבד. \
+                מה שיקרה זה בעצם שאנחנו נגביל את הרוטציה והטרנפורמציה לצירי האיקס והזד בלבד. בשביל לעשות זאת אנחנו חייבים למקם את המסגרות על כל ג'וינט לפי סט של חוקים:"
         self.create_note(note)
         self.add_info()
 
@@ -187,7 +195,6 @@ class DH_01(OPU_Slide):
         img = ImageMobject('../images/dh0.png').scale(1.5).shift(LEFT*3+DOWN*0.05)
         ll = Line(start=[-4,-1,0], end=[-5,-3,0], stroke_width=2.1)
         lr = Line(start=[-2.035,-1,0], end=[-1.035,-3,0], stroke_width=2.1)
-        rule1 = Tex(r"We only deal with open chain robots where the joints to consider are:", color=RED).next_to(secondary_title, DOWN).scale(0.5)
 
         self.add(title, secondary_title, img, ll, lr)
         self.wait()
@@ -195,7 +202,7 @@ class DH_01(OPU_Slide):
 
 class DH_02(OPU_Slide):
    def construct(self):
-        note = ""
+        note = "החוק הראשון אומר שציר הסיבוב בחיובי הוא ציר הזד."
         self.create_note(note)
         self.add_info()
 
@@ -213,7 +220,7 @@ class DH_02(OPU_Slide):
 
 class DH_03(OPU_Slide):
    def construct(self):
-        note = ""
+        note = "ואם מדובר בג'וינט פריזמטי אז ציר הזד הוא עם הכיוון החיובי של תנועת הג'וינט."
         self.create_note(note)
         self.add_info()
 
@@ -233,7 +240,7 @@ class DH_03(OPU_Slide):
 
 class DH_04(OPU_Slide):
    def construct(self):
-        note = ""
+        note = "החוק השני מדבר על ראשית הצירים של המסגרת האי מינוס 1. שימו לב שמה שמעניין אותנו זוהי הקונפיגורציה של האא והמסגרות הן נקודות בדרך. אז כדי לחסוך בפרמטרים אנחנו נרצה למקם את המסגרות בצורה אופטימלית."
         self.create_note(note)
         self.add_info()
 
@@ -253,7 +260,7 @@ class DH_04(OPU_Slide):
 
 class DH_05(OPU_Slide):
    def construct(self):
-        note = ""
+        note = " החוק אומר למצוא ישר אורטוגונלי לשני צירי הג'וינטים ולמקם את ראשית בצירים של הג'וינט האי מינוס אחד בנקודת החיבור - העברנו ישר אורטוגונלי"
         self.create_note(note)
         self.add_info()
 
@@ -280,7 +287,7 @@ class DH_05(OPU_Slide):
 
 class DH_06(OPU_Slide):
    def construct(self):
-        note = ""
+        note = "ראשית הצירים של הג'וינט האי מינוס אחד עכשיו בנקודת החיבור של הישר עם הציר"
         self.create_note(note)
         self.add_info()
 
@@ -313,7 +320,7 @@ class DH_06(OPU_Slide):
 
 class DH_07(OPU_Slide):
    def construct(self):
-        note = ""
+        note = "ראשית הצירים של הג'וינט האי מינוס אחד עכשיו בנקודת החיבור של הישר עם הציר"
         self.create_note(note)
         self.add_info()
 
@@ -345,7 +352,8 @@ class DH_07(OPU_Slide):
 
 class DH_08(OPU_Slide):
    def construct(self):
-        note = ""
+        note = "שני מצבי קצה יכולים לקרות : הראשון הוא שהישרים מקבילים ואז נבחר את הקומפיגורציה העדיפה שתגרום לאיפוס של כמה שיותר פרמטרים. אנחנו לא יודעים מהם הפרמטרים אז לא לדאוג עוד נראה דוגמה לכך \
+                ומקרה קצה שני מדבר על שני צירים שנחתכים ולכן לא קיימים ישר אורתוגונלי - במקרה כזה נקודת החיתוך של הצירים היא ראשית הצירים של המסגרת האי מינוס אחת. "
         self.create_note(note)
         self.add_info()
 
@@ -380,7 +388,7 @@ class DH_08(OPU_Slide):
 
 class DH_09(OPU_Slide):
    def construct(self):
-        note = ""
+        note = "החוק השלישי פשוט ואומר שאת ציר האיקס ממקמים עם כיוון הישר האורטוגונלי בכיוון מאי מינוס אחד לאי"
         self.create_note(note)
         self.add_info()
 
@@ -419,7 +427,7 @@ class DH_09(OPU_Slide):
 
 class DH_10(OPU_Slide):
    def construct(self):
-        note = ""
+        note = "במידה ולא קיים ישר - זה קורה כי הצירים נחתכים ואז ציר האיקס אורטוגונלי למישור שנפרס על ידי שני הצירים"
         self.create_note(note)
         self.add_info()
 
@@ -461,7 +469,7 @@ class DH_10(OPU_Slide):
 
 class DH_11(OPU_Slide):
    def construct(self):
-        note = ""
+        note = "במידה ולא קיים ישר - זה קורה כי הצירים נחתכים ואז ציר האיקס אורטוגונלי למישור שנפרס על ידי שני הצירים"
         self.create_note(note)
         self.add_info()
 
@@ -504,7 +512,7 @@ class DH_11(OPU_Slide):
 
 class DH_12(OPU_Slide):
    def construct(self):
-        note = ""
+        note = "החוק הרביעי בעצם קובע את ציר הוואי כתוצאת המכפלה הקרטזית או במילים פשוטות לפי חוק יד ימין. "
         self.create_note(note)
         self.add_info()
 
@@ -602,7 +610,8 @@ class DH_13(OPU_Slide):
 
 class DH_14(OPU_Slide):
    def construct(self):
-        note = ""
+        note = "אז אחרי שמיקמנו את המסגרות ואת מערכות הצירים שלהם לכל ג'וינט . השיטה מגדירה 4 פרמטרים אותם נצטרך לחישוב הפ.ק. לכל ג'וינט. הפרמטר הראשון .:\
+                איי מינוס אחד הוא הלינק לנגט' - האורך של הישר האורטוגונלי. "
         self.create_note(note)
         self.add_info()
 
@@ -651,7 +660,7 @@ class DH_14(OPU_Slide):
 
 class DH_15(OPU_Slide):
    def construct(self):
-        note = ""
+        note = "הפרמטר השני - אלפא מינוס אחת נקרא הטוויסט - מוגדר להיות הזוית שבה צריך לסובב את מערכת הצירים של אי מינוס אחת סביב ציר האיקס שלו כדי להשוות בין צירי הזד של שתי המסגרות."
         self.create_note(note)
         self.add_info()
 
@@ -707,7 +716,7 @@ class DH_15(OPU_Slide):
 
 class DH_16(OPU_Slide):
    def construct(self):
-        note = ""
+        note = "נסתכל שוב על האנימציה "
         self.create_note(note)
         self.add_info()
 
@@ -770,7 +779,7 @@ class DH_16(OPU_Slide):
 
 class DH_17(OPU_Slide):
    def construct(self):
-        note = ""
+        note = " הפרמטר השלישי - נקרא האופסט - הוא בעצם המרחק מנקודת המפגש של הישר עם ציר הסיבוב האיי עד ראשית הצירים של המסגרת האיית."
         self.create_note(note)
         self.add_info()
 
@@ -834,7 +843,7 @@ class DH_17(OPU_Slide):
 
 class DH_18(OPU_Slide):
    def construct(self):
-        note = ""
+        note = " הפרמטר השלישי - נקרא האופסט - הוא בעצם המרחק מנקודת המפגש של הישר עם ציר הסיבוב האיי עד ראשית הצירים של המסגרת האיית."
         self.create_note(note)
         self.add_info()
 
@@ -902,7 +911,7 @@ class DH_18(OPU_Slide):
 
 class DH_19(OPU_Slide):
    def construct(self):
-        note = ""
+        note = "הפרמטר הרביעי והאחרון הוא הזוית פי, שמוגדר להיות הזוית אותה צריך לסובב את איקס של אי מינוס אחת סביב ציר זד של איי כדי שיתלכד עם איקס של איי "
         self.create_note(note)
         self.add_info()
 
@@ -976,7 +985,7 @@ class DH_19(OPU_Slide):
 
 class DH_20(OPU_Slide):
    def construct(self):
-        note = ""
+        note = "הפרמטר הרביעי והאחרון הוא הזוית פי, שמוגדר להיות הזוית אותה צריך לסובב את איקס של אי מינוס אחת סביב ציר זד של איי כדי שיתלכד עם איקס של איי "
         self.create_note(note)
         self.add_info()
 
@@ -1051,7 +1060,7 @@ class DH_20(OPU_Slide):
 
 class DH_21(OPU_Slide):
    def construct(self):
-        note = ""
+        note = "הפרמטר הרביעי והאחרון הוא הזוית פי, שמוגדר להיות הזוית אותה צריך לסובב את איקס של אי מינוס אחת סביב ציר זד של איי כדי שיתלכד עם איקס של איי "
         self.create_note(note)
         self.add_info()
 
@@ -1136,7 +1145,7 @@ class DH_21(OPU_Slide):
 
 class DH_22(OPU_Slide):
    def construct(self):
-        note = ""
+        note = "אז בעצם אחרי שמיקמנו מסגרת לכל ג'וינט צריל מסגרת נוספת לבסיס ומסגרת נוספת לא.א. השיטה אומרת שאת מסגרת הבסיס בדרך כלל נקבע עם המסגרת הראשונה ואת מסגרת הא.א. נקבע כך שנפשט ככל שניתן את הפרמטרים - במילים אחרות כל שכמה שיותר פרמטרים יהיו מאופסים"
         self.create_note(note)
         self.add_info()
 
@@ -1155,7 +1164,7 @@ class DH_22(OPU_Slide):
 
 class DH_23(OPU_Slide):
    def construct(self):
-        note = ""
+        note = "אז אחרי שיש לנו את 4 הפרמטרים לכל אחד מהג'וינטים בעצם נציב אותם במטריצת הטרנספורמציה המתאימה מאיי מינוס אחת לאיי. "
         self.create_note(note)
         self.add_info()
 
@@ -1173,7 +1182,8 @@ class DH_23(OPU_Slide):
 
 class DH_24(OPU_Slide):
    def construct(self):
-        note = ""
+        note = "אפשר לראות שהטרנספורמציה הזאת היא מכפלה של 4 אופרטורים :\
+                רוטציה...."
         self.create_note(note)
         self.add_info()
 
@@ -1247,7 +1257,7 @@ class DH_24(OPU_Slide):
 
 class DH_25(OPU_Slide):
    def construct(self):
-        note = ""
+        note = "תרגילים"
         self.create_note(note)
         self.add_info()
 
@@ -1261,7 +1271,8 @@ class DH_25(OPU_Slide):
 
 class Chap4_08(OPU_Slide):
    def construct(self):
-        note = ""
+        note = "השיטה הנוספת והעיקרית שנלמדת בספר היא מכפלת האקספוננטים - לפני שנתחיל לעבור עליה חושב להכיר את המונח הום או זירו פוזישן שמוגדר להיות מנח הרובוט כאשר כל המשתנים של הג'וינטים מאופסים - \
+                כלומר כל הזויות מאופסות ברוולוט ג'וינט ובפריזמטיק ג'וינט השינוי באורך גם הוא מאופס. "
         self.create_note(note)
         self.add_info()
 
@@ -1316,7 +1327,7 @@ def get_robot_1dof(dof=1):
 
 class Chap4_09(OPU_Slide):
    def construct(self):
-        note = ""
+        note = "אז כשהרובוט בהום פוזישן - נגדיר את המטריצה אם להיות הקונפיגורציה של הא.א ביחס למסגרת הבסיס המסומנת כאפס"
         self.create_note(note)
         self.add_info()
 
@@ -1334,7 +1345,9 @@ class Chap4_09(OPU_Slide):
 
 class Chap4_10(OPU_Slide):
    def construct(self):
-        note = ""
+        note = "בשלב הבא צריך לקבוע לכל אחד מהצירים ציר בורג אס. אני מזכיר שציר בורג שקול לטרנפורמציה הומוגונית ובנוי משני וקטורים באר שלוש, \
+                הראשון אומגה שהוא המהירות הזויתית ווי - המהירות הלינארית. המהירות הזויות היא ציר הסיבוב במקרה שלפנינו ניתן לראות כי זהו ציר הזד.\
+                        המהירות הלינארית נמדדת בנקודת הייחוס (במקרה שלנו בראשית הצירים של מסגרת הבסיס) ומוגדרת כמינוס המכפלה הוקטורית בין המהירות הזויתית לבין נקודה על ציר הסיבוב המסמנת באות קיו. "
         self.create_note(note)
         self.add_info()
 
@@ -1354,7 +1367,8 @@ class Chap4_10(OPU_Slide):
 
 class Chap4_11(OPU_Slide):
    def construct(self):
-        note = ""
+        note = "וכפי שראיתו לאחר שיש לנו את וקטור ציר הבורג אפשר להציב את הערכים שבו בצורה מטריציונית ולקבל את הייצוג של הטרנספורמציה בקואורדינטות אקספוננציאליות.\
+                בהנחה שהזיות של הג'וינט הראשון והשני נשארו מאופסות. אם נכפיל משמאל את אם באי בחזקת ציר הבורג טטא של הג'וינט השלישי נקבל את הטרנספורמציה מהבסיס לא.א."
         self.create_note(note)
         self.add_info()
 
@@ -1372,7 +1386,8 @@ class Chap4_11(OPU_Slide):
 
 class Chap4_12(OPU_Slide):
    def construct(self):
-        note = ""
+        note = "אז עכשיו נניח שמשנים גם את הזוית של טטא שתיים . וטטא שלוש מקובע כרגע על זוית כלשהי אבל טטא אחת מאופסת.\
+                אז אם נכפיל את מה שקיבלנו בשקף הקודם תתקבל הטרנספורמציה מהבסיס לא.א. כאשר היא תלויה בזויות משני הג'וינטים האחרונים."
         self.create_note(note)
         self.add_info()
 
@@ -1390,7 +1405,8 @@ class Chap4_12(OPU_Slide):
 
 class Chap4_13(OPU_Slide):
    def construct(self):
-        note = ""
+        note = "טוב אז אתם רואים לאן זה הולך אני מקווה...\
+                אם נייצג טרנספורמצית ציר בורג עבור כל ג'וינט ונכפיל בסדר מהראשון לאחרון משמאל למטריצה אם (למה משמאל - כי הטרנספורמציה ביחס לבסיס) נקבל את הטרנספורמציה מהבסיס לא.א. כפי שרצינו "
         self.create_note(note)
         self.add_info()
 
@@ -1408,7 +1424,12 @@ class Chap4_13(OPU_Slide):
 
 class Chap4_14(OPU_Slide):
    def construct(self):
-        note = "POE formula - Space form"
+        note = "בעצם מה שעשינו זה לפתח את ה פ.א.א בספייס פורם - כלומר ביחס למסדרת הבסיס. בשרטוט אפשר לראות איך ההכפלה באקספוננט משנה את הקונפיגורציה של הא.א ביחס לציר הבורג של אותו ג'וינט. \
+                לסיכום  - כדי להגיע לביטוי מכפלת האקספוננטים - צריך שלושה דברים:\
+                        1. להגדיר את הקונפיגורציה של הא.א ביחס לבסיס בשהרובוט בהום פוזישן באמצעות המטריצה אם\
+                                2. להגדיר ציר בורג לכל אחד מהג'ינטס ביחס לבסיס\
+                                        3. וכמובן שאנחנו צריכים את ערכי הטטות של כל הג'וינטס\
+                                                וכפי שכתוב בשורה האחרונה בשקף - יתרון של השיטה הזאת הוא שאין צורך להגדיר מסגרות ייחוס"
         self.create_note(note)
         self.add_info()
 
@@ -1426,7 +1447,7 @@ class Chap4_14(OPU_Slide):
 
 class Chap4_15(OPU_Slide):
    def construct(self):
-        note = "Example 4.1"
+        note = "דוגמה 4.1 בספר - שימו לב שבדוגמה נתונים לנו מערכות הצירים אבל הן פה רק כדי להטעות - למה? כין שכל מה שמעניין אותנו זה ציר הבורג ביחס למערכת הצירים של הבסיס וזהו "
         self.create_note(note)
         self.add_info()
 
@@ -1444,7 +1465,7 @@ class Chap4_15(OPU_Slide):
 
 class Chap4_16(OPU_Slide):
    def construct(self):
-        note = "Example 4.1"
+        note = "אז מהו הביטוי של הפ.ק. בספיישיאל פורם? ומהי המטריצה אם? "
         self.create_note(note)
         self.add_info()
 
@@ -1483,7 +1504,7 @@ class Chap4_17(OPU_Slide):
 
 class Chap4_18(OPU_Slide):
    def construct(self):
-        note = "Example 4.1"
+        note = "נמלא טבלה של וקטורי המהירות עבוד כל ג'וינט "
         self.create_note(note)
         self.add_info()
 
@@ -1525,7 +1546,7 @@ class Chap4_19(OPU_Slide):
 
 class Chap4_20(OPU_Slide):
    def construct(self):
-        note = "Example 4.1"
+        note = "ואז כמובן שנציב את הערכים בייצוג המטריציוני כדי להשלים את מה שחסר כדי לחשב את המכפלה "
         self.create_note(note)
         self.add_info()
 
@@ -1543,7 +1564,7 @@ class Chap4_20(OPU_Slide):
 
 class Chap4_21(OPU_Slide):
    def construct(self):
-        note = "Example 4.1"
+        note = "תרגיל נוסף - שמו לב שהפעם אין לנו מסגרות על כל ג'וינט אלא רק את מסגרת הבסיס והא.א."
         self.create_note(note)
         self.add_info()
 
@@ -1581,7 +1602,7 @@ class Chap4_22(OPU_Slide):
 
 
 
-class Chap4_22(OPU_Slide):
+class Chap4_23(OPU_Slide):
    def construct(self):
         note = "Example 4.1"
         self.create_note(note)
@@ -1612,7 +1633,7 @@ class Chap4_22(OPU_Slide):
 
 
 
-class Chap4_23(OPU_Slide):
+class Chap4_24(OPU_Slide):
    def construct(self):
         note = "Example 4.1"
         self.create_note(note)
@@ -1630,9 +1651,9 @@ class Chap4_23(OPU_Slide):
 
 
 
-class Chap4_24(OPU_Slide):
+class Chap4_25(OPU_Slide):
    def construct(self):
-        note = "Example 4.1"
+        note = "אוקיי אז השקף האחרון מגלה לנו שכמו שהכפלנו משמאל את אם בצירי בורג ביחס לבסיס אפשר להכפיל מימין בצירי בורג ביחס לא.א. הפעולות דומות ונבצע אותם בתרגילים "
         self.create_note(note)
         self.add_info()
 
@@ -1645,7 +1666,7 @@ class Chap4_24(OPU_Slide):
 
         self.wait()
 
-class Chap4_25(OPU_Slide):
+class Chap4_26(OPU_Slide):
    def construct(self):
         note = ""
         self.create_note(note)

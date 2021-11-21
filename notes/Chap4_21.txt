@@ -1,1 +1,1 @@
-<aside class="notes">Example 4.1</aside>
+<aside class="notes">תרגיל נוסף - שמו לב שהפעם אין לנו מסגרות על כל ג'וינט אלא רק את מסגרת הבסיס והא.א.</aside>

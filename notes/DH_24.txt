@@ -1,1 +1,1 @@
-<aside class="notes"></aside>
+<aside class="notes">אפשר לראות שהטרנספורמציה הזאת היא מכפלה של 4 אופרטורים :                רוטציה....</aside>

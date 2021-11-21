@@ -1,1 +1,1 @@
-<aside class="notes">Example 4.1</aside>
+<aside class="notes">ואז כמובן שנציב את הערכים בייצוג המטריציוני כדי להשלים את מה שחסר כדי לחשב את המכפלה </aside>
