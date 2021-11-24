@@ -1,3 +1,4 @@
+var env = PRODUCTION
 var slide = document.currentScript.getAttribute('slide_scene');
 function loadFile(filePath) {
   var result = null;
@@ -12,10 +13,18 @@ function loadFile(filePath) {
 }
 frags = loadFile(`video_slides/${slide}.txt`)
 note = loadFile(`notes/${slide}.txt`)
-document.write(`
+if(env=='LOCAL'){
+  document.write(`
 <section data-background-video="./video_slides/${slide}.mp4" id=${slide} data-background-color="#000000" id="vid" type="videoslide">
  ${frags}
  <aside class="notes">
     ${note}
   </aside>
 </section>`)
+}
+else{
+  document.write(`
+  <section data-background-video="./video_slides/${slide}.mp4" id=${slide} data-background-color="#000000" id="vid" type="videoslide">
+   ${frags}
+  </section>`)
+}
