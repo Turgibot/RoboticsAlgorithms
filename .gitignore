@@ -11,3 +11,5 @@ node_modules/
 .sass-cache
 dist/*.map
 token
+screenshots/
+images/

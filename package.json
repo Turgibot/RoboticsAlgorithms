@@ -13,13 +13,13 @@
     "build": "gulp build"
   },
   "author": {
-    "name": "Hakim El Hattab",
-    "email": "hakim.elhattab@gmail.com",
-    "web": "https://hakim.se"
+    "name": "Guy Tordjman",
+    "email": "turgibot@gmail.com",
+    "web": "https://tegale.com"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/hakimel/reveal.js.git"
+    "url": "https://github.com/Turgibot/RoboticsAlgorithms.git"
   },
   "engines": {
     "node": ">=10.0.0"
@@ -96,5 +96,8 @@
       "no-eq-null": 2,
       "no-unused-expressions": 0
     }
+  },
+  "dependencies": {
+    "mss": "^0.0.2"
   }
 }
