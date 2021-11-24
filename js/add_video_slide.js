@@ -1,4 +1,4 @@
-var env = PRODUCTION
+var env = 'PRODUCTION'
 var slide = document.currentScript.getAttribute('slide_scene');
 function loadFile(filePath) {
   var result = null;
