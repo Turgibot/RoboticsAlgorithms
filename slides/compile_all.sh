@@ -1,12 +1,12 @@
 #!/bin/sh
 echo Compiling all manim animation and uploading to website
 
-# manim introduction.py Intro1
-# manim introduction.py Intro2
-# manim introduction.py Admin
-# manim introduction.py Book
-# manim introduction.py HowTo
-# manim introduction.py Overview
+manim introduction.py Intro1
+manim introduction.py Intro2
+manim introduction.py Admin
+manim introduction.py Book
+manim introduction.py HowTo
+manim introduction.py Overview
 
 
 # manim chapter2.py Chap2_00
