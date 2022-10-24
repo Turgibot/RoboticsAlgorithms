@@ -6,7 +6,7 @@ class OPU_Slide(SlideScene):
         today = date.today()
         ou_img = ImageMobject('../images/ou_logo_full_inverted.jpeg').scale(0.4).shift(3*UP+6.3*LEFT)
         nbel_img = ImageMobject('../images/nbel.png').scale(0.18).shift(3*UP+5.8*RIGHT)
-        name = Text("Guy Tordjman").scale(0.25).shift(3.3*DOWN+6.1*LEFT)
+        name = Text("Guy Tordjman").scale(0.25).shift(3.4*DOWN+5.8*LEFT)
         lecture = Text("Algorithmic Robotics "+str(today.year), color=BLUE).scale(0.25).shift(3.3*DOWN+5*RIGHT)
         self.add(ou_img, name, lecture)
 

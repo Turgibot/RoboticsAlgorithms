@@ -46,7 +46,7 @@ class Book(OPU_Slide):
         img_txt = Text("Framed base image data").scale(0.3).next_to(img, DOWN)
         bul0 = "Modern Robotics - by Kevin M. Lynch and Frnack C. Park"
         bul2 = "Alongsided by short video lessons from Dr. Elishai"
-        bul1 = "Our course deals with 6 chapters"
+        bul1 = "Our course deals with 5 chapters"
         bul3 = "Excerises mostly from the book"
         bul4 = "Plenty of online resources including wiki, Coursera and GitHub"
 
