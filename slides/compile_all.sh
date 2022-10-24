@@ -191,60 +191,60 @@ echo Compiling all manim animation and uploading to website
 # manim chapter3.py Chap3_331
 # manim chapter3.py Chap3_332
 
-manim chapter4.py Chap4_00
-manim chapter4.py Chap4_01
-manim chapter4.py Chap4_02
-manim chapter4.py Chap4_03
-manim chapter4.py Chap4_04
-manim chapter4.py Chap4_05
-manim chapter4.py Chap4_06
-manim chapter4.py Chap4_07
-manim chapter4.py DH_00
-manim chapter4.py DH_01
-manim chapter4.py DH_02
-manim chapter4.py DH_03
-manim chapter4.py DH_04
-manim chapter4.py DH_05
-manim chapter4.py DH_06
-manim chapter4.py DH_07
-manim chapter4.py DH_08
-manim chapter4.py DH_09
-manim chapter4.py DH_10
-manim chapter4.py DH_11
-manim chapter4.py DH_12
-manim chapter4.py DH_13
-manim chapter4.py DH_14
-manim chapter4.py DH_15
-manim chapter4.py DH_16
-manim chapter4.py DH_17
-manim chapter4.py DH_18
-manim chapter4.py DH_19
-manim chapter4.py DH_20
-manim chapter4.py DH_21
-manim chapter4.py DH_22
-manim chapter4.py DH_23
-manim chapter4.py DH_24
-manim chapter4.py DH_25
-manim chapter4.py Chap4_08
-manim chapter4.py Chap4_09
-manim chapter4.py Chap4_10
-manim chapter4.py Chap4_11
-manim chapter4.py Chap4_12
-manim chapter4.py Chap4_13
-manim chapter4.py Chap4_14
-manim chapter4.py Chap4_15
-manim chapter4.py Chap4_16
-manim chapter4.py Chap4_17
+# manim chapter4.py Chap4_00
+# manim chapter4.py Chap4_01
+# manim chapter4.py Chap4_02
+# manim chapter4.py Chap4_03
+# manim chapter4.py Chap4_04
+# manim chapter4.py Chap4_05
+# manim chapter4.py Chap4_06
+# manim chapter4.py Chap4_07
+# manim chapter4.py DH_00
+# manim chapter4.py DH_01
+# manim chapter4.py DH_02
+# manim chapter4.py DH_03
+# manim chapter4.py DH_04
+# manim chapter4.py DH_05
+# manim chapter4.py DH_06
+# manim chapter4.py DH_07
+# manim chapter4.py DH_08
+# manim chapter4.py DH_09
+# manim chapter4.py DH_10
+# manim chapter4.py DH_11
+# manim chapter4.py DH_12
+# manim chapter4.py DH_13
+# manim chapter4.py DH_14
+# manim chapter4.py DH_15
+# manim chapter4.py DH_16
+# manim chapter4.py DH_17
+# manim chapter4.py DH_18
+# manim chapter4.py DH_19
+# manim chapter4.py DH_20
+# manim chapter4.py DH_21
+# manim chapter4.py DH_22
+# manim chapter4.py DH_23
+# manim chapter4.py DH_24
+# manim chapter4.py DH_25
+# manim chapter4.py Chap4_08
+# manim chapter4.py Chap4_09
+# manim chapter4.py Chap4_10
+# manim chapter4.py Chap4_11
+# manim chapter4.py Chap4_12
+# manim chapter4.py Chap4_13
+# manim chapter4.py Chap4_14
+# manim chapter4.py Chap4_15
+# manim chapter4.py Chap4_16
+# manim chapter4.py Chap4_17
 
-manim chapter4.py Chap4_18
-manim chapter4.py Chap4_19
-manim chapter4.py Chap4_20
-manim chapter4.py Chap4_21
-manim chapter4.py Chap4_22
-manim chapter4.py Chap4_23
-manim chapter4.py Chap4_24
-manim chapter4.py Chap4_25
-manim chapter4.py Chap4_26
+# manim chapter4.py Chap4_18
+# manim chapter4.py Chap4_19
+# manim chapter4.py Chap4_20
+# manim chapter4.py Chap4_21
+# manim chapter4.py Chap4_22
+# manim chapter4.py Chap4_23
+# manim chapter4.py Chap4_24
+# manim chapter4.py Chap4_25
+# manim chapter4.py Chap4_26
 
 
 
